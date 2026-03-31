@@ -59,15 +59,15 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
                 <h4 className="text-[13px] font-bold text-emerald-400 mb-4 flex items-center gap-2">
                   <span className="bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-lg text-emerald-300 shadow-sm flex items-center gap-2">
                     <span className="animate-pulse w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
-                    {isKo ? 'Resolution Flow (확인 항목)' : 'Resolution Flow'}
+                    {isKo ? 'Resolution Check (확인 사항)' : 'Resolution Check'}
                   </span>
                 </h4>
                 <div className="relative pl-4 border-l-[3px] border-zinc-700/60 space-y-6 ml-3 mt-4 pb-2">
                   {message.structured.steps.map((step, idx) => (
                     <div key={idx} className="relative group cursor-pointer" onClick={() => toggleStep(idx)}>
-                      {/* Step 동그라미 표식 */}
-                      <div className={`absolute -left-[27px] w-[22px] h-[22px] rounded-full flex items-center justify-center top-0 shadow-lg transition-all ${checkedSteps.includes(idx) ? 'bg-emerald-500 border-none scale-110' : 'bg-zinc-900 border-[3px] border-zinc-600'}`}>
-                        {checkedSteps.includes(idx) ? <CheckSquare className="w-3.5 h-3.5 text-white" /> : <span className="text-[10px] font-bold text-zinc-500">{idx + 1}</span>}
+                      {/* 체크박스 표식 (번호 제거) */}
+                      <div className={`absolute -left-[27px] w-[22px] h-[22px] rounded-full flex items-center justify-center top-0 shadow-lg transition-all ${checkedSteps.includes(idx) ? 'bg-emerald-500 border-none scale-110' : 'bg-zinc-800 border-[2px] border-zinc-600'}`}>
+                        {checkedSteps.includes(idx) ? <CheckSquare className="w-3.5 h-3.5 text-white" /> : <Square className="w-3.5 h-3.5 text-zinc-500" />}
                       </div>
                       {/* Step 내용 카드 */}
                       <div className={`p-4 rounded-2xl border transition-all shadow-md ml-3 ${checkedSteps.includes(idx) ? 'bg-emerald-500/10 border-emerald-500/40' : 'bg-zinc-800/60 border-zinc-700/50 hover:bg-zinc-800/90'}`}>

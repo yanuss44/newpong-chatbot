@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import template from '../../data/complaint_form_template.json';
 import { generateEmailTemplate } from '../../utils/emailTemplate.js';
 import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 import { Download, FileJson, Mail, X, CheckCircle } from 'lucide-react';
 
 export default function ComplaintForm({ onClose, language, initialNotes }) {
@@ -9,6 +10,7 @@ export default function ComplaintForm({ onClose, language, initialNotes }) {
     additionalNotes: initialNotes || ''
   });
   const [copiedHTML, setCopiedHTML] = React.useState(false);
+  const formRef = useRef(null);
 
   // initialNotes가 변경될 때 formData에 반영 (필수)
   React.useEffect(() => {
@@ -29,28 +31,31 @@ export default function ComplaintForm({ onClose, language, initialNotes }) {
     a.click();
   };
 
-  const handleExportPDF = () => {
-    const doc = new jsPDF();
-    doc.setFontSize(18);
-    doc.text("Official Complaint Form (ISO 13485)", 20, 20);
+  const handleExportPDF = async () => {
+    if (!formRef.current) return;
     
-    doc.setFontSize(12);
-    let y = 40;
-    template.fields.forEach(field => {
-      doc.setFont("helvetica", "bold");
-      const label = `${field.label}:`;
-      doc.text(label, 20, y);
+    try {
+      const canvas = await html2canvas(formRef.current, {
+        scale: 2,
+        backgroundColor: '#18181b', // zinc-900 background
+        useCORS: true
+      });
       
-      doc.setFont("helvetica", "normal");
-      const value = formData[field.name] || 'N/A';
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
       
-      const splitText = doc.splitTextToSize(value, 120);
-      doc.text(splitText, 70, y);
-      
-      y += 10 + ((splitText.length - 1) * 6);
-    });
-
-    doc.save(`complaint_${formData.serialNumber || 'record'}.pdf`);
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save(`complaint_${formData.serialNumber || 'record'}.pdf`);
+    } catch (error) {
+      console.error("PDF Export failed:", error);
+      // Fallback
+      const doc = new jsPDF();
+      doc.text("Export Error - Please use JSON or Copy Email", 20, 20);
+      doc.save('error.pdf');
+    }
   };
 
   const handleCopyEmailHTML = () => {
@@ -87,7 +92,7 @@ export default function ComplaintForm({ onClose, language, initialNotes }) {
           </button>
         </div>
         
-        <div className="flex-1 overflow-y-auto p-8 bg-zinc-900 custom-scrollbar">
+        <div ref={formRef} className="flex-1 overflow-y-auto p-8 bg-zinc-900 custom-scrollbar">
           <form className="space-y-5">
             {template.fields.map(field => (
               <div key={field.name} className="flex flex-col">

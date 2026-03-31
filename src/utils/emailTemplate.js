@@ -29,10 +29,17 @@ export function generateEmailTemplate(formData) {
           <div class="field"><div class="label">Serial Number (SN)</div><div class="value">${formData.serialNumber || '-'}</div></div>
           <div class="field"><div class="label">Issue Date</div><div class="value">${formData.issueDate || '-'}</div></div>
           
-          <div class="field" style="border-bottom: none;">
+          <div class="field">
             <div class="label">Issue Description</div>
             <div class="value" style="background: #f8fafc; padding: 15px; border-radius: 6px; margin-top: 10px;">
               ${(formData.issueDescription || '-').replace(/\n/g, '<br/>')}
+            </div>
+          </div>
+
+          <div class="field" style="border-bottom: none;">
+            <div class="label">Additional Notes</div>
+            <div class="value" style="background: #f1f5f9; padding: 15px; border-radius: 6px; margin-top: 10px; color: #475569;">
+              ${(formData.additionalNotes || '-').replace(/\n/g, '<br/>')}
             </div>
           </div>
           
@@ -45,3 +52,4 @@ export function generateEmailTemplate(formData) {
     </html>
   `;
 }
+`,Description:
