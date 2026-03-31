@@ -115,10 +115,27 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
           
           {!isUser && message.status === 'diagnosing' && (
              <div className="mt-4 border-t border-zinc-700/50 pt-3 flex flex-col gap-3">
-                {!showMoreQuery ? (
+                {message.structured && message.structured.no_more_checks ? (
+                  /* 더 이상 체크할 사항이 없을 때의 전용 UI */
+                  <div className="bg-zinc-900/60 p-5 rounded-xl border border-rose-500/30 animate-in fade-in slide-in-from-bottom-2 duration-500">
+                    <p className="text-[14px] text-rose-200 mb-4 font-bold leading-relaxed text-center">
+                      {isKo ? '더 이상의 체크항목은 없습니다. 제조사에서 면밀히 검토할 수 있게 서비스 접수를 진행해 주세요. 그렇게 진행할까요?' : 'No more check items available. Please proceed to file a service request for a thorough review. Shall we proceed?'}
+                    </p>
+                    <button 
+                      onClick={handleUnresolved}
+                      className="w-full bg-rose-600 hover:bg-rose-500 text-white py-3 px-4 rounded-xl text-sm font-black transition-all shadow-lg shadow-rose-900/30 flex items-center justify-center gap-2 group"
+                    >
+                      <span>{isKo ? '네, 서비스 접수를 진행하겠습니다' : 'Yes, Proceed to Service Request'}</span>
+                      <Bot className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
+                ) : !showMoreQuery ? (
                   <div className="flex gap-2 w-full">
                     <button 
-                      onClick={onResolvedClick}
+                      onClick={() => {
+                        const resolvingSteps = checkedSteps.map(idx => message.structured.steps[idx]);
+                        onResolvedClick(resolvingSteps);
+                      }}
                       className="flex-1 bg-zinc-900/50 border border-zinc-700 hover:bg-emerald-500/10 hover:border-emerald-500/40 text-slate-300 hover:text-emerald-400 py-2.5 px-3 rounded-xl text-sm font-bold transition-all shadow-sm"
                     >
                       {isKo ? '가이드로 해결됨' : 'Resolved by Guide'}

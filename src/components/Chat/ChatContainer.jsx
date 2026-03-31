@@ -45,7 +45,7 @@ export default function ChatContainer({ messages, onSendMessage, onUnresolved, o
               key={index} 
               message={msg} 
               onUnresolvedClick={(notes) => onUnresolved(msg.language || 'ko', notes)}
-              onResolvedClick={onResolved}
+              onResolvedClick={(steps) => onResolved(steps)}
               onMoreChecks={onMoreChecks}
             />
           ))}

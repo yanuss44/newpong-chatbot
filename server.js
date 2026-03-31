@@ -65,16 +65,22 @@ const MASTER_MODELS = [
 
 // 성공 사례 저장 API
 app.post('/api/save-case', (req, res) => {
-    const { question, answer, language } = req.body;
+    const { question, answer, language, resolved_steps } = req.body;
     if (!question || !answer) return res.status(400).json({ error: "Invalid data" });
 
     const cases = loadResolvedCases();
     // 중복 방지 (간단한 질문 매칭)
     const exists = cases.find(c => c.question.trim() === question.trim());
     if (!exists) {
-        cases.push({ question, answer, language, timestamp: new Date().toISOString() });
+        cases.push({ 
+            question, 
+            answer, 
+            language, 
+            resolved_steps: resolved_steps || [], // 어떤 단계로 해결됐는지 저장
+            timestamp: new Date().toISOString() 
+        });
         fs.writeFileSync(CASES_FILE, JSON.stringify(cases, null, 2));
-        console.log("✅ 새로운 성공 사례 학습 완료:", question.substring(0, 20) + "...");
+        console.log("✅ 새로운 성공 사례 학습 완료 (조치 사항 포함):", question.substring(0, 20) + "...");
     }
     res.json({ success: true });
 });

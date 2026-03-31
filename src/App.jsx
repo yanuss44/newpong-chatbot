@@ -110,8 +110,8 @@ function App() {
     setShowComplaintForm(true);
   };
 
-  const handleResolved = async () => {
-    // 🧠 성공 사례 서버로 전송 (학습)
+  const handleResolved = async (resolvedSteps = []) => {
+    // 🧠 성공 사례 서버로 전송 (학습 및 구체적 해결 단계 포함)
     const lastBotMsg = messages[messages.length - 1];
     if (lastUserQuery && lastBotMsg && lastBotMsg.sender === 'bot') {
       try {
@@ -121,7 +121,8 @@ function App() {
           body: JSON.stringify({
             question: lastUserQuery,
             answer: lastBotMsg.text,
-            language: sessionLanguage || 'ko'
+            language: sessionLanguage || 'ko',
+            resolved_steps: resolvedSteps // 사용자가 체크한 '해결된 항목들' 데이터 추가
           })
         });
       } catch (e) {
