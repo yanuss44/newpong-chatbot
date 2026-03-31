@@ -38,22 +38,32 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
           {isUser ? <User className="w-5 h-5 text-white" /> : <Bot className="w-5 h-5 text-white" />}
         </div>
         <div className={`p-4 rounded-2xl ${isUser ? 'bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-tr-sm shadow-[0_4px_14px_rgba(37,99,235,0.2)] border border-blue-500/20' : 'bg-zinc-800/80 backdrop-blur-md text-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.3)] border border-zinc-700/50 rounded-tl-sm'}`}>
-          {message.structured ? (
+          {message.structured && (message.structured.symptom || message.structured.steps?.length > 0 || message.structured.no_more_checks) ? (
             <div className="flex flex-col gap-4 w-full">
               {/* 증상 / 원인 요약 섹션 */}
-              <div className="bg-zinc-900/40 p-4 rounded-xl border border-zinc-700/50 shadow-inner">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="w-2 h-2 bg-rose-400 rounded-full shadow-[0_0_8px_rgba(244,63,94,0.6)]"></div>
-                  <span className="text-xs font-bold text-rose-400 uppercase tracking-wider">{isKo ? 'Target Symptom (증상)' : 'Target Symptom'}</span>
+              {(message.structured.symptom || message.structured.cause) && (
+                <div className="bg-zinc-900/40 p-4 rounded-xl border border-zinc-700/50 shadow-inner">
+                  {message.structured.symptom && (
+                    <>
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-2 h-2 bg-rose-400 rounded-full shadow-[0_0_8px_rgba(244,63,94,0.6)]"></div>
+                        <span className="text-xs font-bold text-rose-400 uppercase tracking-wider">{isKo ? 'Target Symptom (증상)' : 'Target Symptom'}</span>
+                      </div>
+                      <p className="text-[15px] font-medium text-slate-200 ml-4 leading-relaxed tracking-wide mb-4">{message.structured.symptom}</p>
+                    </>
+                  )}
+                  
+                  {message.structured.cause && (
+                    <>
+                      <div className="flex items-center gap-2 mt-4 mb-1">
+                        <div className="w-2 h-2 bg-orange-400 rounded-full shadow-[0_0_8px_rgba(251,146,60,0.6)]"></div>
+                        <span className="text-xs font-bold text-orange-400 uppercase tracking-wider">{isKo ? 'Possible Cause (원인)' : 'Possible Cause'}</span>
+                      </div>
+                      <p className="text-[14px] text-slate-300 ml-4 leading-relaxed">{message.structured.cause}</p>
+                    </>
+                  )}
                 </div>
-                <p className="text-[15px] font-medium text-slate-200 ml-4 leading-relaxed tracking-wide">{message.structured.symptom}</p>
-                
-                <div className="flex items-center gap-2 mt-4 mb-1">
-                  <div className="w-2 h-2 bg-orange-400 rounded-full shadow-[0_0_8px_rgba(251,146,60,0.6)]"></div>
-                  <span className="text-xs font-bold text-orange-400 uppercase tracking-wider">{isKo ? 'Possible Cause (원인)' : 'Possible Cause'}</span>
-                </div>
-                <p className="text-[14px] text-slate-300 ml-4 leading-relaxed">{message.structured.cause}</p>
-              </div>
+              )}
 
               {/* 추가 점검 사항 없음 안내 (특수 케이스) */}
               {message.structured.no_more_checks && (

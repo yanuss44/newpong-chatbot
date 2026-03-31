@@ -120,10 +120,19 @@ app.post('/api/chat', async (req, res) => {
                 ? currentCases.map(c => `Q: ${c.question}\nA: ${c.answer}`).join('\n\n')
                 : "아직 학습된 사례가 없습니다.";
 
+            const langMap = {
+                'ko': '한국어(Korean)',
+                'en': '영어(English)',
+                'ja': '일본어(Japanese)',
+                'pt-BR': '포르투갈어(Portuguese)',
+                'es': '스페인어(Spanish)'
+            };
+            const targetLangLabel = langMap[language] || '영어(English)';
+
             const systemContent = `당신은 10년 차 의료기기 전문 CS 진단 AI이며, NEWPONG의 제품(NP-110, NP-200) 매뉴얼 및 과거 해결 사례를 숙지하고 있습니다. 
             
             [미션]: 사용자의 증상에 대해 매뉴얼과 과거 경험을 근거로 정확한 원인과 해결 단계를 제시하라.
-            [언어 설정]: 반드시 ${language === 'ko' ? '한국어(Korean)' : '영어(English)'}로만 답변하십시오. 
+            [언어 설정]: 반드시 ${targetLangLabel}로만 답변하십시오. 질문자가 사용하는 언어와 동일한 언어를 사용해야 합니다.
             
             [제공된 매뉴얼 데이터 기반 지식]:
             ${masterManualData}
