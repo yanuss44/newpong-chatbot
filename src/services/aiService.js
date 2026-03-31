@@ -43,16 +43,16 @@ export const analyzeSymptom = async (userText, language = 'en', history = [], on
       }
     }
 
-    // 최종 파싱 시도 (JSON 구조 추출)
+    // 최종 파싱 시도 (JSON 구조 추출 최적화: 정규식 사용)
     let structured = null;
     try {
-      let pureJson = fullText.trim();
-      // 백틱 오염 제거
-      if(pureJson.startsWith('```json')) pureJson = pureJson.replace(/```json/g, '').replace(/```/g, '').trim();
-      
-      const parsed = JSON.parse(pureJson);
-      if (parsed && parsed.steps) {
-        structured = parsed;
+      const jsonMatch = fullText.match(/{[\s\S]*}/);
+      if (jsonMatch) {
+        const pureJson = jsonMatch[0];
+        const parsed = JSON.parse(pureJson);
+        if (parsed && (parsed.steps || parsed.no_more_checks)) {
+          structured = parsed;
+        }
       }
     } catch (e) {
       console.warn("최종 JSON 파싱 실패:", e);
@@ -60,8 +60,12 @@ export const analyzeSymptom = async (userText, language = 'en', history = [], on
 
     // 상태 요약 로직 (서버와 연계)
     let status = 'diagnosing';
-    const lowerRes = fullText.toLowerCase();
-    if (lowerRes.includes("매뉴얼에 없")) status = 'unresolved';
+    if (structured && structured.no_more_checks) {
+       status = 'unresolved'; // 추가 점검 사항이 없으면 바로 unresolved 상태로 간주
+    } else {
+       const lowerRes = fullText.toLowerCase();
+       if (lowerRes.includes("매뉴얼에 없")) status = 'unresolved';
+    }
 
     return {
       language: language,

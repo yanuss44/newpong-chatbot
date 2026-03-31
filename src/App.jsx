@@ -74,7 +74,14 @@ function App() {
             structured: response.structured
           }];
         });
-        if (response.status === 'unresolved') {
+
+        // ✨ 추가 점검 사항이 없을 경우 자동 접수 전환 (1.5초 지연)
+        if (response.structured && response.structured.no_more_checks) {
+          setTimeout(() => {
+            const autoNote = `[시스템 안내: 추가 점검 불가]\n${response.structured.message || "매뉴얼 내 추가 대책이 확인되지 않아 자동으로 접수 절차를 개시합니다."}`;
+            handleUnresolved(msgLang, autoNote);
+          }, 1500);
+        } else if (response.status === 'unresolved') {
           setCurrentStep('unresolved');
         }
       }
