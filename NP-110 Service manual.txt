@@ -1,0 +1,32 @@
+Lincurve Pro
+NP-110
+SERVICE MANUAL (Text-based Knowledge Base)
+
+1. PRODUCT OVERVIEW
+The Lincurve Pro (NP-110) is an advanced medical device specializing in ultrasonic treatments. It uses a high-frequency transducer to deliver focused energy.
+
+2. SPECIFICATIONS
+- Model: NP-110
+- Frequency: 20kHz - 40kHz (Variable)
+- Input: 100-240VAC, 50/60Hz
+- Power: Max 150VA
+
+3. ERROR CODES & TROUBLESHOOTING
+Er 01: System Overheat
+- Cause: Ventilation blocked or fan failure.
+- Resolution: Check fan operation, clear vents, and wait for 10 minutes.
+
+Er 05: Transducer Communication Error
+- Cause: Handpiece cable not fully inserted.
+- Resolution: Re-connect the handpiece and restart the device.
+
+Er 12: High Voltage Fault
+- Cause: Internal SMPS failure.
+- Resolution: Turn off main power immediately and contact Newpong service.
+
+4. MAINTENANCE
+- Inspect probes every 100 treatments.
+- Clean handpiece with 70% Isopropanol after each use.
+- Do NOT submerge the main body in water.
+
+(End of Manual)
