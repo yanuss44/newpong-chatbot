@@ -161,7 +161,7 @@ app.use((req, res, next) => {
     res.sendFile(path.join(distPath, 'index.html'));
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, async () => {
     console.log(`✨ 백엔드 AI 서버가 ${PORT} 포트에서 시작되었습니다.`);
     await uploadManuals();
