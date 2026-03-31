@@ -19,32 +19,38 @@ function App() {
   const [showComplaintForm, setShowComplaintForm] = useState(false);
   const [formLanguage, setFormLanguage] = useState('ko');
   const [loadingLanguage, setLoadingLanguage] = useState('ko');
+  const [sessionLanguage, setSessionLanguage] = useState(null); // 세션 고정 언어
 
-  const handleSendMessage = async (text) => {
-    // 🌍 언어 감지: 메시지에 한글이 한 글자라도 있으면 'ko', 아니면 'en'
-    const hasKorean = /[가-힣]/.test(text);
-    const msgLang = hasKorean ? 'ko' : 'en';
+  const handleSendMessage = async (text, isSystemCommand = false) => {
+    // 🌍 언어 감지 및 세션 고정 로직
+    let msgLang = sessionLanguage;
+
+    if (!msgLang) {
+      const hasKorean = /[가-힣]/.test(text);
+      msgLang = hasKorean ? 'ko' : 'en';
+      setSessionLanguage(msgLang); // 최초 감지된 언어로 세션 고정
+    }
 
     setLoadingLanguage(msgLang);
     
+    // 시스템 명령(추가 점검 등)인 경우 사용자에게 공개하지 않고 처리할 수도 있지만, 여기서는 투명하게 표시
     const newMessages = [...messages, { sender: 'user', text, language: msgLang }];
     setMessages(newMessages);
     setCurrentStep('diagnosing');
     setIsLoading(true);
 
     try {
-      // Call AI Service with full context
+      // 분석 요청 시 세션 언어를 강제 전달
       const response = await analyzeSymptom(text, msgLang, messages);
       if (response) {
         setMessages([...newMessages, {
           sender: 'bot',
           text: response.text,
           status: response.status,
-          language: response.language,
+          language: msgLang, // AI 응답 언어도 세션 언어로 강제 설정 (서버 규칙 보조)
           code: response.code,
           structured: response.structured
         }]);
-        // If it comes back unresolved immediately
         if (response.status === 'unresolved') {
           setCurrentStep('unresolved');
         }
@@ -56,11 +62,18 @@ function App() {
     }
   };
 
+  const handleMoreChecks = () => {
+    const query = sessionLanguage === 'ko' 
+      ? "추가적인 점검 사항이나 해결책이 매뉴얼에 더 있나요? 있다면 상세히 알려주세요." 
+      : "Are there any more troubleshooting steps or solutions in the manual? If so, please provide them in detail.";
+    handleSendMessage(query, true);
+  };
+
   const [complaintInitialNotes, setComplaintInitialNotes] = useState('');
 
   const handleUnresolved = (lang, notes = '') => {
     setCurrentStep('unresolved');
-    setFormLanguage(lang);
+    setFormLanguage(sessionLanguage || lang); // 세션 언어 우선
     setComplaintInitialNotes(notes);
     setShowComplaintForm(true);
   };
@@ -94,6 +107,7 @@ function App() {
             onSendMessage={handleSendMessage}
             onUnresolved={handleUnresolved}
             onResolved={handleResolved}
+            onMoreChecks={handleMoreChecks}
             isLoading={isLoading}
             loadingLanguage={loadingLanguage}
           />

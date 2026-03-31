@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import MessageBubble from './MessageBubble';
 import { Send } from 'lucide-react';
 
-export default function ChatContainer({ messages, onSendMessage, onUnresolved, onResolved, isLoading, loadingLanguage }) {
+export default function ChatContainer({ messages, onSendMessage, onUnresolved, onResolved, onMoreChecks, isLoading, loadingLanguage }) {
   const [input, setInput] = useState('');
   const [searchTime, setSearchTime] = useState(0);
   const messagesEndRef = useRef(null);
@@ -46,6 +46,7 @@ export default function ChatContainer({ messages, onSendMessage, onUnresolved, o
               message={msg} 
               onUnresolvedClick={(notes) => onUnresolved(msg.language || 'ko', notes)}
               onResolvedClick={onResolved}
+              onMoreChecks={onMoreChecks}
             />
           ))}
           {isLoading && (

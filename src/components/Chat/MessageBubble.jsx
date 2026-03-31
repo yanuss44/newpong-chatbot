@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Bot, User, CheckSquare, Square } from 'lucide-react';
 
-export default function MessageBubble({ message, onUnresolvedClick, onResolvedClick }) {
+export default function MessageBubble({ message, onUnresolvedClick, onResolvedClick, onMoreChecks }) {
   const isUser = message.sender === 'user';
   const isKo = message.language === 'ko';
   const [checkedSteps, setCheckedSteps] = useState([]);
+  const [showMoreQuery, setShowMoreQuery] = useState(false); // 추가 점검 질문 노출 여부
 
   const toggleStep = (idx) => {
     if (checkedSteps.includes(idx)) {
@@ -98,19 +99,43 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
           )}
           
           {!isUser && message.status === 'diagnosing' && (
-             <div className="mt-4 border-t border-zinc-700/50 pt-3 flex gap-2">
-                <button 
-                  onClick={onResolvedClick}
-                  className="flex-1 bg-zinc-900/50 border border-zinc-700 hover:bg-emerald-500/10 hover:border-emerald-500/40 text-slate-300 hover:text-emerald-400 py-1.5 px-3 rounded-lg text-sm font-medium transition-colors"
-                >
-                  {isKo ? '가이드로 해결됨' : 'Resolved by Guide'}
-                </button>
-                <button 
-                  onClick={handleUnresolved} 
-                  className="flex-1 border border-zinc-700 bg-zinc-900/50 text-slate-400 hover:text-rose-400 hover:border-rose-500/40 hover:bg-rose-500/10 py-1.5 px-3 rounded-lg text-sm font-medium transition-colors"
-                >
-                  {isKo ? '해결 안됨 (접수 진행)' : 'Not Resolved (File Complaint)'}
-                </button>
+             <div className="mt-4 border-t border-zinc-700/50 pt-3 flex flex-col gap-3">
+                {!showMoreQuery ? (
+                  <div className="flex gap-2 w-full">
+                    <button 
+                      onClick={onResolvedClick}
+                      className="flex-1 bg-zinc-900/50 border border-zinc-700 hover:bg-emerald-500/10 hover:border-emerald-500/40 text-slate-300 hover:text-emerald-400 py-2.5 px-3 rounded-xl text-sm font-bold transition-all shadow-sm"
+                    >
+                      {isKo ? '가이드로 해결됨' : 'Resolved by Guide'}
+                    </button>
+                    <button 
+                      onClick={() => setShowMoreQuery(true)} 
+                      className="flex-1 border border-zinc-700 bg-zinc-900/50 text-slate-400 hover:text-rose-400 hover:border-rose-500/40 hover:bg-rose-500/10 py-2.5 px-3 rounded-xl text-sm font-bold transition-all shadow-sm"
+                    >
+                      {isKo ? '해결 안됨' : 'Not Resolved'}
+                    </button>
+                  </div>
+                ) : (
+                  <div className="bg-zinc-900/60 p-4 rounded-xl border border-zinc-700 animate-in slide-in-from-top-2 duration-300">
+                    <p className="text-[13px] text-slate-300 mb-3 font-medium leading-relaxed">
+                      {isKo ? '위 내용들의 체크로 해결되지 않았나요? 추가로 체크항목을 좀더 확인해드릴까요?' : 'Did the above checks not solve it? Should I check for more items?'}
+                    </p>
+                    <div className="flex gap-2">
+                       <button 
+                         onClick={onMoreChecks}
+                         className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white py-2 px-3 rounded-lg text-xs font-bold transition-colors shadow-lg shadow-emerald-900/20"
+                       >
+                         {isKo ? '예 (YES)' : 'YES'}
+                       </button>
+                       <button 
+                         onClick={handleUnresolved}
+                         className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-slate-300 py-2 px-3 rounded-lg text-xs font-bold transition-colors border border-zinc-700"
+                       >
+                         {isKo ? '아니오 (접수진행)' : 'NO (File Complaint)'}
+                       </button>
+                    </div>
+                  </div>
+                )}
              </div>
           )}
         </div>
