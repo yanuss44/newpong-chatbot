@@ -57,7 +57,7 @@ export default function ChatContainer({ messages, onSendMessage, onUnresolved, o
                   <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce shadow-[0_0_8px_rgba(16,185,129,0.8)] delay-200"></div>
                 </div>
                 <span className="text-sm font-medium text-emerald-300">
-                  {loadingLanguage === 'ko' ? `매뉴얼 검색 중입니다... (${searchTime}초 경과)` : `Searching manual... (${searchTime}s elapsed)`}
+                  {loadingLanguage === 'ko' ? `해결책을 찾고있습니다. 잠시만 기다려주세요... (${searchTime}초 경과)` : `Finding a solution. Please wait a moment... (${searchTime}s elapsed)`}
                 </span>
               </div>
             </div>

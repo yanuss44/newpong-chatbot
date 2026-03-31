@@ -19,22 +19,12 @@ function App() {
   const [showComplaintForm, setShowComplaintForm] = useState(false);
   const [formLanguage, setFormLanguage] = useState('ko');
   const [loadingLanguage, setLoadingLanguage] = useState('ko');
-  const [sessionLanguage, setSessionLanguage] = useState(null); // 대화 유지 언어
 
   const handleSendMessage = async (text) => {
-    // 🌍 언어 감지 및 유지 로직
+    // 🌍 언어 감지: 메시지에 한글이 한 글자라도 있으면 'ko', 아니면 'en'
     const hasKorean = /[가-힣]/.test(text);
-    let msgLang = sessionLanguage;
+    const msgLang = hasKorean ? 'ko' : 'en';
 
-    if (hasKorean) {
-      msgLang = 'ko';
-    } else if (!sessionLanguage) {
-      // 최초 질문이고 한글이 없으면 영어로 판단 (모델명만 있는 경우 등)
-      msgLang = 'en';
-    }
-    // 이미 sessionLanguage가 'ko'인 상태에서 'np-200'(한글없음)을 쳐도 'ko'로 유지됨
-
-    if (!sessionLanguage) setSessionLanguage(msgLang);
     setLoadingLanguage(msgLang);
     
     const newMessages = [...messages, { sender: 'user', text, language: msgLang }];

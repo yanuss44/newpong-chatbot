@@ -10,6 +10,13 @@ export default function ComplaintForm({ onClose, language, initialNotes }) {
   });
   const [copiedHTML, setCopiedHTML] = React.useState(false);
 
+  // initialNotes가 변경될 때 formData에 반영 (필수)
+  React.useEffect(() => {
+    if (initialNotes) {
+      setFormData(prev => ({ ...prev, additionalNotes: initialNotes }));
+    }
+  }, [initialNotes]);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
