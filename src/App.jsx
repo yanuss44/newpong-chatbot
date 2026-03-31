@@ -20,6 +20,7 @@ function App() {
   const [formLanguage, setFormLanguage] = useState('ko');
   const [loadingLanguage, setLoadingLanguage] = useState('ko');
   const [sessionLanguage, setSessionLanguage] = useState(null); // 세션 고정 언어
+  const [lastUserQuery, setLastUserQuery] = useState(''); // 마지막 사용자 질문 저장 (학습용)
 
   const handleSendMessage = async (text, isSystemCommand = false) => {
     // 🌍 언어 감지 및 세션 고정 로직
@@ -32,6 +33,7 @@ function App() {
     }
 
     setLoadingLanguage(msgLang);
+    if (!isSystemCommand) setLastUserQuery(text); // 일반 질문일 때만 학습 재료로 저장
     
     // 시스템 명령(추가 점검 등)인 경우 사용자에게 공개하지 않고 처리할 수도 있지만, 여기서는 투명하게 표시
     const newMessages = [...messages, { sender: 'user', text, language: msgLang }];
@@ -108,12 +110,31 @@ function App() {
     setShowComplaintForm(true);
   };
 
-  const handleResolved = () => {
-    setCurrentStep('resolved');
-    setMessages([...messages, {
-      sender: 'bot',
-      text: '가이드로 문제가 해결되어 다행입니다! 다른 도움이 필요하시면 언제든 증상을 입력해주세요.'
+  const handleResolved = async () => {
+    // 🧠 성공 사례 서버로 전송 (학습)
+    const lastBotMsg = messages[messages.length - 1];
+    if (lastUserQuery && lastBotMsg && lastBotMsg.sender === 'bot') {
+      try {
+        await fetch('/api/save-case', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            question: lastUserQuery,
+            answer: lastBotMsg.text,
+            language: sessionLanguage || 'ko'
+          })
+        });
+      } catch (e) {
+        console.error("사례 저장 실패:", e);
+      }
+    }
+
+    setMessages([...messages, { 
+      sender: 'bot', 
+      text: sessionLanguage === 'ko' ? '문제가 해결되어 기쁩니다! 이용해 주셔서 감사합니다.' : 'Glad the issue is resolved! Thank you for using our service.',
+      language: sessionLanguage || 'ko'
     }]);
+    setCurrentStep('resolved');
   };
 
   return (
