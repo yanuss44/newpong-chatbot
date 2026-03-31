@@ -40,13 +40,13 @@ function App() {
     setIsLoading(true);
 
     try {
-      // 1. 임시 빈 봇 메시지 생성 (스트리밍 대상)
+      // 1. 임시 빈 봇 메시지 생성 (상태를 'thinking'으로 시작하여 버튼 노출 방지)
       const botMessageId = Date.now();
       setMessages([...newMessages, { 
         id: botMessageId,
         sender: 'bot', 
         text: '', 
-        status: 'diagnosing', 
+        status: 'thinking', 
         language: msgLang 
       }]);
 
@@ -61,14 +61,14 @@ function App() {
         });
       });
 
-      // 3. 최종 완성된 메시지 및 구조화 데이터 반영
+      // 3. 최종 완성된 메시지 및 구조화 데이터 반영 (이때 status가 'diagnosing'이 되어 버튼이 나타남)
       if (response) {
         setMessages(prev => {
           const filtered = prev.slice(0, -1);
           return [...filtered, {
             sender: 'bot',
             text: response.text,
-            status: response.status,
+            status: response.status || 'diagnosing',
             language: msgLang,
             code: response.code,
             structured: response.structured
