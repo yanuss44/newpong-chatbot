@@ -40,17 +40,40 @@ function App() {
     setIsLoading(true);
 
     try {
-      // 분석 요청 시 세션 언어를 강제 전달
-      const response = await analyzeSymptom(text, msgLang, messages);
+      // 1. 임시 빈 봇 메시지 생성 (스트리밍 대상)
+      const botMessageId = Date.now();
+      setMessages([...newMessages, { 
+        id: botMessageId,
+        sender: 'bot', 
+        text: '', 
+        status: 'diagnosing', 
+        language: msgLang 
+      }]);
+
+      // 2. 스트리밍 질의 실행 (onChunk 콜백 활용)
+      const response = await analyzeSymptom(text, msgLang, messages, (streamedText) => {
+        setMessages(prev => {
+          const lastMsg = prev[prev.length - 1];
+          if (lastMsg && lastMsg.sender === 'bot') {
+            return [...prev.slice(0, -1), { ...lastMsg, text: streamedText }];
+          }
+          return prev;
+        });
+      });
+
+      // 3. 최종 완성된 메시지 및 구조화 데이터 반영
       if (response) {
-        setMessages([...newMessages, {
-          sender: 'bot',
-          text: response.text,
-          status: response.status,
-          language: msgLang, // AI 응답 언어도 세션 언어로 강제 설정 (서버 규칙 보조)
-          code: response.code,
-          structured: response.structured
-        }]);
+        setMessages(prev => {
+          const filtered = prev.slice(0, -1);
+          return [...filtered, {
+            sender: 'bot',
+            text: response.text,
+            status: response.status,
+            language: msgLang,
+            code: response.code,
+            structured: response.structured
+          }];
+        });
         if (response.status === 'unresolved') {
           setCurrentStep('unresolved');
         }
