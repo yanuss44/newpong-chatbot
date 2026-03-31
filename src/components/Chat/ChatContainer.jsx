@@ -44,7 +44,7 @@ export default function ChatContainer({ messages, onSendMessage, onUnresolved, o
             <MessageBubble 
               key={index} 
               message={msg} 
-              onUnresolvedClick={() => onUnresolved(msg.language || 'ko')}
+              onUnresolvedClick={(notes) => onUnresolved(msg.language || 'ko', notes)}
               onResolvedClick={onResolved}
             />
           ))}

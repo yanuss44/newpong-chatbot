@@ -1,9 +1,34 @@
-import React from 'react';
-import { Bot, User } from 'lucide-react';
+import React, { useState } from 'react';
+import { Bot, User, CheckSquare, Square } from 'lucide-react';
 
 export default function MessageBubble({ message, onUnresolvedClick, onResolvedClick }) {
   const isUser = message.sender === 'user';
   const isKo = message.language === 'ko';
+  const [checkedSteps, setCheckedSteps] = useState([]);
+
+  const toggleStep = (idx) => {
+    if (checkedSteps.includes(idx)) {
+      setCheckedSteps(checkedSteps.filter(i => i !== idx));
+    } else {
+      setCheckedSteps([...checkedSteps, idx]);
+    }
+  };
+
+  const handleUnresolved = () => {
+    if (message.structured && message.structured.steps) {
+      const checkedText = checkedSteps
+        .sort((a, b) => a - b)
+        .map(idx => `- ${message.structured.steps[idx]} (완료)`)
+        .join('\n');
+      
+      const notes = checkedText 
+        ? `[사용자 자가 점검 완료 항목]\n${checkedText}\n----------------------------------\n`
+        : '';
+      onUnresolvedClick(notes);
+    } else {
+      onUnresolvedClick('');
+    }
+  };
   
   return (
     <div className={`flex w-full mb-4 ${isUser ? 'justify-end' : 'justify-start'}`}>
@@ -34,19 +59,19 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
                 <h4 className="text-[13px] font-bold text-emerald-400 mb-4 flex items-center gap-2">
                   <span className="bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-lg text-emerald-300 shadow-sm flex items-center gap-2">
                     <span className="animate-pulse w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
-                    {isKo ? 'Resolution Flow (해결 절차)' : 'Resolution Flow'}
+                    {isKo ? 'Resolution Flow (확인 항목)' : 'Resolution Flow'}
                   </span>
                 </h4>
                 <div className="relative pl-4 border-l-[3px] border-zinc-700/60 space-y-6 ml-3 mt-4 pb-2">
                   {message.structured.steps.map((step, idx) => (
-                    <div key={idx} className="relative group">
+                    <div key={idx} className="relative group cursor-pointer" onClick={() => toggleStep(idx)}>
                       {/* Step 동그라미 표식 */}
-                      <div className="absolute -left-[27px] w-[22px] h-[22px] rounded-full bg-zinc-900 border-[3px] border-emerald-500 flex items-center justify-center top-0 shadow-[0_0_12px_rgba(16,185,129,0.4)] transition-transform group-hover:scale-110">
-                        <span className="text-[10px] font-bold text-emerald-400 leading-none mt-px">{idx + 1}</span>
+                      <div className={`absolute -left-[27px] w-[22px] h-[22px] rounded-full flex items-center justify-center top-0 shadow-lg transition-all ${checkedSteps.includes(idx) ? 'bg-emerald-500 border-none scale-110' : 'bg-zinc-900 border-[3px] border-zinc-600'}`}>
+                        {checkedSteps.includes(idx) ? <CheckSquare className="w-3.5 h-3.5 text-white" /> : <span className="text-[10px] font-bold text-zinc-500">{idx + 1}</span>}
                       </div>
                       {/* Step 내용 카드 */}
-                      <div className="bg-zinc-800/60 p-4 rounded-2xl border border-zinc-700/50 shadow-lg ml-3 hover:border-emerald-500/40 hover:bg-zinc-800/90 transition-all">
-                        <p className="text-[15px] text-slate-200 leading-relaxed font-medium">
+                      <div className={`p-4 rounded-2xl border transition-all shadow-md ml-3 ${checkedSteps.includes(idx) ? 'bg-emerald-500/10 border-emerald-500/40' : 'bg-zinc-800/60 border-zinc-700/50 hover:bg-zinc-800/90'}`}>
+                        <p className={`text-[15px] leading-relaxed transition-colors ${checkedSteps.includes(idx) ? 'text-emerald-200 font-bold' : 'text-slate-200 font-medium'}`}>
                           {step}
                         </p>
                       </div>
@@ -64,7 +89,7 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
           {!isUser && message.status === 'unresolved' && (
             <div className="mt-4 border-t border-zinc-700/50 pt-3">
               <button 
-                onClick={onUnresolvedClick}
+                onClick={handleUnresolved}
                 className="w-full bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 font-semibold py-2 px-4 rounded-lg transition-colors text-sm border border-rose-500/20 shadow-[0_0_10px_rgba(244,63,94,0.1)]"
               >
                 {isKo ? 'Complaint Form (불만 접수) 펼치기' : 'Submit Official Complaint Form'}
@@ -81,7 +106,7 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
                   {isKo ? '가이드로 해결됨' : 'Resolved by Guide'}
                 </button>
                 <button 
-                  onClick={onUnresolvedClick} 
+                  onClick={handleUnresolved} 
                   className="flex-1 border border-zinc-700 bg-zinc-900/50 text-slate-400 hover:text-rose-400 hover:border-rose-500/40 hover:bg-rose-500/10 py-1.5 px-3 rounded-lg text-sm font-medium transition-colors"
                 >
                   {isKo ? '해결 안됨 (접수 진행)' : 'Not Resolved (File Complaint)'}

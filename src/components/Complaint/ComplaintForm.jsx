@@ -4,9 +4,11 @@ import { generateEmailTemplate } from '../../utils/emailTemplate.js';
 import jsPDF from 'jspdf';
 import { Download, FileJson, Mail, X, CheckCircle } from 'lucide-react';
 
-export default function ComplaintForm({ onClose, language }) {
-  const [formData, setFormData] = useState({});
-  const [copiedHTML, setCopiedHTML] = useState(false);
+export default function ComplaintForm({ onClose, language, initialNotes }) {
+  const [formData, setFormData] = React.useState({
+    additionalNotes: initialNotes || ''
+  });
+  const [copiedHTML, setCopiedHTML] = React.useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

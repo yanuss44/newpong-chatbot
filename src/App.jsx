@@ -66,9 +66,12 @@ function App() {
     }
   };
 
-  const handleUnresolved = (lang) => {
+  const [complaintInitialNotes, setComplaintInitialNotes] = useState('');
+
+  const handleUnresolved = (lang, notes = '') => {
     setCurrentStep('unresolved');
     setFormLanguage(lang);
+    setComplaintInitialNotes(notes);
     setShowComplaintForm(true);
   };
 
@@ -117,6 +120,7 @@ function App() {
         <ComplaintForm 
           onClose={() => setShowComplaintForm(false)} 
           language={formLanguage} 
+          initialNotes={complaintInitialNotes}
         />
       )}
     </div>
