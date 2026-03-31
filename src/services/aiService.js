@@ -50,7 +50,8 @@ export const analyzeSymptom = async (userText, language = 'en', history = [], on
       if (jsonMatch) {
         const pureJson = jsonMatch[0];
         const parsed = JSON.parse(pureJson);
-        if (parsed && (parsed.steps || parsed.no_more_checks)) {
+        // steps, no_more_checks 외에 새로 추가된 message 필드도 유효한 구조화 데이터로 인정
+        if (parsed && (parsed.steps || parsed.no_more_checks || parsed.message || parsed.symptom)) {
           structured = parsed;
         }
       }
