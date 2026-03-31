@@ -38,8 +38,17 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
           {isUser ? <User className="w-5 h-5 text-white" /> : <Bot className="w-5 h-5 text-white" />}
         </div>
         <div className={`p-4 rounded-2xl ${isUser ? 'bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-tr-sm shadow-[0_4px_14px_rgba(37,99,235,0.2)] border border-blue-500/20' : 'bg-zinc-800/80 backdrop-blur-md text-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.3)] border border-zinc-700/50 rounded-tl-sm'}`}>
-          {message.structured && (message.structured.symptom || message.structured.steps?.length > 0 || message.structured.no_more_checks) ? (
+          {message.structured && (message.structured.message || message.structured.symptom || message.structured.steps?.length > 0 || message.structured.no_more_checks) ? (
             <div className="flex flex-col gap-4 w-full">
+              {/* 대화형 안내 메시지 (있을 경우 최상단 노출) */}
+              {message.structured.message && !message.structured.no_more_checks && (
+                <div className="bg-blue-500/10 p-4 rounded-xl border border-blue-500/20 shadow-sm">
+                  <p className="text-[15px] font-medium text-blue-200 leading-relaxed italic">
+                    "{message.structured.message}"
+                  </p>
+                </div>
+              )}
+
               {/* 증상 / 원인 요약 섹션 */}
               {(message.structured.symptom || message.structured.cause) && (
                 <div className="bg-zinc-900/40 p-4 rounded-xl border border-zinc-700/50 shadow-inner">
