@@ -1,0 +1,962 @@
+
+LSSA
+NP-200
+ 
+
+SERVICE MANUAL
+NPSM-200 Rev.0 2026.02.02
+Eng. Ver.
+
+NEWPONG CO., LTD.
+⚠  FOR USE BY AUTHORIZED SERVICE ENGINEERS ONLY
+NEWPONG Co., Ltd.  |  #1216 SJ Technoville, 278, Beotkkot-ro, Geumcheon-gu, Seoul, Korea
+Tel: +82-2-541-0145  |  Fax: +82-2-541-0147  |  cs@newpong.com
+ 
+PROPRIETARY NOTICE
+This Service Manual is the exclusive technical property of Newpong Co., Ltd. Any reproduction, distribution, or use of this document, in whole or in part, without prior written authorization from Newpong Co., Ltd. is strictly prohibited.
+This document is intended exclusively for use by service engineers certified by Newpong Co., Ltd. Unauthorized service, repair, or modification of this device may result in electrical hazard, device malfunction, or patient injury. The manufacturer bears no liability for damage arising from unauthorized use.
+This device is classified as a medical device. Service must be performed only by qualified personnel in accordance with applicable regulations, including 21 CFR Part 820 (FDA Quality System Regulation) and ISO 13485:2016.
+
+Field	Value
+Product Name	LSSA
+Model Number	NP-200
+Document Title	Service Manual
+Document No.	NPSM-200(en-GLB) Rev.0 2026.02.02
+Manufacturer	Newpong Co., Ltd.
+Factory Address	#1216 SJ Technoville, 278, Beotkkot-ro, Geumcheon-gu, Seoul, Korea
+Tel	+82-2-541-0145
+Fax	+82-2-541-0147
+E-mail	cs@newpong.com
+ 
+TABLE OF CONTENTS
+1.	Safety Precautions and Installation Environment	4
+2.	Electromagnetic Compatibility	6
+3.	Product Cleaning and Routine Maintenance	9
+4.	Product Information	11
+5.	Service Component Names and Functions	15
+6.	Exploded View	19
+7.	Disassembly Procedure	29
+8.	Board Inspection	39
+9.	Troubleshooting	45
+10.	Quality Warranty	54
+
+ 
+1.	Safety Precautions and Installation Environment
+⚠ WARNING
+This device operates at high voltage and generates high-power ultrasonic energy. Failure to follow these precautions may result in death, serious injury, or device damage.
+Authorized service engineers must read and understand all safety precautions before servicing this device.
+
+1.1	General Safety
+	This device must be serviced only by service engineers certified by Newpong Co., Ltd.
+	Before disassembling or repairing the device's interior, disconnect the AC power cord from the AC inlet.
+	This device is not rated AP or APG per IEC 60601-1. It must not be operated in any environment where flammable anesthetic gas mixtures with air, oxygen, or nitrous oxide may be present.
+	Do not operate this device in the presence of flammable anesthetic mixtures with air or oxygen.
+	Keep this service manual available at all times during service operations.
+	After any repair or replacement, verify that all connectors are fully seated and all fasteners are properly torqued before restoring power.
+1.2	Electrical Safety
+Type and degree of protection against electric shock	Ingress Protection Degree
+Class Ⅰ, Type BF	Equipment: IPX0
+Handpiece: IPX7
+FootSwitch: IPX6
+Mode of Operation	Electrical Isolation
+Non-continuous	Leakage current conforms to IEC 60601-1
+Dielectric withstanding voltage conforms to IEC 60601-1
+
+	Connect this device only to a properly grounded AC power source: 100–240 V, 50/60 Hz.
+	Verify that the protective earth terminal on the rear panel is properly connected before applying power.
+	Board inspection procedures (Section 8) require live-AC testing. Always wear rubber-insulated gloves during live-AC tests. Use only one hand when probing live circuits.
+	Do not allow water, ultrasound gel, or conductive fluids to contact electrical connectors or the AC inlet area.
+1.3	Mechanical and Procedural Safety
+	The ultrasonic handpiece generates focused mechanical energy. Do not activate ultrasonic output unless the handpiece is properly loaded and the output path is clear. This device is related for Non-continuous(intermittent) mode of operation only; do not operate ultrasonic output beyond the duty cycle specified in the User Manual.
+	When heating the handpiece joint during handpiece disassembly (Section 7.4), use a heat gun at the minimum effective temperature. Excessive heat will permanently damage the handpiece case.
+	Do not apply anti-seize agent to electrical contact surfaces. Apply it only to mechanical fastener threads as specified.
+	Wear anti-static gloves and a grounded anti-static wrist strap when handling circuit boards (Main Board, SMPS, Front Board, Rear Board, MCU Board).
+	After handpiece reassembly, always verify normal ultrasonic output before returning the device to service.
+1.4	Installation and Operating Environment
+	Install on a flat, stable, level surface. An unstable or inclined surface may cause the device to fall and result in injury.
+	Do not place equipment that generates strong electromagnetic fields (high-power RF transmitters, microwave sources) near this device. EMI may cause a malfunction.
+	Operation Environment
+①	Temperature: +10℃ to +30℃
+②	Relative Humidity: 30 to 75%(non-condensing)
+③	Atmospheric pressure: 800 to 1060hPa
+
+ 
+2.	Electromagnetic Compatibility
+        NP-200 Ultrasonic Surgical Unit has been tested and found to comply with the limits for medical devices per IEC 60601-1-2:2014+AMD1:2020. These limits are designed to provide reasonable protection against harmful interference in a typical medical installation. This equipment uses, and can radiate RF energy and, if not installed and used in accordance with the instructions given below, may cause harmful interference to other devices in the vicinity. However, there is no guarantee that interference will not occur in a particular installation.
+2.1	Electromagnetic Field Information according to IEC 60601-1-2
+Table 1. IEC EMC Specifications (Emissions)
+Guidance and manufacturer’s declaration – electromagnetic emissions
+The LSSA is intended for use in the electromagnetic environment specified below.
+The customer or the user of the LSSA should ensure that it is used in such an environment.
+Emission test	Compliance	Electromagnetic environment - guidance
+RF emissions
+CISPR 11	Group 1	The LSSA uses RF energy only for its internal function.
+Therefore, its RF emissions are very low and unlikely to cause interference with nearby electronic equipment.
+RF emissions
+CISPR 11	Class A	The emission characteristics of this equipment make it suitable for use in industrial areas and hospitals (CISPR 11 class A). If it is used in a residential environment (where CISPR 11 Class B is normally required), this equipment might not provide adequate protection for radio-frequency communication services. The user might need to take mitigation measures, such as relocating or reorienting the equipment.
+Harmonic emissions
+IEC 61000-3-2	Class A	
+Voltage fluctuations/flicker emissions IEC 61000-3-3	Complies	
+
+ 
+Table 2. IEC EMC Specifications (Immunity)
+Guidance and manufacturer’s declaration – electromagnetic Immunity
+The LSSA is intended for use in the electromagnetic environment specified below.
+The customer or the user of the LSSA should ensure that it is used in such an environment
+Immunity	IEC 60601
+Test level	Compliance level	Electromagnetic environment - guidance
+Electrostatic
+Discharge (ESD)
+
+IEC 61000-4-2	± 2,4,6,8 kV Contact	± 2,4,6,8 kV Contact	The floor should be wood. Concrete or ceramic tile. If floors are covered with synthetic material. The relative humidity should be at least 30%.
+	± 2,4,8,15 kV air	± 2,4,8,15 kV air	
+Electrical fast
+Transient/burst
+
+IEC 61000-4-4	± 2 kV for power
+Supply lines	± 2 kV for power 
+Supply lines	Main power quality should be that of a typical commercial or hospital environment.
+	± 1 kV for input/output
+lines	± 1 kV for input/output lines	
+Surge
+
+IEC61000-4-5	± 0.5, 1 kV line(s) to line(s)	± 1 kV line(s) to line(s)	Main power quality should be that of a typical commercial or hospital environment.
+	± 0.5,1,2 kV line(s) to ground	± 2 kV line(s) to ground	
+Voltage dips, short interruptions, and voltage
+Variations on power supply input lines
+
+IEC 61000-4-11	< 0% ∪T
+(>100% dip in ∪t)
+for 0.5cycle	< 0% ∪T
+(>100% dip in ∪t)
+for 0.5cycle	The main power quality should be that of a typical commercial or hospital environment. If the user of the NP-200 requires continued operation during main power interruptions, it is recommended that the NP-200 be powered by an uninterruptible power supply.
+	0% ∪T
+(100% dip in ∪T)
+for 1cycle	0% ∪T
+(100% dip in ∪T)
+for 1cycle	
+	70% ∪T
+(30% dip in ∪T)
+for 25cycle	70% ∪T
+(30% dip in ∪T)
+for 25cycle	
+	< 0% ∪T
+(>100% dip in ∪T)
+for 250cycle	< 0% ∪T
+(>100% dip in ∪T)
+for 250cycle	
+Power frequency 
+(50,60Hz)
+Magnetic field
+
+IEC 61000-4-8	30 A/m	30 A/m	Power-frequency magnetic fields should be at levels typical of a commercial or hospital environment.
+NOTE ∪T is the A.C. main voltage prior to application of the test level.
+
+ 
+
+Immunity	IEC 60601
+Test level	Compliance level	Electromagnetic environment - guidance
+Conducted RF
+IEC 61000-4-6	3 Vrms
+150kHz to 80MHz	3 Vrms	Potable mobile RF communications equipment should be used no closer to any part of the NP-200, including cables, than the recommended separation distance calculated using the equation applicable to the transmitter's frequency.
+
+Recommended distance separation
+ d = 1,2√P
+
+d = 1,2√P 80MHz to 800 MHz
+d = 2,3√P 800MHz to 2.5 GHz
+where P is the maximum output power rating of the transmitter in watts (W) according to the transmitter manufacturer, and d is the recommended separation distance in meters(m).
+
+Field strengths from fixed RF transmitters, as determined by an electromagnetic site survey, should be below the compliance level for each frequency range.
+Interference may occur in the vicinity of equipment marked with the following symbol:
+ 
+	6 Vrms
+ISM bands
+150 kHz to 80 MHz	6 Vrms	
+Radiated RF
+IEC 61000-4-3	3V/m
+80MHz to 2.7 GHz	3 V/m	
+NOTE 1) at 80 MHz and 800 MHz, the higher frequency range applies.
+NOTE 2) These guidelines may not apply in all situations. Electromagnetic propagation is affected by absorption and reflection from structures, objects, and people.
+Field strengths from fixed transmitters, such as base stations for radio (cellular/cordless) telephones and land mobile radios, amateur radio, AM and FM radio broadcasts, and TV broadcasts, cannot be predicted theoretically with high accuracy. To assess the electromagnetic environment from fixed RF transmitters, an electromagnetic site survey should be considered. If the measured field strength at the location where the EUT is used exceeds the applicable RF compliance level above, the EUT should be observed to verify normal operation. If abnormal performance is observed, additional measures may be necessary, such as reorienting or relocating LSSA.
+b Over frequency range 150 kHz to 80 MHz, field strengths should be less than 3 v/m.
+
+
+1)	Precautions regarding sources of EM energy that:
+- emit levels of EM energy that exceed the immunity test levels of the referenced EMC standards used, or EMI Testing has verified the product's release.
+- have other emission characteristics to which the medical device has not been tested for immunity: N/A
+2)	Specifications of the wireless communication for medical devices with RF wireless functions: N/A
+3)	Any maintenance instructions are needed to ensure that the medical device remains safe and performs as intended with regard to EM disturbances throughout the expected service life.
+4)	Stop using the device if it operates erratically or if the display malfunctions due to the EM disturbances.
+5)	Markings affixed to the medical device and warnings for certain types of known EM environments, such as in or near an MRI scanner. Medical devices intended for use in the MR environment that have not been shown to be MR Safe or MR Conditional should be marked with the ASTM F2503 symbol for MR Unsafe. (See ASTM F2503-13 Standard Practice for Marking Medical Devices and Other Items for Safety in the Magnetic Resonance Environment.)
+
+ 
+3.	Product Cleaning and Routine Maintenance
+⚠ CAUTION
+Use only the cleaning materials specified below. Do not use abrasive cleaners, organic solvents (acetone, benzene), or high-pressure sprays on any surface. Do not immerse the main unit in any liquid.
+After cleaning, allow all surfaces to dry completely before applying power.
+
+3.1	Main Body and Boards
+	Remove surface dust from the exterior of the main unit using dry compressed air or a soft, dry cloth.
+	Wipe the exterior casing with a soft cloth lightly dampened with isopropanol (70–90%). Do not allow liquid to enter ventilation openings, the AC inlet, or the front panel interface area.
+	Do not spray cleaning agents directly onto the device.
+3.2	Handpieces
+	Apply ethanol or isopropanol (70–90%) to a clean cotton swab or pad and wipe the handpiece body and cable.
+	Do not fully bend the cable during cleaning.
+	Verify that probe contact surfaces are free of ultrasound gel residue after each use.
+3.3	Probes
+	Wipe probe contact surfaces with a cotton pad dampened with isopropanol (70–90%).
+	Inspect probe contact surfaces for wear prior to each use. Refer to the probe wear reference table in Section 5.1.5. Replace probes that show Replacement Recommended or Must Be Replaced wear patterns.
+3.4	Recommended Frequency
+	Perform the maintenance procedures at the recommended frequency shown in the following table. The
+	maintenance procedures described in this guide should only be performed by qualified service personnel.
+⚠ CAUTION
+The frequency recommendations in the following table do not supersede local requirements.
+Always perform locally required testing in addition to the testing in this chapter.
+
+Maintenance Procedure	Frequency
+Routine safety and operational checks
+	Visual inspection of the exterior for damage	Before use.
+	Inspection of labels for legibility	Before use.
+Cleaning and disinfecting	According to your institution’s policy or between
+each patient. For complete cleaning instructions,
+see the LSSA(NP-200) User Manual.
+
+ 
+3.5	Routine Safety and Operational Checks
+Newpong recommends that you regularly:
+	Visually inspect the monitor exterior for damage.
+	Ensure the vents are free of dust.
+	Inspect the rear case labels for legibility.
+
+Newpong recommends that you perform certain tests and verification checks at least once a year and after
+each repair. If a verification check is required, please contact the manufacturer.
+3.6	Cleaning and Disinfecting
+To clean or disinfect the device, use only cleaning agents approved by Newpong. For complete cleaning instructions, see the LSSA(NP-200) User Manual.
+ 
+4.	Product Information
+4.1	Overview
+NP-200 of Newpong Co., Ltd. is an ultrasonic surgical unit designed to fragment and emulsify subcutaneous fatty tissues using ultrasound frequency vibrations. The NP-200 generates ultrasonic vibrations via the piezoelectric effect of PZT ceramic crystals embedded in its handpieces. When electrical energy is supplied from the main control unit, these PZT crystals rapidly expand and contract, converting electrical signals into mechanical ultrasonic vibrations. These vibrations are transmitted to the attached probe, which delivers the mechanical action required for tissue fragmentation and emulsification. 
+The NP-200 is equipped with an electronic control system that allows the operator to adjust the vibration amplitude and frequency. It offers two operating modes, Continuous Mode and Pulse Mode.
+
+4.2	Intended Use 
+LSSA is intended to fragment and emulsify subcutaneous fatty tissue for aesthetic body contouring. LSSA is indicated for use in the following surgical specialists when the fragmentation and aspiration of adipose tissue is desired: 
+	Plastic and Reconstruction Surgery 
+	Orthopedic Surgery
+
+4.3	Composition
+NP-200 consists of the following parts. 
+Please check whether the parts below are included in the package and whether there is any damage to the main body or accessories. Applied part to the patient is only “PROBEs”.
+No.	Shape	Part Name
+(Part number)	Description	Remark
+1	 	NP-200
+Main body
+(HA26-BA-005)	LED indicator for User Interface
+Jog wheel for Adjusting Ultrasonic power	1EA
+2	 	B Handpiece
+(HB25-AY-000)	Convert electric power to ultrasonic power (IPX7)
+With BL, BM, BS PROBE	Optional
+3	 	F Handpiece
+(HC25-AY-000)	Convert electric power to ultrasonic power (IPX7)
+With FM, FS PROBE	
+4	 	Foot Switch
+(HG25-AY-000)	On and Off output of the ultrasonic power (IPX6)	2EA
+5	 	BL PROBE
+(200-AT-PRO-03)
+
+BM PROBE
+(200-AT-PRO-02)
+
+BS PROBE
+(200-AT-PRO-01)	Convert the ultrasonic power to mechanical vibration energy 
+BL PROBE (Ø3.7mm),
+BM PROBE (Ø2.9mm), 
+BS PROBE (Ø1.8mm), 	Optional
+	 	FM PROBE
+(200-AT-PRO-05)
+
+FS PROBE
+(200-AT-PRO-04)	FM PROBE (Ø1.2mm), 
+FS PROBE (Ø0.9mm)	
+6	 
+(For FM, FS)          (For BL, BM, BS)	SPANNER
+(WRENCH)
+(200-AA-SPA-01)	Connect or disconnect the PROBE with the handpiece
+For BL, BM, BS, FM, FS PROBE	1EA
+7	 	Power Cord	AC Power Connection	1EA
+8	 	Operator Manual	Operating Instruction for use	1EA
+
+4.4	Main body
+4.4.1	Front View
+ 
+Symbol	Item Name	Description
+①	Elapsed Time FND	Displays elapsed treatment time.
+②	Output Power Level LED	Indicates current output power level (Levels 1–5).
+③	Output Indicator LED	Illuminates to indicate that the ultrasonic output is active.
+④	Pulsed Mode LED	Indicates Pulsed output mode is selected. White: Body Handpiece active. Blue: Face Handpiece active.
+⑤	Continuous Mode LED	Indicates Continuous output mode is selected. White: Body Handpiece active. Blue: Face Handpiece active.
+⑥	Jog Wheel	Rotary control for adjusting output power level (1–5).
+⑦	Handpiece Connector Socket	Handpiece connection port. Applied Part, Type BF. Model: 11251 CSF-6P SOCKET.
+
+4.4.2	Rear View
+ 
+No.	Function	Description
+①	Time Check Button	Press to display the current accumulated treatment time on the timer display.
+②	Time Reset Button	Press to reset the treatment timer to zero.
+③	Protective Earth Terminal	Terminal for connecting the protective ground (earth) cable. Must be connected before applying AC power.
+④	Foot Switch Connector	Connect the foot switch. Two-foot switches cannot be activated simultaneously; each operates independently.
+⑤	Main Power Switch	Switches AC power On (I) and Off (O). Input: 100–240 VAC, 50/60 Hz.
+⑥	Power Cable Socket	AC power cord inlet (IEC 60320-C14). Connect AC power cord here.
+
+ 
+4.5	Specifications
+Item	Description
+Model Name	NP-200
+Type and degree of protection against electric shock	Class I, Type BF
+Input Power	(100 – 240) V~, (50/60) Hz
+Maximum Power Dissipation	200VA
+PROBE Tuning Frequency Range	37.5 kHz ± 2%, 31 kHz ± 2%
+Output Acoustic power	Mode	BL	BM	BS	FM	FS
+Continuous	17W~40W±10%	15W~37W±10%	14W~36W±10%	8W~22W±10%	8W~20W±10%
+Pulse	12W~30W±10%	11W~28W±10%	11W~27W±10%	7W~19W±10%	6W~18W±10%
+
+Operation Mode	Continuous	Continuous Output 
+	Pulse	Pulsed Output (Duty Cycle: 50%)
+Main Body	D 396mm x W 397mm x H 128mm
+B HANDPIECE	264mm (without cable), 32Φ, IPX7
+F HANDPIECE	205mm (without cable), 28Φ, IPX7
+Foot Switch	IPX6
+Mobility	Portable ME equipment
+Language	English
+S/W Version	NP200_MAIN_APP_2.00.00
+
+
+ 
+5.	Service Component Names and Functions
+5.1	Service Components
+5.1.1	Accessories
+Item No.	Name	Part Number	Description
+1	 	Body Handpiece	HB25-AY-000	Converts electrical power to ultrasonic power. IPX7. For use with BL, BM, and BS probes.
+2	 	Face Handpiece	HC25-AY-000	Converts electrical power to ultrasonic power. IPX7. For use with FM, FS probes.
+3	 	Foot Switch	HG25-AY-000	Activates and deactivates ultrasonic output. IPX6. 
+Two footswitches cannot be operated simultaneously.
+4	 	AC Power Cord	-	Delivers AC power from the wall outlet to the device's AC inlet.
+
+5.1.2	Boards
+Item No.	Name	Part Number	Description
+1	 	SMPS	HA26-PB-005	Switched-mode power supply. Supplies power to drive the equipment. Output: 12 V and 50 V DC.
+2	 	Main Board	HA26-PB-004	Controls ultrasonic output power.
+3	 	Front Board	200-PCB-FRONT	Displays output power level and output time.
+4	 	Rotary Board	200-PCB-SWITCH	Selects output power level via rotary encoder.
+5	 	Rear Board	200-PCB-REAR BOARD	Provides a foot-switch connection and time-reset signal reception.
+6	 	MCU Board	200-PCB-MCU BOARD	Receives control signals and manages device functions.
+
+5.1.3	Connectors and Harness
+Item No.	Name	Part Number	Description
+1	 	AC Inlet
+Assembly	R-301SN	Inlet for supplying AC power to the equipment. Model: R-301SN (IEC 60320-C14). Input: 100–240 VAC, 50–60 Hz.
+2	 	Speaker	WH-200-SPEAKER	HD408BMB1. Outputs audible status alerts.
+3	 	Cooling Fan	EC6010L12BA	EC6010L12BA (60×60 mm). Dissipates heat from internal components. Supply voltage: 12 V DC (nominal range 11.4–12.6 V).
+4	 	Cable — Power Switch	WH-200-CABLE POWER SWITCH	Turns the main power on and off.
+5	 	Flat Cable REAR-MAIN 20P	WH-200-MAIN SUB REAR	Transfers foot switch detection/operation signals and time-check/time-reset signals to the Main Board.
+6	 	Flat Cable FRONT-MAIN 16P (Long)	WH-200-MAIN SUB FRONT	Transfers power-level adjustment and front LED UI control signals between the Front Board and the Main Board.
+7	 	Flat Cable FRONT-ROTARY 16P (Short)	WH-200-SUB ROTARY	Transfers the power-level adjustment signal from the Rotary Switch to the Front Board.
+8	 	Cable Main-Socket	WH-200-MAIN SOCKET	Transfers handpiece detection and handpiece-type identification signals to the Main Board; delivers ultrasonic output to the handpiece.
+9	 	Cable Button (Time Reset/Check)	WH-200-BUTTON	Time reset and time check button with a signal cable to the Main Board.
+10	 	12 V / 50 V Power Cable	HA26-HA-003	Supplies 12 V and 50 V DC from SMPS to the Main Board.
+11	 	AC Power Cable	HA26-HA-004	Supplies AC power from the wall outlet (via the AC inlet) to the SMPS.
+
+5.1.4	Mechanical Parts — Probes
+Item No.	Name	Part Number	Description
+1	 	BL Probe	200-AT-PRO-03	Transmits ultrasonic energy to tissue. For use with Body Handpiece.
+2	 	BM Probe	200-AT-PRO-02	Transmits ultrasonic energy to tissue. For use with Body Handpiece.
+3	 	BS Probe	200-AT-PRO-01	Transmits ultrasonic energy to tissue. For use with Body Handpiece.
+4	 	FM Probe	200-AT-PRO-05	Transmits ultrasonic energy to tissue. For use with Face Handpiece.
+5	 	FS Probe	200-AT-PRO-04	Transmits ultrasonic energy to tissue. For use with Face Handpiece.
+
+ 
+5.1.5	Probe Wear Reference
+Inspect probe contact surfaces before each use. Replace probes per the wear classification below.
+Wear State	Description	Required Action
+ 	Unused	Contact surface shows no wear pattern.	No action required.
+ 	Usable	Minor surface marks; output performance unaffected.	No action required. Continue monitoring.
+ 	Replacement Recommended	Visible wear. Possibility of abnormal output.	Schedule probe replacement. Do not use it if abnormal output is observed.
+ 	Must Be Replaced	Significant wear. Abnormal output is likely.	Remove from service immediately. Replace the probe before further use.
+
+
+ 
+6.	Exploded View
+6.1	Main Body Assembly
+The main body assembly consists of four sub-assemblies: Front Assembly, Middle Assembly, Rear Assembly, and Main Board Assembly.
+ 
+No.	Part Name	Part Number	Qty
+1	MAIN BODY FRONT ASSY	—	1
+2	MAIN BODY MIDDLE ASSY	—	1
+3	MAIN BODY REAR ASSY	—	1
+4	MAIN BODY SIDE DECO L	200-AP-DEC-03	1
+5	MAIN BODY SIDE DECO R	200-AP-DEC-04	1
+6	CABLE POWER SWITCH	WH-200-CABLE POWER SWITCH 	1
+7	SPEAKER	WH-200-SPEAKER	1
+8	MAIN BOARD ASSY	HA26-PB-004	1
+9	MAIN BODY TOP	200-JA-TOP-01	1
+10	FOOT RUBBER	300-RQ-FOT-01	4
+11	LABEL	200-ZJ+BL-11	1
+
+6.1.1	Main Board Assembly
+ 
+No.	Part Name	Part Number	Qty
+1	BOARD BRACKET	200-AE-BRK-01	1
+2	MAIN BOARD	HA26-PB-004	1
+3	SMPS 50 V 250 W	HA26-PB-005	1
+4	FAN 60×60	EC6010L12BA	1
+5	SUPPORT (Hex 5 mm, 50 mm, SUS, M3, MF)	—	4
+6	MCU BOARD	HA26-PB-003	1
+7	FAN BRACKET	200-AM-BRK-01	1
+8	SUPPORT (Hex 5 mm, 7 mm, SUS, M3, MF)	—	4
+
+6.1.2	Main Body Front Assembly
+ 
+No.	Part Name	Part Number	Qty
+1	MAIN BODY FRONT	200-AA-FNT-01	1
+2	MAIN BODY BUTTON	200-AB-BUT-01	1
+3	MAIN BODY FRONT DECO	200-AP-DEC-01	1
+4	MAIN BODY BUTTON DECO	200-AP-DEC-02	1
+5	TOP/BOTTOM POSITION BLOCK	200-AA-BLK-01	4
+6	SIDE POSITION BLOCK	200-AA-BLK-01	2
+7	HANDPIECE SOCKET	11251 CSF-6P SOCKET	1
+8	FRONT BOARD	200-PCB-FRONT	1
+9	SUB ROTARY SWITCH BOARD	200-PCB-SWITCH	1
+11	SWITCH BRACKET	200-AM-BRT-02	1
+12	SPONGE RUBBER	200-RQ-SPN-01	1
+13	M14 NUT, OD 17mm. 2.65T	—	1
+14	MAIN BODY FRONT	200-AA-FNT-01	1
+6.1.3	Main Body Rear Assembly
+ 
+No.	Part Name	Part Number	Qty
+1	MAIN BODY REAR	200-AA-RER-01	1
+2	REAR BOARD	200-PCB-REAR BOARD	1
+3	CABLE BUTTON	WH-200-BUTTON	2
+4	AC INLET	R-301SN	1
+5	TOP/BOTTOM POSITION BLOCK	200-AA-BLK-01	4
+6	SIDE POSITION BLOCK	200-AA-BLK-02	2
+7	MAIN GND	200-AB-GND-01	1
+8	SUPPORT (Hex 5 mm, 10 mm, SUS, M3, MF)	—	4
+9	M6 Nut	—	1
+
+ 
+6.1.4	Main Body Middle Assembly
+ 
+No.	Part Name	Part Number	Qty
+1	MAIN BODY TOP	200-JA-TOP-01	1
+2	MAIN BODY SIDE L	200-JA-SID-01	1
+3	MAIN BODY SIDE R	200-JA-SID-02	1
+4	SUPPORT (Hex 5 mm, 20 mm, SUS, M3, MF)	200-AP-DEC-03	2
+
+ 
+6.2	Handpiece Assembly
+6.2.1	Body Handpiece
+ 
+No.	Part Name	Part Number	Qty
+1	BODY_HANDPIECE_FRONT_COVER	200-AP-FNT-01	1
+2	O_RING_BODY_RED	AN115	2
+3	BODY_HORN_ASSY	HB25-AY-001	1
+4	BODY_MIDDLE_COVER	200-AP-MID-01	1
+5	BODY_INNER_CAP	200-AP-CAP-01	1
+6	O_RING_BODY_PURPLE	AN118	2
+7	BODY_REAR_COVER	200-AP-RER-01	1
+8	HANDPIECE_STOPPER	200-MR-STP-01	1
+
+ 
+6.2.2	Face Handpiece
+ 
+No.	Part Name	Part Number	Qty
+1	FACE_HANDPIECE_FRONT_COVER	200-AP-FNT-02	1
+2	O_RING_FACE_PURPLE	AN113	2
+3	FACE_MIDDLE_COVER	200-AP-MID-02	1
+4	O_RING_FACE_HORN_RED	AN015	1
+5	FACE_HORN_ASSY	HC25-AY-001	1
+6	FACE_INNER_CAP	200-AP-CAP-02	1
+7	O_RING_FACE_RED	AN113	1
+8	FACE_REAR_COVER	200-AP-RER-02	1
+9	HANDPIECE_STOPPER	200-MR-STP-01	1
+
+ 
+6.3	System Connectivity
+ 
+Connection	Mating Note
+SMPS OUT ↔ 12V/50V Power Cable	Verify locking hook orientation on the connector and housing before mating.
+Main Board J9, J11 ↔ 12V/50V Power Cable	Verify locking hook orientation on the connector and housing before mating.
+Main Board J10 ↔ Cable Power Switch	Verify the connector and housing shapes; make the correct orientation.
+Main Board J7 ↔ Cable Main-Socket	Screw-lock type connector. Turn counterclockwise to loosen, clockwise to tighten. Verify fully secured.
+Main Board J8 ↔ Cable Main-Socket (signal)	Verify connector shape and housing; mate in correct orientation.
+Main Board J4 ↔ FAN	Align the connector guide protrusion with the housing guide slit before engaging.
+Main Board J5 ↔ Speaker	Verify the locking hole orientation, then engage until an audible click is heard.
+Main Board J1, J2 ↔ MCU Board J2, J3	Verify connector shape on each board; mate in correct orientation.
+Flat Cables (all)	Align the guide protrusion on the housing with the guide slit on the connector before inserting the cable.
+
+6.4	Proper connector connections
+　Cable	Connector	Remark
+SMPS OUT
+↔12V 50V Power Cable	 	Check the orientation of the locking hook on the connector and housing.
+MAIN B'D
+J9, J11
+↔12V 50V Power Cable	 	Check the orientation of the locking hook on the connector and housing.
+MAIN B'D
+J10↔ Cable Power Switch	     	Check the shape of the connector and housing, and mate them in the correct orientation.
+MAIN B'D
+J7↔Cable Main Socket	 	Screw-lock type: counterclockwise to loosen, clockwise to tighten. Make sure it is fully secured.
+MAIN B'D
+J8↔Cable Main Socket 	   	Check the shape of the connector and housing, and mate them in the correct orientation
+MAIN B'D
+J4↔FAN	   	Align the connector’s protruding guide with the housing’s guide slit, and then engage the connector.
+MAIN B'D
+J5↔Speaker	   	After confirming the orientation of the connector’s locking hole and the housing’s locking hook, engage them until a click is heard.
+MAIN B'D
+J1, J2
+↔MCU B’D
+J2, J3	 
+ 	Check the shape of the connectors mounted on each board, and mate them in the correct orientation.
+FLAT CABLE	    	Align the guide protrusion on the housing with the guide slit on the connector, then engage the cable. This applies to all flat cables.
+
+
+
+ 
+7.	Disassembly Procedure
+⚠ WARNING
+Before performing any disassembly procedure, disconnect the AC power cord from the AC inlet on the rear panel. Failure to disconnect AC power before disassembly may result in electric shock, serious injury, or death.
+This device contains high-voltage internal circuitry. Do not touch internal components without confirming that AC power has been disconnected and residual charge has dissipated.
+Wear anti-static gloves and a grounded anti-static wrist strap when handling any circuit board.
+
+7.1	Warnings and Precautions
+7.1.1	Warnings
+Only Newpong-certified engineers may service or replace internal components.
+Internal circuits operate at high voltage and current. Unauthorized disassembly may cause electric shock or
+serious injury.
+Newpong is not responsible for injuries or damage resulting from ignoring these warnings.
+7.1.2	Precautions
+Before disassembly, switch OFF at the AC INLET and unplug the AC power cord.
+Do not remove the cartridge or handpiece while the ultrasound is active.
+Wear ESD-protective gloves and wrist straps during disassembly/reassembly.
+ 	 
+Antistatic Gloves	Antistatic wrist strap
+
+ 
+7.2	Required Tools
+The following tools are required to perform disassembly and board inspection procedures.
+No.	Tool Name	Notes
+1	Phillips Screwdriver (Crosshead)	For all standard crosshead screws (M3×6, M3×8, M3×12, M3×14, M3×15).
+2	Hex (Vox) Screwdriver, 5 mm	For hex-head fasteners and fan support assembly.
+3	Digital Multimeter	Required for board inspection procedures (Section 9). Must support AC Voltage and DC Voltage measurement modes.
+4	Monkey Wrench	For handpiece cable gland release and bottom case removal.
+5	Metal Tweezers	For connector handling and component manipulation.
+6	Long-Nose Pliers	For harness routing and connector lock release.
+7	Heat Gun	For heating the handpiece joint during handpiece disassembly (Section 7.4). Use at minimum effective temperature — excessive heat will damage the handpiece case.
+8	Soldering Iron	For desoldering and resoldering the handpiece transducer wire during handpiece repair (Section 7.4).
+9	Anti-Seize Agent (Thread)	For mechanical fasteners only. Do not apply to electrical contact surfaces.
+10	Heat-Shrink Tubing	For re-insulating handpiece transducer wires after resoldering.
+11	Cutter / Blade	For removing heat-shrink tubing from handpiece transducer wires.
+12	Rubber-Insulated Gloves	Mandatory for all live-AC board inspection procedures (Section 8).
+13	Anti-Static Wrist Strap and Gloves	Mandatory when handling any circuit board.
+ 
+7.3	Main Body Disassembly
+Perform sub-procedures in the order listed. Each sub-procedure specifies its prerequisites.
+
+7.3.1	Main Body Bottom Disassembly
+Step	Action	Fasteners / Tools
+1	 	Orient the device with the bottom panel facing upward.	—
+2		Remove 6 screws from the bottom panel: 2× flat-head cross M3×14 screws (indicated by blue circles in source diagram) and 4× FOOT RUBBER (300-RQ-FOT-01) secured with round-head cross M3×14 screws (indicated by red circles). Note: foot rubbers must be removed to access all bottom screws.	Phillips Screwdriver
+
+7.3.2	Cooling Fan Disassembly
+Prerequisite: Bottom panel removed.
+Step	Action	Fasteners / Tools
+1	   	Remove 4 screws (red circles in source diagram) securing the fan bracket.	Phillips Screwdriver
+2		Disconnect the fan power connector (blue square connector on Main Board J4).	—
+3	   	Remove 4 spacers (red circles).	—
+4		Separate the cooling fan assembly and place it with the sealing sticker facing downward.	—
+
+ 
+7.3.3	Speaker Disassembly
+Prerequisite: Bottom panel removed.
+Step	Action	Fasteners / Tools
+1	   	Remove 2 screws (red circles in source diagram).	Phillips Screwdriver
+2		Press the connector locking hook and disconnect the speaker cable from the board connector (blue square connector).	—
+3		Remove the speaker (HD408BMB1).	—
+
+7.3.4	MCU Board Disassembly
+Prerequisite: Cooling fan assembly removed.
+Step	Action	Fasteners / Tools
+1	    	Remove 4 screws (red circles).	Phillips Screwdriver
+2		Pull the MCU Board upward and separate it from the Main Board.	—
+3		Remove 4 spacers (yellow circles).	—
+
+7.3.5	Main Board Disassembly
+Prerequisites: Cooling fan assembly and MCU Board removed.
+Step	Action	Fasteners / Tools
+1	 	Remove 3 screws (red circles).	Phillips Screwdriver
+2		Disconnect all 7 connectors (blue rectangles) from the Main Board in the order accessible.	—
+3		Lift and remove the Main Board.	—
+
+7.3.6	SMPS Disassembly
+⚠ WARNING
+Verify that the device is disconnected from the AC power source before beginning SMPS disassembly. The SMPS (MPS-50250NP2) operates at 50 V DC / 250 W. Residual charge may persist after power disconnection. Do not touch SMPS terminals until residual charge has dissipated.
+
+Step	Action	Fasteners / Tools
+1	 	Confirm AC power is disconnected.	—
+2		Remove 5 screws (indicated by red circles).	Phillips Screwdriver
+3		Disconnect 2 connectors from the SMPS (blue rectangles).	—
+4		Pull the SMPS out of the device chassis.	—
+
+7.3.7	Board Bracket Disassembly
+Step	Action	Fasteners / Tools
+1	 	Remove 4 screws (red circles).	Phillips Screwdriver
+2		Remove the board bracket (200-AE-BRK-01).	—
+
+ 
+7.3.8	Soft Switch (Power Switch) Disassembly
+Step	Action	Fasteners / Tools
+1	    	Loosen the nut securing the switch from inside the device. Note: if the nut is secured with resin, apply controlled heat to the nut with a heat gun before attempting to loosen it. Do not apply excessive heat.	Monkey Wrench, Heat Gun (if required)
+2		Pull the switch out through the exterior opening.	—
+
+7.3.9	Rear Board Disassembly
+Prerequisites: Main Board, SMPS, and Board Bracket removed.
+Step	Action	Fasteners / Tools
+1	 	Remove 4 screws (red circles).	Phillips Screwdriver
+2		Disconnect 2 connectors (blue rectangles) from the Rear Board (200-PCB-REAR BOARD).	—
+3		Remove the Rear Board.	—
+
+7.3.10	Rear Disassembly
+Prerequisites: Soft Switch and Rear Board removed.
+Step	Action	Fasteners / Tools
+1	 	Remove 4 screws (red circles) from the rear assembly exterior.	Phillips Screwdriver
+2	 	Remove 4 screws from the inside of the device chassis (red circles).	Phillips Screwdriver
+7.3.11	AC Inlet Disassembly
+Step	Action	Fasteners / Tools
+1	 	Remove 2 screws (red circles) securing the AC Inlet (R-301SN).	Phillips Screwdriver
+2		Disconnect the AC wiring from the inlet terminals before removing.	—
+
+7.3.12	Front Disassembly
+Prerequisites: Main Board, SMPS, Board Bracket, and Soft Switch removed.
+Step	Action	Fasteners / Tools
+1	 	Remove 4 screws (red circles) from the exterior of the front assembly.	Phillips Screwdriver
+2	 	Remove 4 screws from the inside of the device chassis (red circles).	Phillips Screwdriver
+
+ 
+7.3.13	Front Board Disassembly
+Prerequisite: Front Assembly removed.
+Step	Action	Fasteners / Tools
+1	 	Disconnect 2 connectors (blue rectangles).	—
+2		Remove 6 screws (red circles).	Phillips Screwdriver
+3		Remove the Front Board (200-PCB-FRONT).	—
+
+7.3.14	Rotary Switch Disassembly
+Step	Action	Fasteners / Tools
+1	 	Disconnect 1 connector (blue rectangle).	—
+2		Remove 4 screws (red circles).	Phillips Screwdriver
+3		Pull the Rotary Switch (SRRM264300) out from the Front Assembly.	—
+4	    	To disassemble the rotary switch knob: insert a small screwdriver into the access hole and remove 1 screw (red circle). Pull the cover out.	Small Phillips Screwdriver
+5		Rotate the securing nut clockwise to remove the nut and washer.	—
+
+ 
+7.4	Handpiece Disassembly
+⚠ CAUTION
+Excessive heat during handpiece disassembly will permanently damage the handpiece case. Use the heat gun at the minimum effective temperature.
+If the handpiece is not correctly reassembled after disassembly, ultrasonic output performance will be degraded. After reassembly, always verify that the ultrasonic output is normal before returning the device to service.
+
+Step	Action	Fasteners / Tools
+1	 	Disconnect the handpiece from the main unit.	—
+2		Pull off the rubber cover from the handpiece body.	—
+3	 	Release the cable gland at the rear of the handpiece using a monkey wrench.	Monkey Wrench
+4	 	Apply controlled heat to the joint at the bottom of the handpiece case using a heat gun. Do not overheat — excessive heat will damage the handpiece case.	Heat Gun
+5	 	Release the bottom case of the handpiece using a monkey wrench.	Monkey Wrench
+6	 	Carefully separate the ultrasonic horn from the handpiece case.	—
+7	 	Peel off the heat-shrink tubing from the transducer wires using a cutter. Take care not to cut transducer leads.	Cutter
+8	 	Before desoldering, confirm the polarity of the transducer wires: Red = + (positive), Black = − (negative). White and Green wires are unused.	
+9	 	Desolder the active wires (Red and Black) from the copper plate using the soldering iron.	Soldering Iron
+10	 	Before reassembly, inspect the Piezoelectric Transducer for cracks. If a crack is found, do not reassemble — replace the handpiece assembly.	—
+ℹ NOTE
+Wiring polarity: Red → + (positive). Black → − (negative). White and Green → Unused. Confirm polarity before desoldering, and verify it is correct before resoldering during reassembly.
+ 
+8.	Board Inspection
+⚠ WARNING
+Board inspection procedures require the device to be powered from AC with the top panel removed. Live AC voltages (100–240 Vrms) and live DC voltages (12 V and 50 V) are present during these procedures.
+Always wear rubber-insulated gloves during live-AC procedures. Use only one hand when probing live circuits. Keep the other hand away from all conductive surfaces.
+Failure to follow these precautions may result in electric shock, serious injury, or death.
+
+8.1	AC Input Voltage Test
+Purpose: Verify that AC mains voltage is correctly reaching the SMPS input.
+Step	Action
+1	 	Remove the top panel of the device. [See source fig.]
+2	 	Connect the AC power cord and supply AC power to the device.
+3		Turn the AC power switch on the rear panel to the ON (I) position.
+ 
+4	 	Set the multimeter dial to AC Voltage Measurement mode.
+5		Place the black test probe on the neutral (N) terminal of the AC inlet. Place the red test probe on the live (L) terminal.
+6		Verify that the measured voltage is within the rated input range of 100–240 Vrms.
+7		Normal range: 100–240 Vrms. If voltage is outside this range, inspect and replace the AC power cord and/or AC inlet (R-301SN).
+
+ 
+8.2	SMPS Output Voltage Test 
+Purpose: Verify that the SMPS (MPS-50250NP2) produces correct 12 V and 50 V DC outputs.
+Step	Action
+1	  	With AC power applied and the main power switch in the ON position, set the multimeter dial to DC Voltage Measurement mode.
+2		Locate the 12 V / 50 V power cable connection at the Main Board.
+3	 	Place the black test probe on the GND pin. Place the red test probe on the 12 V check pin.
+4		Normal range for 12 V output: 11.4–12.6 V (12 V ±5%). If outside this range, inspect and replace the SMPS.
+5	 	 	Place the red test probe on the 50V check pin.
+6			Normal range for 50 V output: 47.5 ~ 52.5 V (50 V ±5%). If outside this range, inspect and replace the SMPS.
+	50V check pin 1	50V check pin 2	
+
+8.3	12V / 50V Power Cable Test
+Step	Action
+1	 	With AC power applied and the main power switch in the ON position, set the multimeter dial to DC Voltage Measurement mode.
+2		Locate the 12 V / 50 V power cable connection at the Main Board.
+3	   	 	Place the black test rod on GND, then move the red test rod to measure the voltage at each TP.
+			Normal range for 12 V output: 11.4–12.6 V (12 V ±5%). If outside this range, inspect and replace the SMPS.
+4			Normal range for 50 V output: 47.5 ~ 52.5 V (50 V ±5%). If outside this range, inspect and replace the SMPS.
+	TP5: 12V check	TP7: 50V check	
+8.4	Switching Circuit Test
+Step	Action
+1	 	Supply AC power and press the soft power switch to turn on the device. Set the multimeter dial to DC Voltage Measurement mode.
+2		Place the black test rod on the GND (black rectangle) and the red test rod on the TP 6 (red rectangle) to measure the voltage.
+3		Normal range for 12 V output: 11.4–12.6 V (12 V ±5%). If outside this range, inspect and replace the SMPS.
+4	 	Disconnect the connector from the main board (red rectangle).
+5	 	Use metal tweezers or another conductive tool to briefly short pins 3 and 4 of the mainboard switch connector for 2–3 seconds.
+6		Check that the equipment is operating normally.
+
+ 
+8.5	Voltage Regulating Test
+Step	Action
+1	 	Supply AC power and press the soft power switch to turn on the device. Set the multimeter dial to DC Voltage Measurement mode.
+2		Place the black test rod on the GND (black rectangle) and the red test rod on the TP 9 (red rectangle) to measure the voltage.
+3		Normal range for 3.3 V output: 3.135~3.465V (3.3 V ±5%). If outside this range, inspect and replace the SMPS.
+4	 	Place the black test rod on the GND (black rectangle) and the red test rod on the TP 11 (red rectangle) to measure the voltage.
+		Normal range for 5 V output: 4.75~5.25 V (5 V ±5%). If outside this range, inspect and replace the SMPS.
+5	 	Place the black test rod on the GND (black rectangle) and the red test rod on the TP 10 (red rectangle) to measure the voltage.
+6		Normal range for -5 V output: -5.25 ~ -4.75 V (-5 V ±5%). If outside this range, inspect and replace the SMPS.
+7	 	Place the black test rod on the GND (black rectangle) and the red test rod on the TP 12 (red rectangle) to measure the voltage.
+8		Normal range for 5 V output: 4.75~5.25 V (5 V ±5%). If outside this range, inspect and replace the SMPS.
+
+8.6	Flat Cable Test
+Step	Action
+1	 	Supply AC power and press the soft power switch to turn on the device. Set the multimeter dial to DC Voltage Measurement mode.
+2		Place the black test rod on the GND pin below and the red test rod on the check pin below to measure the voltage.
+3	 	1: DC measurement, 5V
+2: AC measurement, a deviation exceeding 0 V
+3: AC measurement, a deviation exceeding 0 V
+4: GND
+5: DC measurement, 3.3V
+6: DC measurement, 3.3V
+7: DC measurement, 0 V
+8: GND
+9: DC measurement, 5V
+10: DC measurement, 3.3V
+11: DC measurement, 5V
+12: GND
+13: DC measurement, 3.3V
+14: DC measurement, 3.3V
+15: Unused
+16: GND
+
+8.7	Fan Voltage Test
+Purpose: Verify that the cooling fan (EC6010L12BA) is receiving the correct 12 V DC supply voltage.
+Step	Action
+1	 	Supply AC power and press the soft power switch to turn on the device.
+2		Verify that all connectors are fully seated.
+3		Set the multimeter dial to DC Voltage Measurement mode.
+4	 	Place the black test probe on the GND pin at the fan connector (black rectangle on Main Board J4). Place the red test probe on the 12 V pin (red rectangle).
+5		Normal range: 11.4–12.6 V (12 V ±5%). If outside this range, inspect the Main Board and fan wiring. If wiring is intact, replace fan (EC6010L12BA).
+
+8.8	Rotary Switch Test
+Purpose: Verify that the rotary output level switch (SRRM264300) produces correct signal voltages at each level position.
+Step	Action
+1	 	Supply AC power and press the soft power switch to turn on the device.
+2		Set the multimeter dial to DC Voltage Measurement mode.
+3		Locate the Rotary Switch check points on the Front Board (200-PCB-SWITCH).
+4	 	Place the black test probe on the GND pin (black rectangle). Place the red test probe on each checkpoint (red arrows) in sequence while rotating the jog wheel through Levels 1–5.
+5		①Expected output at Check Point A: 0 V at Level 4; 3.3 V at all other levels.
+6		②Expected output at Check Point B: 0 V at Level 2; 3.3 V at all other levels.
+7		③Expected output at Check Point C: 3.3 V at all levels.
+8		If any check point produces an unexpected voltage, inspect cable connections and replace the Rotary Switch Board (200-PCB-SWITCH) if wiring is intact.
+ 
+9.	Troubleshooting
+9.1	Error Codes
+When an error is detected, the device displays an error code on the front panel. Address error codes before resuming operation.
+9.1.1	General Errors
+Error Code	Condition	Cause	Resolution
+Er 21	Handpiece not connected	The handpiece is not detected at the Handpiece Connector Socket.	1. Disconnect and reconnect the handpiece. Verify the connector is fully seated. 2. If Er 21 persists, inspect the Cable Main Socket (Item 3-8) and Handpiece Socket (11251 CSF-6P SOCKET). 3. If wiring is intact, replace the handpiece.
+ 
+
+
+
+
+Er 23	The foot switch is not connected	The foot switch is not detected at the Foot Switch Connector on the rear panel.	1. Disconnect and reconnect the foot switch. Verify the connector is fully seated. 2. If Er 23 persists, inspect the Flat Cable REAR-MAIN 20P (Item 3-5) and the foot switch connector. 3. If wiring is intact, replace the foot switch.
+ 
+
+ 
+9.1.2	Critical Errors
+🛑 CRITICAL ERROR — Er 10
+Condition: A critical fault has occurred in the NP-200 LSSA main hardware system. The system cannot be initialized. Normal operation is not possible after Er 10.
+Cause: Main Board (200-PCB-MAIN BOARD) hardware failure.
+Resolution:
+1. Disconnect the device from the AC power source immediately.
+2. Replace the Main Board (200-PCB-MAIN BOARD).
+3. Return the failed Main Board to Newpong Co., Ltd. for analysis. Contact: service@newpong.com.
+Note: Do not attempt to clear Er 10 by repeatedly cycling the power. The device must not be returned to service until the Main Board has been replaced and normal operation verified.
+
+ 
+9.2	Symptom-Based Troubleshooting
+9.2.1	Power Instability
+Symptoms
+The device does not power on when the soft power switch is pressed.
+The device powers on, then turns off after 2–3 seconds.
+
+Check Point	Action if Normal	Action if Abnormal
+Verify that the AC power cord is fully inserted into the AC inlet (R-301SN) and the wall outlet.	Proceed to the next check.	Reseat the AC power cord. If damaged, replace the AC power cord.
+Verify that the AC power switch on the rear panel is in the ON (I) position.	Proceed to the next check.	Toggle the power switch to ON (I).
+Verify that the wall outlet supplies correct AC voltage: 100–240 V, 50/60 Hz.	Proceed to the next check.	Use a compliant power source. Check facility power.
+Verify that all internal connectors are fully seated (see Section 6.3 connector mating table).	Proceed to the next check.	Reseat all connectors. Verify locking hooks engaged.
+If all the above checks pass and power instability persists, replace the SMPS (MPS-50250NP2).	Device operational.	Replace SMPS.
+ 
+9.2.2	Front LED Malfunction
+Symptoms
+The device produces audio output, but the front panel LEDs do not illuminate.
+Front panel LEDs are blinking abnormally.
+Some LEDs are not illuminating.
+ℹ NOTE
+If the device has been stored or operated in a sub-freezing environment, front LEDs may exhibit temporary malfunction. Allow the device to warm to room temperature (at least 30 minutes) and retest before proceeding with the following steps.
+
+Check Point	Action if Normal	Action if Abnormal
+Inspect all flat cable connections at Main Board J1, J2 (↔ MCU Board J2, J3) and FRONT-MAIN 16P cable (Main Board ↔ Front Board).	Proceed to the next check.	Reseat affected cables per Section 6.3 connector mating instructions.
+If connections are intact, replace the Front Board (200-PCB-FRONT) and retest.	Device operational.	Proceed to the next check.
+If the LED malfunction persists after Front Board replacement, replace the Main Board (200-PCB-MAIN BOARD).	Device operational.	Contact the manufacturer.
+ 
+9.2.3	Speaker Malfunction
+Symptoms
+All other device functions are normal, but no audio output is produced.
+
+Check Point	Action if Normal	Action if Abnormal
+Inspect the speaker connector at Main Board J5. Verify locking hook is engaged, and the connection is secure.	Proceed to the next check.	Reseat the speaker connector. Verify click confirmation.
+Replace the speaker (HD408BMB1) and retest.	Device operational.	Proceed to the next check.
+If the audio malfunction persists after replacing the speaker, replace the Main Board.	Device operational.	Contact the manufacturer.
+ 
+
+ 
+9.2.4	Fan Malfunction
+Symptoms
+All other device functions are normal, but the cooling fan does not operate.
+
+⚠ CAUTION
+Do not operate the device with a non-functioning cooling fan. Continued operation without cooling will result in thermal damage to internal components and may create a hazardous condition.
+
+Check Point	Action if Normal	Action if Abnormal
+Perform the Fan Voltage Test (Section 9.3). Verify 12 V DC (11.4–12.6 V) at Main Board J4.	Proceed to the next check.	Inspect SMPS output. Replace the SMPS if the 12 V output is out of range.
+If 12 V is present at J4, replace the fan (EC6010L12BA) and retest.	Device operational.	Proceed to the next check.
+If the fan malfunction persists after the fan replacement, replace the Main Board.	Device operational.	Contact the manufacturer.
+ 
+
+ 
+9.2.5	Ultrasonic Generator Malfunction
+Symptoms
+No ultrasonic output when the foot switch is activated.
+High-pitched noise from the handpiece during operation.
+
+Check Point	Action if Normal	Action if Abnormal
+Verify that Er 21 (handpiece not connected) is not displayed. Verify the handpiece connector is fully seated (see Section 9.1).	Proceed to the next check.	Re-seat the handpiece or replace the Er 21 resolutions.
+Verify that Er 23 (foot switch not connected) is not displayed. Verify the foot switch is fully connected (see Section 9.1).	Proceed to the next check.	Reseat the foot switch or replace it per Er 23 resolutions.
+Disconnect the handpiece and inspect the Piezoelectric Transducer for cracks (see Section 8.2, Step 10). Also inspect probe contact surfaces for wear (Section 5.1.5).	Proceed to the next check.	Replace the handpiece if a transducer crack is found. Replace the probe if the " Must Be Replaced wear state is observed.
+If the handpiece and probes are intact, inspect the Cable Main Socket (Item 3-8) for damage or loose connections.	Proceed to the next check.	Replace Cable Main-Socket.
+If the cable is intact, replace the Main Board (200-PCB-MAIN BOARD).	Device operational.	Contact the manufacturer.
+ 
+ 
+10.	Quality Warranty
+Thank you for purchasing a product from Newpong Co., Ltd. This product has passed rigorous quality control and inspection prior to shipment.
+
+10.1	Warranty Coverage
+	This product is warranted against defects in materials and workmanship under normal use conditions during the warranty period.
+	If a defect occurs under normal use conditions during the warranty period, free-of-charge repair service will be provided at an authorized service center.
+	Compensation standards for repair, exchange, and refund of this product follow applicable consumer protection regulations in the country of sale.
+
+10.2	Warranty Period
+Product name	LSSA
+Model name	NP-200
+Warranty
+(from shipping date)	Main body: 27 months (except accessories)
+Handpiece and Footswitch: 9 months
+Manufacturer	NEWPONG Co., Ltd
+
+10.3	Warranty Exclusions
+The following conditions void warranty coverage:
+	Damage resulting from unauthorized service, modification, or disassembly by personnel not certified by Newpong Co., Ltd.
+	Damage caused by use of the device for purposes other than those specified in this service manual or the Instructions for Use.
+	Damage caused by use with unauthorized accessories, probes, or consumables.
+	Physical damage from dropping, impact, immersion, or environmental contamination.
+	Normal wear and degradation of probe contact surfaces (probes are consumable items).
+
+10.4	Warranty Service Procedure
+When a warranty issue occurs, notify Newpong Co., Ltd. with the following information:
+	Product model name: NP-200 LSSA
+	Serial number of the main unit and affected components
+	Date of purchase or original installation
+	Description of the defect or malfunction observed
+	Error codes displayed (if applicable)
+
+ 
+10.5	Manufacturer Contact
+Field	Details
+Company	NEWPONG Co., Ltd.
+Address	#1216 SJ Technoville, 278, Beotkkot-ro, Geumcheon-gu, Seoul, Korea
+Tel	+82-2-541-0145
+Fax	+82-2-541-0147
+E-mail	cs@newpong.com
+
+	No portion of this service manual may be modified, republished, or reproduced without prior written authorization from Newpong Co., Ltd.
+	Newpong Co., Ltd. reserves the right to change technical specifications and device configuration without prior notice to improve product quality and reliability.
+	No liability is assumed for damage resulting from use of the device for purposes other than those specified herein, or from operation by unqualified personnel.
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  NEWPONG Co., Ltd
+#1216 SJ Technoville, 278, Beotkkot-ro, Geumcheon-gu, Seoul, Korea
+Tel. +82-2-541-0145   
+FAX. +82-2-541-0147
+E-mail: info@newpong.com

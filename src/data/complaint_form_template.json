@@ -1,0 +1,11 @@
+{
+  "fields": [
+    { "name": "reporterName", "label": "Reporter Name", "type": "text", "required": true },
+    { "name": "contactInfo", "label": "Contact Info (Email/Phone)", "type": "text", "required": true },
+    { "name": "deviceModel", "label": "Device Model", "type": "text", "required": true },
+    { "name": "serialNumber", "label": "Serial Number (SN)", "type": "text", "required": true },
+    { "name": "issueDate", "label": "Date of Issue (YYYY-MM-DD)", "type": "date", "required": true },
+    { "name": "issueDescription", "label": "Detailed Issue Description", "type": "textarea", "required": true },
+    { "name": "additionalNotes", "label": "Additional Notes", "type": "textarea", "required": false }
+  ]
+}

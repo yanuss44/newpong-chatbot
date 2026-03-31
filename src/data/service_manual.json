@@ -1,0 +1,35 @@
+{
+  "troubleshooting": [
+    {
+      "code": "ERR-P01",
+      "symptom": [
+        "Power does not turn on",
+        "No power",
+        "전원이 안켜짐",
+        "전원 불량",
+        "전원이 들어오지 않습니다."
+      ],
+      "cause": "Battery depletion or power cable issue",
+      "guide": [
+        "Please check if the power cable is firmly connected to the outlet.",
+        "If using battery, please charge for at least 30 minutes.",
+        "Check the power switch on the back panel."
+      ]
+    },
+    {
+      "code": "ERR-S02",
+      "symptom": [
+        "Sensor not detected",
+        "Cannot connect to sensor",
+        "센서 인식 안됨",
+        "센서 연결 실패"
+      ],
+      "cause": "Sensor disconnection or dirty contact points",
+      "guide": [
+        "Detach the sensor and wipe the contact points with a dry cloth.",
+        "Reconnect the sensor and wait for 10 seconds.",
+        "If the error persists, the sensor might need replacement."
+      ]
+    }
+  ]
+}
