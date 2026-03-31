@@ -46,7 +46,6 @@ const MASTER_MODELS = [
     { name: "gemini-1.5-flash", version: "v1beta" },
     { name: "gemini-pro", version: "v1" }
 ];
-let currentModelIndex = 0;
 
 console.log(`🔑 사용 중인 API Key: ${apiKey.substring(0, 10)}...${apiKey.slice(-5)}`);
 
@@ -54,10 +53,13 @@ console.log(`🔑 사용 중인 API Key: ${apiKey.substring(0, 10)}...${apiKey.s
 app.post('/api/chat', async (req, res) => {
     const { message, language, context } = req.body;
     let fallbackCount = 0;
+    let localModelIndex = 0; // 매 요청마다 0번 모델부터 시도하도록 지역 변수로 변경
 
     const tryGenerateFetch = async () => {
         try {
-            const modelObj = MASTER_MODELS[currentModelIndex];
+            const modelObj = MASTER_MODELS[localModelIndex];
+            if (!modelObj) throw new Error("No more models to try");
+
             const modelName = modelObj.name;
             const apiVersion = modelObj.version;
             
@@ -117,12 +119,12 @@ ${masterManualData}
             res.json({ language, text: responseText, status, structured: structuredData });
 
         } catch (error) {
-            console.error(`❌ 모델 ${MASTER_MODELS[currentModelIndex].name} 실패:`, error.message);
+            console.error(`❌ 모델 ${MASTER_MODELS[localModelIndex]?.name || 'Unknown'} 실패:`, error.message);
             
             if (fallbackCount < MASTER_MODELS.length - 1) {
                 fallbackCount++;
-                currentModelIndex++;
-                console.log(`🔄 자동 장애 조치: ${MASTER_MODELS[currentModelIndex].name}`);
+                localModelIndex++; // 지역 변수 인덱스 증가
+                console.log(`🔄 자동 장애 조치 시도: ${MASTER_MODELS[localModelIndex]?.name}`);
                 return tryGenerateFetch();
             }
             res.status(500).json({ error: "모든 AI 모델 호출에 실패했습니다." });
