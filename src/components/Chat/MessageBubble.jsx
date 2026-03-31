@@ -87,7 +87,7 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
                 </div>
               )}
 
-              {/* 해결 단계 Stepper / Flow Chart UI (있는 경우에만 노출) */}
+              {/* 해결 단계 Stepper */}
               {message.structured.steps && message.structured.steps.length > 0 && (
                 <div className="mt-2 mb-2">
                   <h4 className="text-[13px] font-bold text-emerald-400 mb-4 flex items-center gap-2">
@@ -99,11 +99,9 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
                   <div className="relative pl-4 border-l-[3px] border-zinc-700/60 space-y-6 ml-3 mt-4 pb-2">
                     {message.structured.steps.map((step, idx) => (
                       <div key={idx} className="relative group cursor-pointer" onClick={() => toggleStep(idx)}>
-                        {/* 체크박스 표식 (번호 제거) */}
                         <div className={`absolute -left-[27px] w-[22px] h-[22px] rounded-full flex items-center justify-center top-0 shadow-lg transition-all ${checkedSteps.includes(idx) ? 'bg-emerald-500 border-none scale-110' : 'bg-zinc-800 border-[2px] border-zinc-600'}`}>
                           {checkedSteps.includes(idx) ? <CheckSquare className="w-3.5 h-3.5 text-white" /> : <Square className="w-3.5 h-3.5 text-zinc-500" />}
                         </div>
-                        {/* Step 내용 카드 */}
                         <div className={`p-4 rounded-2xl border transition-all shadow-md ml-3 ${checkedSteps.includes(idx) ? 'bg-emerald-500/10 border-emerald-500/40' : 'bg-zinc-800/60 border-zinc-700/50 hover:bg-zinc-800/90'}`}>
                           <p className={`text-[15px] leading-relaxed transition-colors ${checkedSteps.includes(idx) ? 'text-emerald-200 font-bold' : 'text-slate-200 font-medium'}`}>
                             {step}
@@ -112,6 +110,13 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
                       </div>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {/* [NEW] 내부 데이터가 모두 없을 때의 세이프티 렌더링 */}
+              {!message.structured.message && !message.structured.symptom && !message.structured.no_more_checks && (!message.structured.steps || message.structured.steps.length === 0) && (
+                <div className="whitespace-pre-wrap text-[15px] leading-relaxed opacity-90 italic">
+                  {message.text}
                 </div>
               )}
             </div>
