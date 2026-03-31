@@ -52,4 +52,3 @@ export function generateEmailTemplate(formData) {
     </html>
   `;
 }
-`,Description:
