@@ -16,8 +16,7 @@ app.use(express.json());
 
 const apiKey = process.env.GEMINI_API_KEY;
 if (!apiKey) {
-    console.error("❌ No Gemini API key found in .env");
-    process.exit(1);
+    console.warn("⚠️ Warning: No GEMINI_API_KEY found. AI chat will not work until set in environment variables.");
 }
 
 // 1. 매뉴얼 텍스트 데이터 로드 (RAG 지식 베이스 구축)
