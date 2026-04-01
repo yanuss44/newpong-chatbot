@@ -38,7 +38,14 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
           {isUser ? <User className="w-5 h-5 text-white" /> : <Bot className="w-5 h-5 text-white" />}
         </div>
         <div className={`p-4 rounded-2xl ${isUser ? 'bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-tr-sm shadow-[0_4px_14px_rgba(37,99,235,0.2)] border border-blue-500/20' : 'bg-zinc-800/80 backdrop-blur-md text-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.3)] border border-zinc-700/50 rounded-tl-sm'}`}>
-          {message.structured && (message.structured.message || message.structured.symptom || (message.structured.steps && message.structured.steps.length > 0) || message.structured.no_more_checks) ? (
+          {/* 로딩 중 (thinking) → 빈 박스 대신 애니메이션 표시 */}
+          {message.status === 'thinking' ? (
+            <div className="flex items-center gap-1.5 py-1 px-1">
+              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
+              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce" style={{animationDelay: '150ms'}}></div>
+              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce" style={{animationDelay: '300ms'}}></div>
+            </div>
+          ) : message.structured && (message.structured.message || message.structured.symptom || (message.structured.steps && message.structured.steps.length > 0) || message.structured.no_more_checks) ? (
             <div className="flex flex-col gap-4 w-full">
               {/* 대화형 안내 메시지 (있을 경우 최상단 노출) */}
               {message.structured.message && (
