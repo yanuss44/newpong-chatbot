@@ -137,7 +137,7 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
             </div>
           )}
           
-          {!isUser && message.status === 'diagnosing' && (
+          {!isUser && message.status === 'diagnosing' && message.structured && (message.structured.steps?.length > 0 || message.structured.no_more_checks) && (
              <div className="mt-4 border-t border-zinc-700/50 pt-3 flex flex-col gap-3">
                 {message.structured && message.structured.no_more_checks ? (
                   /* 더 이상 체크할 사항이 없을 때의 전용 UI */

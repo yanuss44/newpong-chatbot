@@ -55,12 +55,11 @@ function loadResolvedCases() {
     return [];
 }
 
-// AI 모델 순위
+// AI 모델 순위 (실제 존재하는 모델만 사용)
 const MASTER_MODELS = [
-    "gemini-3-flash-preview",
-    "gemini-3-flash",
     "gemini-1.5-flash",
-    "gemini-pro"
+    "gemini-1.5-flash-latest",
+    "gemini-1.0-pro"
 ];
 
 // 성공 사례 저장 API
