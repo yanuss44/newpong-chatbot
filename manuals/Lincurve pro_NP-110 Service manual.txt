@@ -1,0 +1,2227 @@
+
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+NP-110 Service Manual 
+Rev.05 (Mar. 2026) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 2 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+This Service Manual is the technical property of Newpong Co., Ltd. 
+Any reproduction, distribution, or unauthorized use of this manual without prior 
+written approval, or for purposes other than the repair and maintenance of Newpong 
+products, is strictly prohibited and may result in legal penalties under applicable 
+domestic or international laws. 
+ 
+ 
+Copyright© 2015-2026 NEWPONG Co.,Ltd. All rights reserved. 
+Document No. : NPSM-110(en-GLB) Rev.05 
+ 
+ 
+ 
+ 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 3 
+ 
+INDEX 
+1 Safety Guidelines and Installation Environment....................................................5 
+1.1 Safety Precations..................................................................................................................... 5 
+1.2 Installation and Usage Environment Conditions .............................................................. 5 
+2 IEC Electrical Safety and EMC Specifications .................................................................. 6 
+3 Product Cleaning and Periodic Inspection ..................................................................... 8 
+4 Product Information ...................................................................................................... 9 
+4.1 Overview ................................................................................................................................... 9 
+4.2 Components ............................................................................................................................. 9 
+4.3 Specifications ......................................................................................................................... 10 
+5 Product Components - Names and Functions .............................................................. 11 
+5.1 Main Body and LCD ............................................................................................................... 11 
+5.2 Accessories ................................................................ 오류! 책갈피가 정의되어 있지 않습니다. 
+6 Exploded View Diagrams.............................................................................................. 14 
+6.1 LCD Assembly ......................................................................................................................... 14 
+6.2 Main System Assembly ......................................................................................................... 15 
+7 Disassembly Procedures .............................................................................................. 16 
+7.1 Warnings and Precations ........................................ 오류! 책갈피가 정의되어 있지 않습니다. 
+7.2 LCD Disassembly.................................................................................................................... 17 
+7.3 Main System Disassembly .................................................................................................... 19 
+8 Service Parts List ......................................................................................................... 26 
+9 Caution and Error Codes .............................................................................................. 29 
+9.1 Caution Codes ........................................................................................................................ 29 
+9.2 Error Codes ............................................................................................................................. 34 
+10 System Software Update ............................................................................................. 35 
+10.1 How To Check Software Version  ....................................................................................... 35 
+10.2 How To Do A Software Update ............................................................................................ 35 
+11 Trouble Shooting Guide ............................................................................................... 37 
+11.1 Hardware Connection Diagram .......................................................................................... 37 
+11.2 Trouble Shooting – Main System Power Malfunction .................................................... 38 
+11.3 Trouble Shooting – LCD Ass’y Power Malfunction .......................................................... 39 
+11.4 Trouble Shooting – Touch Malfunction ............................................................................. 41 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 4 
+ 
+11.5 Trouble Shooting – Display Malfunction ........................................................................... 42 
+11.6 Trouble Shooting – Audio Malfunction .............................................................................. 43 
+11.7 Trouble Shooting – Ultrasound Output Malfunction ...................................................... 44 
+11.8 Trouble Shooting – Communication Malfunction ........................................................... 46 
+12 Post-Repair Inspection Check List ................................................................................ 48 
+12.1 Visual Inspection ................................................................................................................... 48 
+12.2 Power Check .............................................................. 오류! 책갈피가 정의되어 있지 않습니다. 
+12.3 Software Version Check ....................................................................................................... 48 
+12.4 Combined Recognition Test ................................................................................................ 49 
+12.5 Functional Test ...................................................................................................................... 49 
+12.6 Ultrasound Output Inspection ............................................................................................ 50 
+12.7 Inspection Check Sheet ........................................................................................................ 51 
+13 Warranty and Product Support .................................................................................... 52 
+ 
+  
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 5 
+ 
+1 Safety Guidelines and Installation Environment  
+1.1  Safety Precautions 
+1.1.1 General Safety 
+This equipment must be operated only by qualified medical professionals or users who have completed formal 
+training programs.  If disassembly or internal repair is required, always disconnect AC power before proceeding. 
+Never manually remove the cartridge or disconnect the handpiece during ultrasound output. 
+1.1.2 Electrical Safety 
+Connect only to AC power rated 100–240 V, 50/60 Hz. Use of non-rated power sources may cause malfunction or 
+damage. Always use a grounded power outlet. Ensure proper earth connection is maintained. 
+Prevent water or ultrasound gel from contacting the AC INLET area. 
+1.1.3 Mechanical / Procedural Safety 
+Burns or pain can occur if ultrasound output is delivered when the cartridge is not in full contact with the skin. 
+If excessive heat is detected inside the device, immediately stop use and contact the manufacturer. 
+1.2 Installation and Operating Environment Conditions  
+1.2.1 Operating Power Supply 
+Use stable AC power rated 100–240 V, 50/60 Hz. 
+1.2.2 Power Consumption 
+Maximum power consumption: 120 W (120 VA) during operation. 
+Avoid connecting other high-power devices to the same electrical circuit. 
+1.2.3 Operating Temperature 
+Recommended operating temperature: 5°C to 35°C. 
+Extreme temperatures may cause performance degradation or condensation. 
+1.2.4 Humidity Conditions 
+Operating humidity: 20%–90% RH (non-condensing). 
+Avoid environments with condensation or sustained high humidity, which may cause electrical damage. 
+1.2.5 Installation Surface Conditions 
+Install on a flat, stable, horizontal surface. 
+Unstable or inclined surfaces may cause vibration, malfunction, or device fall. 
+1.2.6 Electromagnetic and Magnetic Field Interference 
+Do not place high-power RF devices, microwave ovens, or wireless transmitters near the system. 
+Electromagnetic interference can cause malfunction. 
+ 
+ 
+ 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 6 
+ 
+2 IEC Electrical Safety and EMC Specifications 
+Table 1 IEC Electrical Safety Specifications 
+Device Description 
+This device (LINCURVE PRO (NP-110)) delivers focused ultrasound energy to the lower part of the skin through a focused ultrasound 
+transducer. The irradiated ultrasonic energy forms a small thermal coagulation zone of 1㎟ to 2㎟ in the deep skin layers such as 
+the dermis, the boundary layer between the dermis and subcutaneous fat, the fibrous tissue of the fat layer, the SMAS layer, and the 
+fascia. Tissues are coagulated in the area where ultrasonic energy is accumulated, and gradual thermal damage is also made to 
+nearby tissues, causing various degrees of collagen degeneration. 
+Electrical Safety  
+Electrical Isolation 
+⚫ Leakage current conforms to IEC 60601-1 
+⚫ Dielectric withstanding voltage conforms to IEC 60601-1 
+EMC Emissions and Susceptibility: LINCURVE PRO has been tested and found to comply with the limits for medical devices to the 
+IEC 60601-1-2:2014+A1:2020. These limits are designed to provide reasonable protection against harmful interference in a typical 
+medical installation. This Generator generates, uses, and can radiate radiofrequency energy and, if not installed and used in 
+accordance with the instruction given below, may cause harmful interference to other devices in the vicinity. However, there is no 
+guarantee that interference will not occur in a particular installation. 
+ 
+Table 2 IEC EMC Specifications (Emissions) 
+Guidance and Manufacturer’s Declaration – Electromagnetic Emissions 
+LINCURVE PRO is intended for use in the electromagnetic environment specified below. The customer or the user of 
+LINCURVE PRO should assure that it is used in such an environment. 
+Emissions Test Compliance Electromagnetic Environment – Guidance 
+RF emissions 
+CISPR 11 
+Group 1 
+LINCURVE PRO uses RF energy only for its internal function. Therefore, its RF 
+emissions are very low and are not likely to cause any interference in nearby 
+electronic equipment. 
+RF emissions 
+CISPR 11 
+Class A 
+LINCURVE PRO is suitable for use in all establishments other than domestic and 
+those directly connected to the public low voltage power supply network that 
+supplies buildings used for domestic purposes. 
+Harmonic emissions 
+IEC 61000-3-2 
+Class A 
+Voltage fluctuations/ 
+flicker emissions 
+IEC 61000-3-3 
+Complies 
+ 
+Table 3 IEC EMC Specifications (Immunity) 
+Immunity test 
+Basic EMC standard or test 
+method 
+IEC 60601 test level Result 
+Electrostatic discharge (ESD) IEC 61000-4-2 
+±8kV Contact 
+±2kV, ±4kV, ±8kV, ±15kV Air 
+PASS 
+Radio-frequency electromagnetic 
+field. Amplitude modulated 
+IEC 61000-4-3 
+80 MHz - 2.7 GHz 10 V/m 
+Home Healthcare 10 V/m  
+Prof. Healthcare 3 V/m 80 % / 1 kHz 
+PASS 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 7 
+ 
+Power frequency (50 Hz/60 Hz) 
+magnetic field 
+IEC 61000-4-8 30 A/m PASS 
+Electrical fast transient /burst IEC 61000-4-4 5/50 ns, 100 kHz, ±2 kV PASS 
+Surge IEC 61000-4-5 
+1.2/50 (8/20) μs  
+LtL: ±1.0 kV, LtG: ±2.0 kV 
+PASS 
+Conducted RF IEC 61000-4-6 
+Amplitude modulated 
+IEC 61000-4-6 
+150 kHz - 80 MHz 3 V 
+ISM Bands 6 V, 80 % / 1 kHz 
+PASS 
+Voltage dips, short interruptions 
+and voltage variations on power 
+supply input lines 
+IEC 61000-4-11 
+0 % U
+T
+ for 0.5 cycle (1 phase) 
+0 % U
+T
+ for 1 cycle 
+70 % U
+T
+ for 25/30 cycles (50/60 Hz) 
+0 % U
+T
+ for 250/300 cycles (50/60 Hz) 
+PASS 
+ 
+Table 4 IEC Recommended Separation of RF Communication Equipment 
+Band (MHz) Service  IEC 60601 test level Result 
+380–390 TETRA 400 
+380 - 390 MHz 
+27 V/m; PM 50 %; 18 Hz 
+PASS 
+430–470 
+GMRS 460, 
+FRS 460 
+430 - 470 MHz 
+28 V/m; (FM ±5 kHz, 1 kHz sine) PM; 18 Hz 
+PASS 
+704–787 LTE Band 13, 17 
+704 - 787 MHz 
+9 V/m; PM 50 %; 217 Hz 
+PASS 
+800–960 
+GSM 800/900, 
+TETRA 800, iDEN 820, 
+CDMA 850, LTE Band 5 
+800 - 960 MHz 
+28 V/m; PM 50 %; 18 Hz 
+PASS 
+1700 –1990 
+SM 1800, CDMA 1900 
+GSM 1900, DECT, 
+LTE 대역 1, 3,4, 25, UMTS 
+1700 - 1990 MHz 
+28 V/m; PM 50 %; 217 Hz 
+PASS 
+2400 –2570 
+Bluetooth, WLAN,802.11 b/g/n, 
+RFID2450, LTE Band 7 
+2400 - 2570 MHz 
+28 V/m; PM 50 %; 217 Hz 
+PASS 
+5100 –5800 WLAN 802.11 a/n 
+5100 - 5800 MHz 
+9 V/m; PM 50 %; 217 Hz 
+PASS 
+ 
+Rated 
+maximum 
+output power 
+of transmitter 
+P(W) 
+Minimum separation distance (m) 푑=
+6
+퐸
+√
+푃 
+or 0.3, whichever is greater 
+380–390 
+MHz 
+430–470 
+MHz 
+704–787 
+MHz 
+800–960 
+MHz 
+1700 –
+1990MHz 
+2400 –2570 
+MHz 
+5100 –5800 
+MHz 
+0.01 0.3 0.3 0.3 0.3 0.3 0.3 0.3 
+0.1 0.3 0.3 0.3 0.3 0.3 0.3 0.3 
+1 0.3 0.3 0.67 0.3 0.3 0.3 0.67 
+10 0.7 0.68 2.11 0.68 0.68 0.68 2.11 
+100 2.22 2.14 6.67 2.14 2.14 2.14 6.67 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 8 
+ 
+3 Product Cleaning and Periodic Inspection  
+3.1 Periodic Inspection  
+Please use the product by checking it at the intervals shown in the table below. 
+Inspection Item Interval Method 
+Cartridge leakage 
+Before each 
+treatment; during 
+every procedure 
+Continuous visual inspection for fluid leakage. 
+Cartridge film damage 
+Before each 
+treatment; during 
+every procedure 
+Visual inspection; use sufficient ultrasound gel; clean gel 
+thoroughly after use 
+Cartridge abnormal noise 
+Before each 
+treatment; during 
+every procedure 
+If abnormal noise occurs, stop treatment immediately and replace 
+cartridge. 
+Cartridge internal degassed 
+water 
+Before each 
+treatment; during 
+every procedure 
+Invert cartridge (film side up) and confirm internal degassed water 
+level is within normal range. 
+Cartridge life 
+Before each 
+treatment; during 
+every procedure 
+Confirm used and remaining shot count before use. 
+Handpiece button 
+Continuously during 
+treatment 
+Confirm smooth operation of the shot button. 
+Product/component exterior 
+Before every 
+treatment 
+Visual inspection for damage. 
+Product power ON/OFF Once per quarter Toggle power switch and confirm clean power ON/OFF. 
+3.2 Cleaning and Disinfection  
+1) Main Body and Connectors 
+- Remove dust with compressed air or equivalent. 
+- Wipe the body (front, rear, LCD) with a soft cloth moistened with alcohol, avoiding liquid ingress into 
+electrical terminals. 
+2) Handpiece 
+- Clean with cotton or swabs moistened with 70%–90% ethanol or isopropanol. Wipe gently for at least 
+1 minute. Avoid sharply bending the cable. 
+3) Cartridge 
+- Wipe with alcohol-moistened cotton. 
+-   Store at room temperature (2°C–50°C). If internal liquid has frozen, do not use it. 
+※ Use only the specified disinfectants. Do not reuse cotton/swabs. Allow all disinfectants to dry completely 
+before use. 
+3.3 Storage 
+  Store in a dry room at 2°C–50°C, 900–1060 hap, away from direct sunlight. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 9 
+ 
+4 Product Information 
+4.1 Overview 
+The NP-110 LINCURVE PRO is a high-intensity focused ultrasound (HIFU) system designed to 
+generate micro thermal coagulation zones in subcutaneous and SMAS layers. Skin lifting (e.g., 
+eyebrow lifting) is achieved via collagen regeneration during tissue repair following controlled 
+ultrasound-induced injury. 
+ 
+4.2 Components 
+  
+Main body(Main system+LCD Assy 
+Handpiece 
+Cartridges: S2,L2,L3,L4,D3,D4 
+Power Cord 
+LCD Holder Pin 
+ 
+User Manual 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 10 
+ 
+4.3 Specifications 
+Classification Specification Remark 
+Product name LINCURVE PRO  
+Model name NP-110  
+Input voltage 100-240VAC, 50/60Hz  
+Power consumption 120VA  
+Output & frequency 
+ 
+Deep Booster Frequency 
+ 
+S2 0.11 ~ 0.25 J - 7MHz 
+L2 0.11 ~ 0.25 J 2.5 ~ 5.5J 7MHz 
+L3 0.20 ~ 0.45 J 2.5 ~ 5.5J 7MHz 
+L4 0.45 ~ 1.00 J  4.7 ~ 10.5J 4MHz 
+D3 0.20 ~ 0.45 J 
+ 
+7MHz 
+D4 0.45 ~ 1.00 J 
+ 
+4MHz 
+Modes 
+SINGLE /AUTO  - 
+DEEP (SINGLE /AUTO) 
+L, D Cartridge use 
+BOOSTER (SINGLE /AUTO) 
+L-cartridges only 
+Electric shock protection Class I 
+ 
+Applied part classification BF-Type 
+ 
+Safety standards IEC 60601-1, IEC 60601-1-2 
+ 
+Water resistance 
+IPX7 
+(Upper side of the cartridge is not waterproof.) 
+Main body/handpiece 
+not waterproof. 
+Surface temperature ≤ 43°C at all accessible parts  
+Dimensions (L × H × W) 298.8 x 368.1 x 418.9 mm  
+Weight 6.7Kg  
+Operating environment 5°C–35°C; 20%–90% RH; 900–1060 hap  
+Storage environment 
+Main unit: -10°C ∼ 50°C/20% ~ 90% RH 
+Cartridge: 2°C ∼ 50°C/20% ~ 90% RH 
+900hPa ~ 1060hPa 
+Store at room 
+temperature, dry, 
+away from direct 
+sunlight. 
+Warranty 
+Main body 2years  
+Handpiece motor: 200,000 shorts 
+Cartridge – Consumable 
+Contact 
+distributor/manufacturer 
+for shot limits 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 11 
+ 
+ 
+5 Product Components — Names and Functions  
+5.1 Main Body (Body + LCD) 
+5.1.1 Front/Rear 
+ 
+기 호 명 칭 설 명 
+① TFT LCD Displays UI and operational information. 
+② Auxiliary power button  Controls auxiliary power; powers LCD on/off. 
+③ Handpiece cable connector Connection point for handpiece 
+④, ⑤ Ventilation ports  
+Air circulation for internal cooling. 
+⑥ Protective earth Protective earth symbol and ground pin. 
+⑦ AC Inlet Main AC power input and disconnect. 
+ 
+5.1.2 Side (Left/Right) 
+ 
+Symbol Name description 
+① Handpiece cradle Holder for handpiece when not in use. 
+Left 
+Right 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 12 
+ 
+ 
+5.2 Accessories 
+5.2.1 Handpiece 
+            
+ 
+< Cartridge Connection > 
+Symbol Name Description 
+① Handpiece plug Connects to main system handpiece connector 
+② Handpiece cable Handpiece cable 
+③ Handpiece body Main handpiece housing 
+④ Shot button Starts/stops ultrasound output 
+⑤ Cartridge release switch Used to detach cartridge 
+⑥ LED indicator 
+The part where the color appears according to the mode 
+Mode Color 
+STANDBY White 
+READY Green 
+Output Blue 
+ 
+ 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 13 
+ 
+ 
+5.2.2 Cartridge (S2, L2, L3, L4, D3, D4) 
+ 
+ 
+Symbol Name Description 
+① 
+Cartridge 
+Contact surface 
+cover 
+Protects film and indicates output area 
+② 
+Handpiece 
+coupling section 
+Mechanical/electrical interface; contains ultrasound transducer 
+and cartridge PCB. 
+③ 
+Contact surface 
+(film) 
+Ultrasound output surface; must fully contact skin. 
+ 
+5.2.3 LCD Holder Pin 
+         
+Pins provided to mount LCD to body. 
+Use only the pins supplied with the device.. 
+ 
+ 
+ 
+ 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 14 
+ 
+ 
+ 
+6 Exploded View Diagrams 
+6.1 LCD Assembly 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 15 
+ 
+ 
+6.2 Main System Assembly 
+ 
+ 
+ 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 16 
+ 
+ 
+7 Disassembly Procedures 
+7.1 Warnings and Precautions 
+7.1.1 Warnings 
+Only Newpong-certified engineers may service or replace internal components. 
+Internal circuits operate at high voltage and current. Unauthorized disassembly may cause electric shock or 
+serious injury. 
+Newpong is not responsible for injuries or damage resulting from ignoring these warnings.. 
+ 
+7.1.2 Precautions 
+Before disassembly, switch OFF at the AC INLET and unplug the AC power cord. 
+Do not remove the cartridge or handpiece during ultrasound output. 
+Wear ESD-protective gloves and wrist straps during disassembly/reassembly. 
+ 
+    
+< Antistatic Gloves & Antistatic wrist strap > 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 17 
+ 
+7.2 LCD Disassembly 
+No Figure Method Tools 
+1 
+ 
+Remove LCD Assembly from 
+Main System. 
+-Rotate LCD holder pins 
+counterclockwise and remove 
+them. 
+-Gently rock LCD Assembly 
+left/right and pull upwards to 
+remove. 
+- 
+2 
+ 
+Remove LCD Rear Case Bolt 
+Caps and USB Cover. 
+-Using tweezers, remove five  
+bolt caps (positions 1–5; keep 
+numbering for reassembly). 
+-Using a Phillips screwdriver, 
+remove one bolt at position 6 
+and remove the USB cover. 
+Phillps 
+screwdriver 
+(+), 
+Tweezer 
+3 
+ 
+Remove Rear Case Bolts. 
+-Remove five bolts securing the 
+rear case using a Phillips 
+screwdriver. 
+Phillips  
+Screwdriver 
+(+) 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 18 
+ 
+No Figure Method Tools 
+4 
+ 
+Disconnect Pogo PCB Cable 
+(LCD).  
+-Slightly lift rear cover and 
+carefully disconnect the Pogo 
+PCB cable from the indicated 
+connector. 
+- 
+5 
+ 
+Remove LCD_SUB_LCD Board. 
+-Disconnect Pogo PCB cable 
+from LCD_SUB_LCD board. 
+-Remove two bolts securing the 
+board and lift the board out. 
+Phillips 
+ Screwdriver 
+(+) 
+6 
+ 
+Remove Touch Board. 
+-Lift FFC connector actuator 90° 
+to release cable; gently remove 
+FFC cable. 
+-Remove four bolts and 
+separate the Touch Board.  
+Phillps 
+screwdriver 
+(+), 
+Tweezer 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 19 
+ 
+No Figure Method Tools 
+7 
+ 
+Remove Speaker and UI Board. 
+-Remove two bolts and 
+disconnect the speaker; 
+remove the speaker. 
+-Disconnect two LCD cables 
+and one FFC cable (actuator up 
+90°) from UI Board. 
+-Remove five bolts and remove 
+the UI Board. 
+Phillps 
+screwdriver 
+(+), 
+Tweezer 
+ 
+7.3 Main System Disassembly 
+No Figure Method Tools 
+1 
+ 
+Remove HP_CRADLE-
+IN_HOLDER by lifting upward. 
+- 
+2 
+ 
+Remove two bolts and detach 
+HANDPIECE_CRADLE. 
+Phillips 
+ Screwdriver 
+(+) 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 20 
+ 
+No Figure Method Tools 
+3 
+ 
+Carefully peel Side Deco Sticker 
+using tweezers/knife. 
+Tweezer 
+ , Knife 
+4 
+ 
+Remove four side bolts (two 
+each side). 
+Phillips 
+Screwdriver 
+(+) 
+5 
+ 
+Turn device over; remove six  
+bottom bolts (including four 
+rubber feet). 
+Phillips 
+ Screwdriver 
+(+) 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 21 
+ 
+No Figure Method Tools 
+6 
+ 
+Remove two rear panel bolts 
+Phillips 
+ Screwdriver 
+(+) 
+7 
+ 
+Slide Front Case and Rear Case 
+laterally and separate from 
+main body. 
+- 
+8 
+ 
+Lift and remove Body Case Top 
+Cover. 
+- 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 22 
+ 
+No Figure Method Tools 
+9 
+ 
+Remove two top grounding 
+bolts; disconnect AC power 
+cable from SMPS. 
+Phillips 
+ Screwdriver 
+(+) 
+10 
+ 
+Disconnect cables on and 
+around SMPS, Main-to-HP 
+socket, and Pogo PCB–LCD 
+cable. 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 23 
+ 
+No Figure Method Tools 
+11 
+ 
+ 
+ 
+Disconnect all side panel 
+cables and any connectors with 
+lock tabs (press lock to release). 
+ 
+12 
+ 
+ 
+Remove six bolts securing 
+SMPS Bracket Assembly. 
+Phillips 
+ Screwdriver 
+(+) 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 24 
+ 
+No Figure Method Tools 
+13 
+ 
+Lift SMPS Bracket; disconnect 
+Main-to-AMP signal cable (press 
+lock).  
+ 
+14 
+ 
+Remove five bolts securing 
+SMPS; remove SMPS board. 
+Phillips 
+ Screwdriver 
+(+) 
+15 
+  
+Remove four bolts and remove 
+fan from SMPS bracket (note 
+orientation). 
+Phillips 
+Screwdriver 
+(+) 
+16 
+ 
+Disconnect Power Switch cable; 
+use 8 mm spanner as needed 
+for SMA/HP connectors. 
+ 
+8mm Spanner  
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 25 
+ 
+No Figure Method Tools 
+17 
+ 
+Remove eight bolts; remove 
+Main Board and AMP Board 
+assemblies. 
+Phillips 
+ screwdriver 
+(+) 
+18 
+ 
+Remove two bolts and remove 
+LCD_SUB–Main Board from 
+Front Case 
+Phillips 
+ screwdriver 
+(+) 
+19 
+ 
+ Use 25 mm spanner to remove 
+Power Switch nut and remove 
+Power Switch from Front Case. 
+25mm Spanner 
+20 
+  
+Remove the socket by turning 
+the lower nut (arrow part) of 
+the Handpiece Socket Ass’y 
+counterclockwise. 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 26 
+ 
+8 Service Parts List 
+No Part Name Figure Description 
+1 
+S2 Cartridge Ass’y 
+(JC25-AY-001R00) 
+ 
+2mm Single Mode Cartridge 
+(Consumables) 
+2 
+L2 Cartridge Ass’y 
+(JD25-AY-000R00) 
+ 
+2mm Deep/Booster Mode 
+Cartridge 
+(Consumables) 
+3 
+L3 Cartridge Ass’y 
+(JE25-AY-000R00) 
+ 
+3mm Deep/Booster Mode 
+Cartridge 
+(Consumables) 
+4 
+L4 Cartridge Ass’y 
+(JF25-AY-000R00) 
+ 
+4.5mm Deep/Booster Mode 
+Cartridge 
+(Consumables) 
+5 
+D3 Cartridge Ass’y 
+(JG25-AY-000R00) 
+ 
+3mm Deep Mode Cartridge 
+(Consumables) 
+6 
+D4 Cartridge Ass’y 
+(JH25-AY-000R00) 
+ 
+4.5mm Deep Mode Cartridge 
+(Consumables) 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 27 
+ 
+No Part Name Figure Description 
+7 
+HANDPIECE_ASSY  
+(JB25-AY-000R00) 
+ 
+Handpiece with cartridge 
+interface. 
+8 
+LCD_ASSY 
+(JI25-AY-000R00) 
+ 
+Complete LCD UI module 
+9 
+LCD Front Case Ass’y 
+(LCD Module included) 
+ 
+A component that combines the 
+LCD Module (JI25-EP-304R00) 
+and the LCD Front Case (JI25-
+MP-001R00). 
+10 
+UI Board Ass’y 
+(JI25-BA-004R00) 
+ 
+UI Board Ass’y that goes into the 
+LCD Ass’y. 
+11 
+Touch Board Ass’y 
+(JI25-EP-304R00) 
+ 
+Touch Board Ass’y that goes 
+into the LCD Ass’y. 
+12 
+LCD_SUB–
+LCD_BOARD_ASSY 
+(JI25-BA-003R00) 
+ 
+LCD_SUB_LCD_Board Ass’y that 
+connects the UI Board and the 
+Main System. 
+13 
+SPEAKER_408BMB1 
+(JI25-EP-305R00) 
+ 
+Audio speaker 
+14 
+MAIN_SYSTEM_ASSY 
+(JA25-AY-000R00) 
+ 
+Complete main 
+chassis/electronics. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 28 
+ 
+No Part Name Figure Description 
+15 
+POWER_SWITCH_ 
+(JA25-PE-100R00) 
+ 
+Main power switch 
+16 
+HANDPIECE_SOCKET_ASSY 
+(JB25-HA-010R01) 
+ 
+Handpiece connector module 
+17 
+LCD_SUB–
+MAIN_BOARD_ASSY 
+(JA25-BA-001R00) 
+ 
+Connecting the UI Board and 
+the Main System. 
+18 
+MAIN_BOARD_ASSY 
+(JA25-BA-002R00) 
+AMP_BOARD_Ass’y 
+(JA25-EP-300R00) 
+ 
+*Both components must 
+be replaced as a pair, even 
+if only one is found to be 
+defective. 
+ 
+Central control board 
+ 
+Ultrasound amplifier board 
+19 
+SMPS_BOARD Ass’y 
+(JA25-EP-301R00) 
+ 
+Switching Mode Power Supply 
+20 
+AC_INLET 
+(JA25-EP-303R00) 
+ 
+AC mains connector. 
+21 
+FAN_Ass’y 
+(JA25-EP-302R00) 
+ 
+Cooling fan 
+22 
+SIDE_DECO_STICKER 
+(JA25-MP-006R00) 
+ 
+Exterior decorative sticker. 
+(Damage during reassembly 
+may require replacement.) 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 29 
+ 
+No Part Name Figure Description 
+23 
+Curve acrylic for testing 
+(1.5T) 
+(JC25-AX-901R00) 
+ 
+Output test block for 
+S2/L2/L3/D3. 
+24 
+Curve acrylic for testing 
+(2.0T) 
+(JF25-AX-901R00) 
+ 
+Output test block for L4/D4 
+25 
+D4 Acrylic Guide JIG  
+(JF25-AX-902R00) 
+ 
+Acrylic guide jig used for output 
+testing (D3, D4 used). 
+26 
+L4 Acrylic Guide JIG (JC25-
+AX-902R00) 
+ 
+Acrylic guide jig used for output 
+testing (L2, L3, L4used). 
+ 
+9 Caution and Error Codes  
+9.1 Caution Codes  
+Message Code No Cause Solution 
+ 
+UI-01 
+Select Level 8 or higher for 
+each cartridge. 
+Click the message check 
+button and check that the 
+desired setting level is 
+correct. 
+ 
+UI-02 Cartridge not recognized. 
+After pressing the Message 
+check button, remove the 
+cartridge, reassemble it, and 
+check again. If the problem 
+persists, replace the 
+cartridge. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 30 
+ 
+Message Code No Cause Solution 
+ 
+UI-04 Handpiece not recognized 
+After pressing the Message 
+check button, remove the 
+handpiece, reattach it, and 
+check again. If the problem 
+persists, replace the 
+handpiece. 
+ 
+UI-08 Cartridge shot count exceeded 
+Replace cartridge; use new 
+unit. 
+ 
+UI-10 Cartridge temperature high. 
+Allow cooling; replace if 
+problem persists. 
+ 
+UI-20 
+LCD–Main communication 
+issue. 
+Power OFF, reseat LCD, 
+power ON; If the problem 
+persists, repairs should be 
+carried out according to the 
+Troubleshooting Guide 
+(Communication). 
+ 
+UI-40 
+Message displayed when FRAM 
+Memory of LCD Ass’y PCBA fails 
+to be used 
+After turning off the main 
+system, remove the LCD 
+assembly, reinsert it, turn on 
+the power, and check again. 
+ 
+If the problem persists, replace 
+the UI Board Assembly inside 
+the LCD Assembly and proceed 
+with after-sales service. 
+ 
+UI-80 
+Message that appears when 
+the warranty period for the 
+handpiece motor exceeds 
+200,000 cycles. 
+The handpiece warranty has 
+expired, so the handpiece is 
+being replaced. 
+ 
+It can be used after pressing 
+the Message Check button. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 31 
+ 
+Message Code No Cause Solution 
+ 
+HP-0001 
+Cartridge removed during 
+output. 
+After pressing the Message 
+check button, remove the 
+cartridge, reassemble it, and 
+check again. If the problem 
+persists, replace the 
+cartridge. 
+ 
+HP-0002 
+Cartridge–handpiece 
+misalignment. 
+After pressing the Message 
+check button, remove the 
+cartridge and handpiece, 
+reassemble, and check 
+again. If the problem 
+persists, replace the 
+cartridge or handpiece. 
+ 
+HP-0004 
+Cartridge position sensor fault. 
+After pressing the Message 
+check button, remove the 
+cartridge, reassemble it, and 
+check again. If the problem 
+persists, replace the 
+cartridge. 
+ 
+HP-0008 
+ 
+HP-0010 Abnormal cartridge data 
+After pressing the Message 
+check button, remove the 
+cartridge and handpiece, 
+turn the power off and then 
+on, then reassemble and 
+check. If the problem 
+persists, replace the 
+cartridge or handpiece. 
+ 
+HP-0020 
+Internal mechanical movement 
+error. 
+After pressing the Message 
+check button.  
+Reconnect cartridge/ 
+handpiece; replace if 
+persistent. 
+ 
+HP-0040 
+ 
+HP-0080 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 32 
+ 
+Message Code No Cause Solution 
+ 
+HP-0100 
+Cartridge memory R/W error. 
+After pressing the Message 
+check button.  
+  Reconnect cartridge 
+ ; replace cartridge if 
+persistent. 
+ 
+HP-0200 
+ 
+HP-0400 
+ 
+HP-0800 Abnormal operation data. 
+After pressing the Message 
+check button, remove the 
+cartridge, turn the power off 
+and then on, then 
+reassemble and check. If the 
+problem persists, replace the 
+cartridge. 
+ 
+HP-1000 
+Handpiece–Main 
+communication fault. 
+Turn off the main system, 
+remove the handpiece, 
+reinsert it, turn it on, and 
+check again. If the problem 
+persists, replace the 
+handpiece. 
+ 
+HP-2000 
+Abnormal data from Main to 
+handpiece. 
+After pressing the Message 
+check button, remove the 
+cartridge and handpiece, 
+turn the power off and then 
+on, then reassemble and 
+check. If the problem 
+persists, replace the 
+cartridge or handpiece. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 33 
+ 
+Message Code No Cause Solution 
+ 
+HP-4000 
+Movement error during 
+operation. 
+After pressing the Message 
+check button, remove the 
+cartridge and handpiece, 
+reassemble, and check 
+again. If the problem 
+persists, replace the 
+cartridge or handpiece. 
+ 
+MAIN-0001 
+Abnormal ultrasound output 
+timing.  
+Turn the main system power 
+off and on to check. If the 
+problem occurs more than 
+twice in a row, contact the 
+manufacturer. 
+ 
+MAIN-0002 
+LCD–Main communication 
+failure. 
+After powering off the main 
+system, remove the LCD 
+assembly, reinsert it, power 
+it on, and check again. If the 
+problem persists, proceed 
+with repairs according to the 
+Troubleshooting Guide 
+(Communication). 
+ 
+MAIN-0004 
+Handpiece–Main 
+communication failure. 
+Turn off the main system, 
+remove the handpiece, 
+reinsert it, turn it on, and 
+check again. If the problem 
+persists, proceed with repairs 
+according to the 
+Troubleshooting Guide 
+(Communication). 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 34 
+ 
+9.2 Error Codes  
+Error Code Code No Cause Solution 
+ 
+HP-0001 
+When the handpiece does not 
+operate properly. 
+Turn off the main system, 
+remove the handpiece, 
+reinsert it, turn it on, and 
+check again. If the problem 
+persists, replace the 
+handpiece. 
+ 
+HP-0002 
+Cartridge temperature is over 
+65 degrees. 
+Turn off the power for at 
+least 1 hour until the internal 
+temperature of the cartridge 
+drops, then check again. If 
+the problem persists even 
+after the cartridge 
+temperature drops, replace 
+the cartridge. 
+ 
+Main-0001 
+When the Main Board is not 
+functioning properly. 
+Turn the main system power 
+off and then back on again, 
+then check again. If the 
+problem persists, proceed 
+with repairs according to the 
+Troubleshooting Guide 
+(Power). 
+ 
+Main-0002 
+When ultrasound power 
+adjustment fails. 
+Turn the main system power 
+off and then back on again, 
+then check again. If the 
+problem persists, proceed 
+with repairs according to the 
+Troubleshooting Guide 
+(Ultrasound Output). 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 35 
+ 
+10 System Software Update 
+10.1 Software Version Check 
+No Figure  Description 
+1 
+ 
+After turning on the device, press "45678+ENTER" 
+in the password entry window to enter the Service 
+Menu. 
+2 
+ 
+Check the Real Version in Version Information to 
+confirm the Firmware Version, then press Back to 
+return to the initial screen. 
+ 
+※ The Software Version must match the HP, Main, 
+and UI versions in the Set format. If possible, 
+update the entire software (HP, Main, and UI) at 
+once. 
+ 
+10.2 Software Update Method 
+No Figure  Description 
+1 
+ 
+Insert the LCD holder pin of the LCD assembly.  
+Turn it counterclockwise to remove the LCD holder 
+pin.  
+Gently shake the LCD assembly left and right to 
+carefully remove it. 
+ Remove the USB cover from the indicated area 
+using a Phillips screwdriver. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 36 
+ 
+No Figure  Description 
+2 
+ 
+After powering off the device, insert the USB 
+memory (Type C) containing the software into the 
+bottom of the LCD assembly. 
+  Use the USB memory recommended or provided 
+by the manufacturer. 
+Contact the manufacturer or distributor for the 
+software file. 
+3 
+ 
+Press and hold the device power button for more 
+than 1 second to turn it on. An update window will 
+appear on the LCD. When the Update button 
+appears, press OK to proceed with the firmware 
+update. 
+※ The update cannot be completed if the handpiece    
+is not connected. Be sure to connect the handpiece 
+before proceeding with the update. 
+4 
+ 
+Once the update is complete, turn off the power, 
+remove the USB memory, then turn it back on to 
+use the device. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 37 
+ 
+11 Trouble Shooting Guide 
+11.1 Hardware Connection Diagram 
+ 
+The hardware configuration consists of four blocks. 
+1) LCD Ass’y  
+- The part in charge of the display consists of the LCD module, UI board, speaker, and LCD Sub LCD 
+Board that connects to the main system. 
+2) Main System 
+- It is a part that receives AC power, communicates between the LCD Ass’y and the Handpiece, and is 
+responsible for HIFU output. It consists of SMPS, Main Board, AMP Board, FAN, LCD SUB Main Board 
+(connected to the LCD Ass’y), and Handpiece Socket PCBA (connected to the Handpiece). 
+3) Handpiece 
+- It is the part that connects the Main System and the Cartridge, and consists of a button that the 
+user presses to shot and an LED indicator. 
+4) Cartridge 
+It is composed of a transducer that operates by connecting to a handpiece and generates HIFU 
+output. 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 38 
+ 
+11.2 Trouble Shooting – Main System Power Malfunction 
+Symptom 
+If the Power Switch does not light up and the power does not turn on when you 
+press the Power button. 
+Figure  Check Point Flow Chart 
+ 
+Is the AC power cord properly 
+inserted? 
+ 
+If not, check and replace the 
+AC power cord. 
+ 
+ 
+ 
+Is the AC inlet switch turned 
+on? 
+ 
+If not, check and replace the 
+AC inlet. 
+ 
+Is AC voltage (100-240V) 
+supplied to SMPS CN6? 
+Use a multitester in AC 
+measurement mode. 
+ 
+If abnormal, 
+check and replace the AC 
+inlet or AC power cable. 
+ 
+Is the DC voltage (50 V, 12 V) 
+output normal on SMPS CN1? 
+Use a multitester in DC 
+measurement mode. 
+ 
+If abnormal, inspect and 
+replace the SMPS. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 39 
+ 
+Figure  Check Point Flow Chart 
+ 
+When you press the Power 
+Switch for 1 second, does the 
+LED light up and stay on? 
+ 
+If not, check and replace the 
+Power Switch and Main 
+Board. 
+ 
+ 
+While pressing the power 
+switch, are the TP304 12V 
+and TP305 3.3V outputs on 
+the main board normal? 
+Use the DC measurement 
+mode of a multitester. 
+ 
+If not normal, 
+inspect and replace the main 
+board. 
+ 
+Is LED 301 on the main board 
+lit? 
+Is LED 101 blinking? 
+ 
+If abnormal, inspect and 
+replace the main board. 
+ 
+After removing the LCD 
+assembly and handpiece, 
+press the Power Switch to 
+turn on the device. Verify that 
+the device powers on. 
+ 
+If it turns on normally, 
+inspect and replace the LCD 
+assembly and handpiece. 
+* If the Main Board is defective and needs to be replaced, it must be replaced with the AMP Board that was received as a set. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 40 
+ 
+11.3 Trouble Shooting – LCD Ass’y Power Malfunction 
+Symptom 
+When the Power Switch on the Main System is pressed, power comes on,  
+but the LCD Ass’y does not power on.  
+Figure  Check Point Flow Chart 
+ 
+After removing the LCD 
+Assembly Rear Case, 
+connect it as shown in the 
+picture on the left. Check for 
+damage to the cables. 
+ 
+If abnormal, inspect and 
+replace the defective cables.. 
+ 
+ 
+ 
+ 
+ 
+Check the LCD SUB LCD 
+Board cables and contacts 
+for any issues. 
+ 
+If abnormal, inspect and 
+replace the LCD SUB LCD 
+Board and cables.. 
+ 
+While pressing the Power 
+Switch, do the C120 12V, 
+TP201 5.0V, and TP203 3.3V 
+outputs on the UI Board 
+display normal voltages? 
+Use the DC measurement 
+mode of a multitester. 
+ 
+If not normal, 
+inspect and replace the UI 
+Board. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 41 
+ 
+11.4 Trouble Shooting – Touch Malfunction 
+Symptom If power is supplied to the LCD Ass’y but the touch does not work . 
+Figure  Check Point Flow Chart 
+ 
+Is the FFC cable connected to 
+the FFC connector on the 
+touch board properly 
+connected? 
+ 
+If not, reconnect and check. 
+If there's a problem, inspect 
+and replace the cable. 
+ 
+Carefully remove the black 
+actuator on the FFC 
+connector by lifting it 90 
+degrees upward.. 
+ 
+ 
+Does the touch board 
+function normally after 
+replacement? 
+ 
+If the touch board function is 
+normal, replace it. 
+ 
+Does the UI board function 
+normally when replaced? 
+ 
+If the UI board functions 
+normally, replace it.. 
+ 
+Does the LCD module 
+function normally when 
+replaced? 
+ 
+If the LCD module functions 
+normally, replace it. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 42 
+ 
+11.5 Trouble Shooting – Display Malfunction 
+Symptom If power is supplied to the LCD Ass’y but the display does not work. 
+Figure  Check Point Flow Chart 
+ 
+Are the LCD Module Cable 
+and LCD Backlight Cable 
+connected to the LCD 
+Module properly connected? 
+ 
+If not, reconnect and check. 
+If any abnormalities are 
+found, inspect and replace 
+the cables. 
+ 
+Be careful when connecting 
+the LCD Module Cable, as the 
+pins inside the connector 
+may bend if it is installed 
+crookedly.. 
+ 
+ 
+Does the UI board function 
+normally when replaced? 
+ 
+If the UI board functions 
+normally, replace it.. 
+ 
+Does the LCD module 
+function normally when 
+replaced? 
+ 
+If the LCD module functions 
+normally, replace it. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 43 
+ 
+11.6 Trouble Shooting – Audio Malfunction 
+Symptom If there is no sound when you touch the LCD screen or turn on the power. 
+Figure  Check Point Flow Chart 
+ 
+In the Information window, 
+check that the Speaker 
+Volume is set correctly. 
+ 
+The default is 3. If it's set to 0, 
+no sound will be produced. 
+Adjust it to an appropriate 
+value. 
+ 
+ 
+Does the speaker function 
+normally when replaced? 
+ 
+If the speaker function 
+normally, replace it.. 
+ 
+Does the UI board function 
+normally when replaced? 
+ 
+If the UI board functions 
+normally, replace it.. 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 44 
+ 
+11.7 Trouble Shooting – Ultrasound Output Malfunction 
+Symptom 
+When the ultrasound output is not output normally,  
+the pain is mild or there is no output at all.  
+Figure  Check Point Flow Chart 
+ 
+Does the cartridge operate 
+normally when replaced? 
+ 
+If the cartridge operates 
+normally when replacing the 
+cartridge, replace it. 
+ 
+ 
+Does the handpiece operate 
+normally when replaced? 
+ 
+If it operates normally, 
+replace the handpiece.. 
+ 
+With the UI screen set to 
+Ready, check that the voltage 
+on the Main Board's TP308 is 
+12V and the TP202 is 10V to 
+16V. 
+Use a multitester in DC 
+measurement mode. 
+If abnormal, 
+inspect and replace the Main 
+Board. 
+ 
+Check that the Main to AMP 
+Power Cable, Main to AMP 
+Signal Cable, and Handpiece 
+Socket Assembly connected 
+to the AMP Board are properly 
+connected. 
+ 
+If not, check and replace the 
+cables.. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 45 
+ 
+Figure  Check Point Flow Chart 
+ 
+Does the AMP Board 
+function normally after 
+replacement? 
+ 
+If the AMP Board function 
+normally, replace it. 
+ 
+ 
+Does the Handpiece 
+Socket Assy operate 
+normally when replaced? 
+ 
+ If the Handpiece Socket 
+Assy operates normally 
+when replaced, replace 
+the Handpiece Socket 
+Assy. 
+* If the AMP Board is found to be defective and needs to be replaced, it must be replaced together with the Main 
+Board that was received as a set. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 46 
+ 
+11.8 Trouble Shooting – Communication Malfunction 
+Symptom 
+If a UI-MAIN or MAIN-UI communication failure occurs during a software update or 
+equipment operation. 
+Figure  Check Point Flow Chart 
+ 
+An LCD holder pin is inserted 
+into the area where the LCD 
+Assembly and Main System 
+Assembly are connected at 
+the top of the device.  
+Turn it counterclockwise to 
+remove the LCD holder pin. 
+Gently shake the LCD 
+Assembly from side to side to 
+carefully remove it. 
+ 
+ 
+ 
+ 
+ 
+Are the contacts on the back 
+of the LCD assembly clean? 
+Are there any bent pins or 
+foreign objects on the 
+contacts on the front of the 
+main system? 
+ 
+If abnormal, replace the LCD 
+SUB LCD and LCD SUB MAIN 
+Board. 
+ 
+Does the UI board function 
+normally when replaced? 
+ 
+If the UI board functions 
+normally, replace it.. 
+ 
+Does the device operate 
+normally after replacing the 
+main board? 
+ 
+If the device operates 
+normally after replacing the 
+main board, replace it. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 47 
+ 
+Symptom 
+If a MAIN-HP Communication Fail occurs during 
+ a software update or equipment operation. 
+Figure  Check Point Flow Chart 
+ 
+Does the handpiece operate 
+normally when replaced? 
+ 
+If it operates normally, 
+replace the handpiece. 
+ 
+ 
+Does the Handpiece Socket 
+Assy operate normally when 
+replaced? 
+ If the Handpiece Socket 
+Assy operates normally when 
+replaced, replace the 
+Handpiece Socket Assy. 
+ 
+Does the device operate 
+normally after replacing the 
+main board? 
+ 
+If the device operates 
+normally after replacing the 
+main board, replace it. 
+* If the Main Board is found to be defective and needs to be replaced, it must be replaced with the AMP Board that 
+was received as a set. 
+ 
+ 
+ 
+ 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 48 
+ 
+12 Post-Repair Inspection Check List 
+12.1 Appearance inspection  
+Item Check Point Method 
+Appearance 
+inspection 
+There should be no external abnormalities, such as 
+the main system, LCD module, handpiece, cartridge 
+exterior, foreign matter, tightness, discoloration, 
+deformation, tilting, or mechanical defects.. 
+Visual inspection. 
+Cartridge film 
+inspection 
+Check the film surface of the cartridge for damage and 
+the amount of degassed water is normal.  
+When turning it over, check that the amount of 
+degassed water is within 2/3 of the visible air bubble 
+surface.. 
+Visual inspection. 
+Label inspection 
+Check that the labels on the Main System, Handpiece, 
+and Cartridge are intact.  
+Verify the S/N and record it in the repair history. 
+Visual inspection. 
+ 
+12.2 Power inspection 
+Item Check Point Method 
+Power check 
+Check that the Main System and LCD Module power on 
+and off normally.  
+Connect the AC power cord to the AC INLET and turn 
+on the switch. 
+Press the Power Key for more than 1 second to turn 
+on the power, confirm that the Power Key LED lights 
+up, and confirm that the LCD Assembly displays 
+normally. 
+Press the Power Key for more than 1 second to 
+confirm that the power turns off. 
+ 
+12.3 Software Version Inspection 
+Item Check Point Method 
+Software Version 
+check 
+Verify that the Handpiece, Main System, and GUI Real 
+Versions are the latest versions. 
+Turn on the device, press 45678, and enter the 
+service screen. Check the Real Version in the Version 
+information section on the top left. 
+※ The Software Version must match the HP, Main, 
+and UI versions in a set format. For the final version, 
+please contact the manufacturer or distributor. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 49 
+ 
+Item Check Point Method 
+Software Update 
+Check 
+Check if it is the final software version. 
+If it is not the final software version, refer to 
+Chapter 10.2 of the Service Manual to perform 
+a software update. 
+ 
+12.4 Combined Recognition Inspection 
+Item Check Point Method 
+Handpiece 
+recognition check 
+When connecting and disconnecting the 
+handpiece, check that it is connected properly.  
+When you connect and then disconnect the 
+handpiece, a warning message appears 
+indicating that the handpiece has been 
+disconnected. 
+(Handpiece Not Connected-UI-04) 
+Cartridge 
+recognition check 
+When combining cartridges, check that they are 
+connected properly. 
+After installing the cartridge in the handpiece, 
+check if the type of cartridge combined is 
+recognized normally in the upper right corner 
+of the screen. 
+After removing the cartridge from the 
+handpiece, check if the message "Cartridge is 
+disconnected" appears.  
+Cartridge operation 
+check 
+After combining the cartridges, check if the 
+cartridges are operating normally. 
+Turn the cartridge over and check that the 
+transducer moves back and forth normally. 
+Check for noise and movement, and refer to 
+the Troubleshooting Guide if there are any 
+abnormalities. 
+ 
+12.5 Functional Inspection 
+Item Check Point Method 
+Handpiece LED 
+operation check 
+Check that the LED lights up normally according to 
+the handpiece operation. 
+Check the handpiece's standby status with a 
+white LED.   After connecting the cartridge, 
+press the "Ready" button and check the green 
+LED.    Press the handpiece's Shot button to 
+check the blue LED. 
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 50 
+ 
+Item Check Point Method 
+LCD Display check Check if the LCD screen is normal. Check if the LCD screen is displayed normally. 
+LCD Backlight check Check if the LCD brightness is normal. 
+Check that the blacklight on the LCD screen is 
+bright enough to display normally, and press 
+the Info button to adjust the backlight level to 
+ensure it is adjusted properly. 
+LCD Touch check Check if the LCD Touch function is normal. 
+Press the buttons on the LCD screen to check if 
+the touch function is working properly. 
+LCD Ass’y Sound 
+check 
+Check if the sound is normal when touching the 
+LCD. 
+Check if the boot sound is normal when you 
+turn on the power and if the sound is normal 
+when you touch the LCD screen.. 
+ 
+12.6 Ultrasound Output Inspection 
+ 
+Item Check Point Method 
+Ultrasound output 
+check 
+Ultrasonic output trace inspection is performed using 
+the NP-110 Test Curve acrylic and acrylic guide. 
+Acryl 1.5T → S2, L2, L3, D3 
+Acryl 2.0T → L4, D4  
+Deep Mode  -  Test as single 
+Test Level : S2, L2, L3, L4, D3 : Level 7 
+Test Level : D4 : Level 5  
+Be careful not to create bubbles on the acrylic output 
+surface. Ensure that the test level does not exceed the 
+above level. Failure to comply with the conditions 
+may result in damage to the film surface due to the 
+impact. 
+Insert the cartridges to be tested into the handpiece, 
+select the appropriate level for each cartridge, and 
+press the Ready button to prepare the acrylic 
+specimen for testing. 
+Spray ultrasound gel onto the cartridge's print 
+surface, then assemble the cartridges in the order of 
+Guide → Acrylic. Press firmly with two   fingers to 
+attach, taking care to avoid air bubbles. 
+Tilt the cartridge print surface downward to prevent 
+air bubbles and press the Shot button on the 
+handpiece to create an acrylic print mark. 
+Check the number, size, and spacing of the acrylic 
+print marks, ensuring a total of 17 marks and no 
+overlapping dots. 
+(See the figure below) 
+                                                
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 51 
+ 
+12.7 Inspection Check Sheet 
+Inspection Check Sheet
+ 
+Item Inspector Reviewer Approver 
+Signature    
+Name    
+Date    
+Model 
+NP-110 
+(LINCURVE PRO) 
+Device 
+S/N 
+  
+Cartridge 
+S/N 
+S2   
+L2   
+L3   
+Handpiece 
+S/N 
+ 
+L4   
+D3   
+D4   
+S/W Version 
+Main System GUI HP Sales Country 
+      
+ 
+ 
+ 
+No. Inspection Items Result 
+1 Appearance check 
+Check for damage to the exterior, foreign substances, tightness, discoloration, deformation, tilting etc. 
+□P  □F 
+2 Cartridge film check 
+Check the cartridge film for damage and the amount of degassing water. 
+□P  □F 
+3 Label check 
+ Check the label attached to the MAIN BODY and HANDPIECE for attachment status and damage. 
+□P  □F 
+Check the S/N of each part and record it in the repair history. 
+□P  □F 
+4 Power check 
+ Check if the power is normal and check the LED of the Power Switch. 
+□P  □F 
+5 Software Version check 
+ Check if the Handpiece, Main System, and GUI Real Version are the final versions. 
+□P  □F 
+6 Software Update check 
+ If the Handpiece, Main System, and GUI Real Version are not the final versions, update is performed. 
+□P  □F 
+7 Handpiece recognition check 
+When connecting and disconnecting the handpiece, check that it is connected properly. 
+□P  □F 
+8 Cartridge recognition check 
+ When combining cartridges, check that they are connected properly. 
+□P  □F 
+9 Cartridge operation check 
+ After combining the cartridges, check if the cartridges are operating normally. 
+□P  □F 
+10 Handpiece LED operation check 
+Check that the LED lights up normally according to the handpiece operation. 
+□P  □F 
+11 LCD Display check 
+Check if the LCD screen is normal. 
+□P  □F 
+12 LCD Backlight check 
+Check if the LCD brightness is normal. 
+□P  □F 
+13 LCD Touch check 
+Check if the LCD Touch function is normal. 
+□P  □F 
+14 LCD Ass’y Sound check 
+ Check if the LCD touch sound is normal.. 
+□P  □F 
+15 S2 Ultrasound output check 
+ After examining the output using the acrylic and acrylic guide for each cartridge, check the number, 
+size, and spacing of acrylic output marks, making a total of 17, and confirming that there is no dot 
+overlap. 
+□P □F □NA  
+16 L2 Ultrasound output check □P □F □NA  
+17 L3 Ultrasound output check □P □F □NA  
+18 L4 Ultrasound output check □P □F □NA  
+19 D3 Ultrasound output check □P □F □NA  
+20 D4 Ultrasound output check □P □F □NA  
+
+ 
+NPSM-110(en-GLB) Rev.05 
+ 
+ 52 
+ 
+13 Quality Assurance  
+※ Thank you for purchasing a product from Newpong Co., Ltd.. 
+※ This product has passed thorough quality control and strict inspection.. 
+※ The compensation standards for repair, exchange, and refund of this product are in accordance with 
+the Fair Trade Commission’s “Consumer Dispute Resolution Standards.” 
+※ The warranty period is 2 years (200,000 cycles for Handpiece Motor), and if a problem occurs with the 
+product under normal use during the warranty period, the service center will repair it free of charge 
+during the warranty period. 
+※ Cartridges are consumables, so please contact us or your dealer for the limited number of shots. 
+※ If a problem occurs with the product during the warranty period, please notify the company of the 
+model name, manufacturing number, purchase date, and details of the problem. 
+※ No part of this user manual may be modified, republished, or copied without the prior permission of 
+Newpong Co., Ltd.. 
+※ Newpong Co., Ltd. reserves the right to change technical specifications and equipment configuration 
+(shape) or specifications without prior notice to improve manufacturing and enhance customer 
+reliability. 
+※ The information provided by Newpong Co., Ltd. is accurate and reliable.  
+※ We are not responsible for any damage caused by using the equipment for purposes other than those 
+stated in this user manual or by problems caused by unqualified operators. 
+※ The user manual contains all the information you need to understand how to control and operate the 
+product. If you have any questions or concerns regarding product handling, please contact the 
+manufacturer at any time..  
+※ Before using this product, please be sure to read the user manual carefully to ensure proper use of the 
+product.. 
+※ This product is a ‘medical device’. 
+ 
+ 
+ 
+NEWPONG Co., Ltd. 
+ 
+(Factory): #1216 SJ Technoville, 278, Beotkkot-ro, Geumcheon-gu, Seoul, Korea 
+Tel. +82-2-541-0145 
+FAX. +82-2-541-0147 
+E-mail: info@newpong.com 
+ 

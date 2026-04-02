@@ -2,7 +2,7 @@
 export const analyzeSymptom = async (userText, language = 'en', history = [], onChunk) => {
   try {
     const contextStr = history.map(msg => 
-      `${msg.sender === 'user' ? '사용자' : 'AI'}: ${msg.structured ? msg.structured.symptom : msg.text}`
+      `${msg.sender === 'user' ? '사용자' : 'AI'}: ${msg.text}`
     ).join('\n');
 
     const response = await fetch('/api/chat', {
@@ -16,16 +16,18 @@ export const analyzeSymptom = async (userText, language = 'en', history = [], on
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
     let fullText = "";
+    let buffer = "";
 
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
 
-      const chunk = decoder.decode(value, { stream: true });
-      const lines = chunk.split('\n\n');
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split('\n\n');
+      buffer = lines.pop(); // 아직 덜 온 마지막 데이터 조각 보관
 
       for (const line of lines) {
-        if (line.startsWith('data: ')) {
+        if (line.trim().startsWith('data: ')) {
           const dataStr = line.replace('data: ', '').trim();
           if (dataStr === '[DONE]') continue;
           
@@ -33,7 +35,7 @@ export const analyzeSymptom = async (userText, language = 'en', history = [], on
             const data = JSON.parse(dataStr);
             if (data.text) {
               fullText += data.text;
-              if (onChunk) onChunk(fullText); // 실시간 텍스트 전달
+              if (onChunk) onChunk(fullText); 
             }
             if (data.error) throw new Error(data.error);
           } catch (e) {
@@ -43,29 +45,40 @@ export const analyzeSymptom = async (userText, language = 'en', history = [], on
       }
     }
 
-    // 최종 파싱 시도 (JSON 구조 추출 최적화: 정규식 사용)
+    // 최종 파싱 시도 (JSON 구조 추출 - 가장 바깥 JSON 객체 추출)
     let structured = null;
     try {
-      const jsonMatch = fullText.match(/{[\s\S]*}/);
-      if (jsonMatch) {
-        const pureJson = jsonMatch[0];
-        const parsed = JSON.parse(pureJson);
-        // steps, no_more_checks 외에 새로 추가된 message 필드도 유효한 구조화 데이터로 인정
-        if (parsed && (parsed.steps || parsed.no_more_checks || parsed.message || parsed.symptom)) {
-          structured = parsed;
-        }
+      // 첫 번째 '{' 와 마지막 '}' 사이를 추출하여 중첩 JSON 오파싱 방지
+      const firstBrace = fullText.indexOf('{');
+      const lastBrace = fullText.lastIndexOf('}');
+      if (firstBrace !== -1 && lastBrace > firstBrace) {
+        const jsonCandidate = fullText.substring(firstBrace, lastBrace + 1);
+        structured = JSON.parse(jsonCandidate);
       }
     } catch (e) {
-      console.warn("최종 JSON 파싱 실패:", e);
+      console.warn("최종 JSON 파싱 실패:", e.message);
     }
 
-    // 상태 요약 로직 (서버와 연계)
+    // 다국어 unresolved 감지 키워드
+    const UNRESOLVED_KEYWORDS = [
+      "매뉴얼에 없",           // Korean
+      "not in the manual",     // English
+      "no solution",           // English
+      "マニュアルにはない",      // Japanese
+      "não está no manual",    // Portuguese
+      "no está en el manual",  // Spanish
+      "cannot be resolved",    // English
+      "해결할 수 없",           // Korean
+    ];
+
     let status = 'diagnosing';
     if (structured && structured.no_more_checks) {
-       status = 'unresolved'; // 추가 점검 사항이 없으면 바로 unresolved 상태로 간주
+      status = 'unresolved';
     } else {
-       const lowerRes = fullText.toLowerCase();
-       if (lowerRes.includes("매뉴얼에 없")) status = 'unresolved';
+      const lowerRes = fullText.toLowerCase();
+      if (UNRESOLVED_KEYWORDS.some(kw => lowerRes.includes(kw.toLowerCase()))) {
+        status = 'unresolved';
+      }
     }
 
     return {
@@ -78,11 +91,16 @@ export const analyzeSymptom = async (userText, language = 'en', history = [], on
 
   } catch (error) {
     console.error("AI Service Error:", error);
+    const errorMsgs = {
+      ko: "AI 진단 서버와의 통신에 실패했습니다. 질문을 조금 더 구체적으로 작성해 주세요.",
+      en: "Failed to communicate with the Diagnostic AI Server. Please describe your symptoms more clearly.",
+      ja: "診断AIサーバーとの通信に失敗しました。症状をより具体的にご説明ください。",
+      'pt-BR': "Falha ao comunicar com o Servidor de IA Diagnóstica. Descreva seus sintomas com mais clareza.",
+      es: "Error al comunicar con el Servidor de IA de Diagnóstico. Por favor, describa sus síntomas con más claridad."
+    };
     return {
       language: language,
-      text: language === 'ko' 
-        ? "AI 진단 서버와의 통신에 실패했습니다. 문제가 지속되면 불만 접수(Complaint Form)를 진행해주세요." 
-        : "Failed to communicate with Diagnostic AI Server. Please proceed to file a Complaint.",
+      text: errorMsgs[language] || errorMsgs.en,
       status: 'unresolved',
       code: ''
     };

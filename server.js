@@ -15,205 +15,177 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const apiKey = process.env.GEMINI_API_KEY;
-if (!apiKey) {
-    console.warn("⚠️ Warning: No GEMINI_API_KEY found. AI chat will not work until set in environment variables.");
-}
-
+const apiKey = (process.env.GEMINI_API_KEY || "").trim();
 const genAI = new GoogleGenerativeAI(apiKey);
 
-// 1. 매뉴얼 텍스트 데이터 로드 (RAG 지식 베이스 구축)
-function loadManualsText() {
-    let combinedText = "";
-    const manualFiles = [
-        'NP-110 Service manual.txt',
-        'NP-200 Service manual.txt'
-    ];
+const MASTER_MODELS = [
+    "gemini-2.0-flash", "gemini-2.5-flash", "gemini-pro", "gemini-1.5-flash", "gemini-1.0-pro"
+];
 
-    manualFiles.forEach(file => {
-        const filePath = path.join(__dirname, file);
-        if (fs.existsSync(filePath)) {
-            console.log(`📖 매뉴얼 로딩: ${file}`);
-            combinedText += `\n--- MANUAL: ${file} ---\n` + fs.readFileSync(filePath, 'utf-8') + "\n";
-        }
-    });
-    return combinedText;
+// 매뉴얼 미리 로드 (manuals 폴더 내의 4개 파일 통합 활용)
+// Gemini 2.0 Flash: 1,048,576 토큰 컨텍스트 → 전체 매뉴얼(~130K chars ≈ 33K tokens) 완전 전달 가능
+const MANUALS_DIR = path.join(__dirname, 'manuals');
+
+function loadManual(filename) {
+    const filepath = path.join(MANUALS_DIR, filename);
+    if (fs.existsSync(filepath)) {
+        const content = fs.readFileSync(filepath, 'utf-8');
+        console.log(`✅ 매뉴얼 로드: ${filename} (${content.length.toLocaleString()}자)`);
+        return content;
+    }
+    console.warn(`⚠️ 매뉴얼 파일 없음: ${filename}`);
+    return "";
 }
 
-const masterManualData = loadManualsText();
+const MANUALS = {
+    "NP-110": loadManual('Lincurve pro_NP-110 Service manual.txt')
+            + loadManual('Lincurve pro_NP-110 User manual.txt'),
+    "NP-200": loadManual('LSSA_NP-200 Service manual.txt')
+            + loadManual('LSSA_NP-200 User manual.txt'),
+};
 
-// 2. 학습된 성공 사례 로드 (경험 기반 지식)
+// 로드 결과 요약 출력
+Object.entries(MANUALS).forEach(([model, content]) => {
+    console.log(`📚 ${model} 매뉴얼 총 ${content.length.toLocaleString()}자 로드 완료`);
+});
+
 const CASES_FILE = path.join(__dirname, 'resolved_cases.json');
 function loadResolvedCases() {
-    try {
-        if (fs.existsSync(CASES_FILE)) {
-            return JSON.parse(fs.readFileSync(CASES_FILE, 'utf-8'));
-        }
-    } catch (e) {
-        console.error("사례 로딩 실패:", e);
-    }
+    try { if (fs.existsSync(CASES_FILE)) return JSON.parse(fs.readFileSync(CASES_FILE, 'utf-8')); } catch (e) { }
     return [];
 }
 
-// AI 모델 순위 (실제 존재하는 모델만 사용)
-const MASTER_MODELS = [
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-latest",
-    "gemini-1.0-pro"
-];
-
-// 성공 사례 저장 API
 app.post('/api/save-case', (req, res) => {
-    const { question, answer, language, resolved_steps } = req.body;
+    const { question, answer, language, model } = req.body;
     if (!question || !answer) return res.status(400).json({ error: "Invalid data" });
-
     const cases = loadResolvedCases();
-    // 중복 방지 (간단한 질문 매칭)
-    const exists = cases.find(c => c.question.trim() === question.trim());
-    if (!exists) {
-        cases.push({ 
-            question, 
-            answer, 
-            language, 
-            resolved_steps: resolved_steps || [], // 어떤 단계로 해결됐는지 저장
-            timestamp: new Date().toISOString() 
-        });
-        fs.writeFileSync(CASES_FILE, JSON.stringify(cases, null, 2));
-        console.log("✅ 새로운 성공 사례 학습 완료 (조치 사항 포함):", question.substring(0, 20) + "...");
-    }
+    cases.push({
+        question, answer, language, model: model || "Unknown",
+        timestamp: new Date().toISOString(), isAutoSaved: !!req.body.isAutoSaved
+    });
+    fs.writeFileSync(CASES_FILE, JSON.stringify(cases, null, 2));
     res.json({ success: true });
 });
 
-// React 프론트엔드 통신 API (Streaming & Learning 지원)
 app.post('/api/chat', async (req, res) => {
     const { message, language, context } = req.body;
     let localModelIndex = 0;
 
-    // SSE Header 설정
     res.setHeader('Content-Type', 'text/event-stream');
     res.setHeader('Cache-Control', 'no-cache');
     res.setHeader('Connection', 'keep-alive');
 
-    // 🧠 시만틱 캐싱 (동일 질문 즉시 반환)
-    const cases = loadResolvedCases();
-    const cachedMatch = cases.find(c => c.question.trim() === message.trim() && c.language === language);
-    
-    if (cachedMatch) {
-        console.log(`🚀 [Cache Hit] 동일 질문 발견: ${message}`);
-        res.write(`data: ${JSON.stringify({ text: cachedMatch.answer })}\n\n`);
-        res.write(`data: [DONE]\n\n`);
-        return res.end();
-    }
-
-    const tryStreamGenerate = async () => {
+    const tryGenerate = async () => {
         try {
             const modelName = MASTER_MODELS[localModelIndex];
-            if (!modelName) throw new Error("No more models to try");
+            if (!modelName) throw new Error("No more models");
 
-            console.log(`[Stream Request] Trying: ${modelName}`);
-            const model = genAI.getGenerativeModel({ model: modelName });
+            const queryAndHistory = (message + (context || "")).toUpperCase();
+            const currentModel = queryAndHistory.includes("110") ? "NP-110" : queryAndHistory.includes("200") ? "NP-200" : null;
 
-            // 매번 최신 사례를 불러와서 프롬프트에 주입
-            const currentCases = loadResolvedCases();
-            const casesText = currentCases.length > 0 
-                ? currentCases.map(c => `Q: ${c.question}\nA: ${c.answer}`).join('\n\n')
-                : "아직 학습된 사례가 없습니다.";
+            if (!currentModel) {
+                const askMsgs = {
+                    ko: "모델명(NP-110 혹은 NP-200)을 알려주세요.",
+                    en: "Please specify your device model (NP-110 or NP-200).",
+                    ja: "機器のモデル名（NP-110またはNP-200）を教えてください。",
+                    'pt-BR': "Por favor, informe o modelo do dispositivo (NP-110 ou NP-200).",
+                    es: "Por favor, indique el modelo de su dispositivo (NP-110 o NP-200)."
+                };
+                const askMsg = askMsgs[language] || askMsgs.en;
+                console.log(`⚠️ 모델 미감지 - 언어: ${language}, 메시지: ${message.substring(0, 50)}`);
+                res.write(`data: ${JSON.stringify({ text: askMsg, needs_model: true })}\n\n`);
+                return res.end();
+            }
 
-            const langMap = {
-                'ko': '한국어(Korean)',
-                'en': '영어(English)',
-                'ja': '일본어(Japanese)',
-                'pt-BR': '포르투갈어(Portuguese)',
-                'es': '스페인어(Spanish)'
+            // [캐시 체크]
+            const cases = loadResolvedCases();
+            const cached = cases.find(c => c.question.trim() === message.trim() && c.model === currentModel);
+            if (cached) {
+                res.write(`data: ${JSON.stringify({ text: cached.answer })}\n\n`);
+                return res.end();
+            }
+
+            // [AI 호출 - SDK 사용]
+            const manual = MANUALS[currentModel];
+            if (!manual || manual.trim().length === 0) {
+                console.warn(`⚠️ ${currentModel} 매뉴얼 데이터 없음. manuals/ 폴더를 확인하세요.`);
+            }
+
+            const LANGUAGE_NAMES = {
+                ko: 'Korean (한국어)',
+                en: 'English',
+                ja: 'Japanese (日本語)',
+                'pt-BR': 'Brazilian Portuguese (Português)',
+                es: 'Spanish (Español)'
             };
-            const targetLangLabel = langMap[language] || '영어(English)';
+            const responseLang = LANGUAGE_NAMES[language] || 'English';
 
-            const systemContent = `당신은 10년 차 의료기기 전문 CS 진단 AI이며, NEWPONG의 제품(NP-110, NP-200) 매뉴얼 및 해결 사례를 숙지하고 있습니다. 
-            
-            [미션]: 사용자의 증상에 대해 매뉴얼과 과거 경험을 근거로 정확한 원인과 조치 단계를 제시하라.
-            [언어 설정]: 반드시 ${targetLangLabel}로만 답변하십시오. 질문자가 사용하는 언어와 동일한 언어를 사용해야 합니다.
-            
-            [제공된 매뉴얼 데이터 기반 지식]:
-            ${masterManualData}
-            
-            [학습된 과거 성공 사례]:
-            ${casesText}
+            const systemPrompt = `You are a specialized CS diagnostic assistant for ${currentModel} medical devices.
+You MUST respond ONLY in ${responseLang}. Do not use any other language in your response.
 
-            [진단 규칙]:
-            1. 모델 미지정 시: 질문에 NP-110 또는 NP-200 모델명이 없다면, 진단을 보류하고 모델명을 먼저 물어볼 것. 
-            2. 형식: 무조건 순수 JSON만 반환하라.
-            3. 메시지 필드: 모든 응답에는 사용자에게 건네는 부드러운 설명인 "message" 필드를 반드시 포함하라.
+[Required Output Format - JSON only]
+1. If the user only said a model number like "110" or "200", find the symptom from the conversation Context immediately.
+2. Output troubleshooting steps as: "steps": ["step1", "step2", ...] — all steps written in ${responseLang}.
+3. The "message" field must contain a brief summary like "${currentModel} solution found." written in ${responseLang}.
+4. Prefer the "message" key over "model_confirmed" or "status" for all guidance text.
+5. If no solution exists in the manual, set "no_more_checks": true in your JSON response.
 
-            [모델명을 물어볼 때의 JSON 예시]:
-            {
-              "no_more_checks": false,
-              "symptom": "모델 확인 필요",
-              "cause": "정보 부족",
-              "message": "진단을 시작하기 위해 사용 중이신 제품이 NP-110인가요, 아니면 NP-200인가요?",
-              "steps": []
+Manual Data: ${manual}`;
+
+            const model = genAI.getGenerativeModel({
+                model: modelName,
+                safetySettings: [
+                    { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+                    { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+                    { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+                    { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_MEDIUM_AND_ABOVE" },
+                ]
+            });
+            const result = await model.generateContent(`SYSTEM: ${systemPrompt}\n\nCONTEXT:\n${context || ""}\n\nUSER: ${message}`);
+            const responseTxt = await result.response.text();
+
+            if (responseTxt && responseTxt.trim()) {
+                const cleanTxt = responseTxt.replace(/```json/g, '').replace(/```/g, '').trim();
+                res.write(`data: ${JSON.stringify({ text: cleanTxt })}\n\n`);
+            } else {
+                const emptyMsgs = {
+                    ko: "죄송합니다. 답변을 생성하지 못했습니다. 질문을 더 구체적으로 작성해 주세요.",
+                    en: "Sorry, I could not generate a response. Please describe your issue in more detail.",
+                    ja: "申し訳ありません。回答を生成できませんでした。もう少し詳しく説明してください。",
+                    'pt-BR': "Desculpe, não foi possível gerar uma resposta. Descreva o problema com mais detalhes.",
+                    es: "Lo siento, no pude generar una respuesta. Por favor describa el problema con más detalle."
+                };
+                res.write(`data: ${JSON.stringify({ text: emptyMsgs[language] || emptyMsgs.en, finished: true })}\n\n`);
             }
-
-            [해결책이 있을 때의 JSON 구조]:
-            {
-              "no_more_checks": false,
-              "symptom": "증상 요약",
-              "cause": "추정 원인",
-              "message": "해당 증상에 대해 매뉴얼을 기반으로 아래와 같은 점검을 권장합니다.",
-              "steps": ["단계 1", "단계 2", "..."]
-            }
-
-            [해결책이 더 이상 없을 때의 JSON 구조]:
-            {
-              "no_more_checks": true,
-              "symptom": "점검 한계",
-              "cause": "매뉴얼 외 사항",
-              "message": "준비된 모든 자가 점검을 마쳤으나 해결되지 않았습니다. 제조사 서비스 접수가 필요합니다.",
-              "steps": []
-            }`;
-
-            const fullPrompt = `${systemContent}\n\n[사용자 메시지]\n${message}\n\n[과거 대화 맥락]\n${context || '없음'}`;
-
-            const result = await model.generateContentStream(fullPrompt);
-
-            for await (const chunk of result.stream) {
-                const chunkText = chunk.text();
-                res.write(`data: ${JSON.stringify({ text: chunkText })}\n\n`);
-            }
-
-            res.write(`data: [DONE]\n\n`);
             res.end();
 
         } catch (error) {
-            console.error(`❌ 모델 ${MASTER_MODELS[localModelIndex]} 실패:`, error.message);
-            
+            console.error(`❌ 모델 ${MASTER_MODELS[localModelIndex]} 오류:`, error.message);
             if (localModelIndex < MASTER_MODELS.length - 1) {
                 localModelIndex++;
-                console.log(`🔄 자동 장애 조치(재시도): ${MASTER_MODELS[localModelIndex]}`);
-                return tryStreamGenerate();
+                return tryGenerate();
             }
-            
-            res.write(`data: ${JSON.stringify({ error: "모든 AI 모델 호출에 실패했습니다." })}\n\n`);
+            const retryMsgs = {
+                ko: "응답 지연 중입니다. 잠시 후 시도해 주세요.",
+                en: "Response delayed. Please try again in a moment.",
+                ja: "応答が遅延しています。しばらくしてからお試しください。",
+                'pt-BR': "Resposta atrasada. Por favor, tente novamente em breve.",
+                es: "Respuesta demorada. Por favor, inténtelo de nuevo en un momento."
+            };
+            res.write(`data: ${JSON.stringify({ error: retryMsgs[language] || retryMsgs.en })}\n\n`);
             res.end();
         }
     };
 
-    await tryStreamGenerate();
+    await tryGenerate();
 });
 
-// React 프론트엔드 정적 호스팅
 const distPath = path.join(__dirname, 'dist');
 app.use(express.static(distPath));
-
-app.use((req, res, next) => {
+app.use((req, res) => {
     const indexPath = path.join(distPath, 'index.html');
-    if (fs.existsSync(indexPath)) {
-        res.sendFile(indexPath);
-    } else {
-        res.status(404).send('Not Found');
-    }
+    if (fs.existsSync(indexPath)) res.sendFile(indexPath);
+    else res.status(404).send('Not Found');
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`✨ 백엔드 AI 서버가 ${PORT} 포트에서 시작되었습니다 (지속적 학습 엔진 활성화).`);
-});
+app.listen(process.env.PORT || 3000, () => console.log('✨ Chatbot Engine Stabilized'));

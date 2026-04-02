@@ -19,7 +19,7 @@ export default function LanguageSplash({ onSelect }) {
 
       <div className="relative z-10 w-full max-w-2xl text-center space-y-10 animate-in fade-in zoom-in duration-700">
         <div className="flex flex-col items-center gap-6">
-          <img src={newpongLogo} alt="NEWPONG" className="h-12 object-contain invert grayscale brightness-150 opacity-90" />
+          <img src={newpongLogo} alt="NEWPONG" className="h-12 object-contain" style={{ filter: 'invert(1) hue-rotate(180deg)' }} />
           <div className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full backdrop-blur-sm shadow-xl hover:bg-white/10 transition-colors">
             <Globe className="w-5 h-5 text-blue-400 animate-spin-slow" />
             <span className="text-sm font-bold text-slate-300 tracking-wider">Global Medical Support System</span>

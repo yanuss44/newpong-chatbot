@@ -7,26 +7,11 @@ import newpongLogo from './assets/newpong.png';
 import LanguageSplash from './components/Language/LanguageSplash';
 
 const GREETINGS = {
-  ko: { 
-    text: '안녕하세요. 환영합니다.\n의료기기 사용 중 발생한 오류나 고장 증상을 자세히 입력해주시면, 매뉴얼 기반으로 해결책을 안내해 드립니다. 불량의 내용을 구체적으로 설명해 주시면 빠르게 응대해 드릴수 있습니다.\n\n(예: "전원이 켜지지 않습니다.", "ERR-P01 에러가 발생했습니다.")',
-    label: '한국어' 
-  },
-  en: { 
-    text: 'Hello. Welcome.\nPlease describe the error or malfunction you are experiencing with your medical device in detail. I will provide solutions based on the service manual. Providing specific details will help me assist you faster.\n\n(e.g., "The power does not turn on.", "ERR-P01 error has occurred.")',
-    label: 'English'
-  },
-  ja: { 
-    text: 'こんにちは. ようこそ.\n医療機器の使用中に発生したエラーや故障の症状を詳しく入力してください. サービスマニュアルに基づいた解決策をご案内いたします. 具体的な説明をいただければ, より迅速な対応が可能です.\n\n(例:「電源が入りません.」, 「ERR-P01エラーが発生しました.」)',
-    label: '日本語'
-  },
-  'pt-BR': { 
-    text: 'Olá. Bem-vindo.\nPor favor, descreva em detalhes o erro ou mau funcionamento que você está enfrentando com seu dispositivo médico. Fornecerei soluções com base no manual de serviço. Fornecer detalhes específicos me ajudará a atendê-lo mais rapidamente.\n\n(ex: "O dispositivo não liga.", "Ocorreu o erro ERR-P01.")',
-    label: 'Português'
-  },
-  es: { 
-    text: 'Hola. Bienvenido.\nPor favor, describa detalladamente el error o falla que está experimentando con su dispositivo médico. Le proporcionaré soluciones basadas en el manual de servicio. Proporcionar detalles específicos me ayudará a asistirle más rápido.\n\n(ej: "El dispositivo no enciende.", "Ha ocurrido el error ERR-P01.")',
-    label: 'Español'
-  }
+  ko: { text: '안녕하세요. 환영합니다.\n의료기기 사용 중 발생한 오류나 고장 증상을 자세히 입력해주시면, 매뉴얼 기반으로 해결책을 안내해 드립니다. 불량의 내용을 구체적으로 설명해 주시면 빠르게 응대해 드릴수 있습니다.\n\n(예: "전원이 켜지지 않습니다.", "ERR-P01 에러가 발생했습니다.")', label: '한국어' },
+  en: { text: 'Hello. Welcome.\nPlease describe the error or malfunction you are experiencing with your medical device in detail. Providing specific details will help me assist you faster.\n\n(e.g., "The power does not turn on.", "ERR-P01 error occurred.")', label: 'English' },
+  ja: { text: 'こんにちは. ようこそ.\n故障の症状を詳しく入力してください.', label: '日本語' },
+  'pt-BR': { text: 'Olá. Bem-vindo.\nPor favor, descreva em detalhes o erro.', label: 'Português' },
+  es: { text: 'Hola. Bienvenido.\nPor favor, describa detalladamente el error.', label: 'Español' }
 };
 
 function App() {
@@ -35,176 +20,175 @@ function App() {
   const [currentStep, setCurrentStep] = useState('start');
   const [isLoading, setIsLoading] = useState(false);
   const [showComplaintForm, setShowComplaintForm] = useState(false);
-  const [formLanguage, setFormLanguage] = useState('ko');
-  const [loadingLanguage, setLoadingLanguage] = useState('ko');
-  const [sessionLanguage, setSessionLanguage] = useState(null); // 세션 고정 언어
-  const [lastUserQuery, setLastUserQuery] = useState(''); // 마지막 사용자 질문 저장 (학습용)
+  const [sessionLanguage, setSessionLanguage] = useState('ko');
+  const [lastUserQuery, setLastUserQuery] = useState('');
+  const [complaintNotes, setComplaintNotes] = useState('');
 
   const handleLanguageSelect = (lang) => {
     setSessionLanguage(lang);
-    setFormLanguage(lang);
-    setLoadingLanguage(lang);
-    setMessages([
-      {
-        sender: 'bot',
-        text: GREETINGS[lang].text,
-        status: 'start',
-        language: lang
-      }
-    ]);
+    setMessages([{ sender: 'bot', text: GREETINGS[lang]?.text || GREETINGS.ko.text, language: lang }]);
     setIsLanguageSelected(true);
+    setCurrentStep('start');
   };
 
-  const handleSendMessage = async (text, isSystemCommand = false) => {
-    let msgLang = sessionLanguage;
-
-    if (!msgLang) {
-      const hasKorean = /[가-힣]/.test(text);
-      msgLang = hasKorean ? 'ko' : 'en';
-      setSessionLanguage(msgLang);
+  const handleSendMessage = async (text, isInternal = false) => {
+    if (!text.trim()) return;
+    if (!isInternal) {
+      setMessages(prev => [...prev, { sender: 'user', text }]);
+      setLastUserQuery(text);
     }
-
-    setLoadingLanguage(msgLang);
-    if (!isSystemCommand) setLastUserQuery(text);
     
-    const newMessages = [...messages, { sender: 'user', text, language: msgLang }];
-    setMessages(newMessages);
-    setCurrentStep('diagnosing');
+    // 🚀 전송 시점에 2단계로 즉시 전환
     setIsLoading(true);
+    setCurrentStep('diagnosing');
 
     try {
-      const botMessageId = Date.now();
-      setMessages([...newMessages, { 
-        id: botMessageId,
-        sender: 'bot', 
-        text: '', 
-        status: 'thinking', 
-        language: msgLang 
-      }]);
-
-      const response = await analyzeSymptom(text, msgLang, messages, (streamedText) => {
-        setMessages(prev => {
-          const lastMsg = prev[prev.length - 1];
-          if (lastMsg && lastMsg.sender === 'bot') {
-            return [...prev.slice(0, -1), { ...lastMsg, text: streamedText }];
-          }
-          return prev;
-        });
-      });
-
-      if (response) {
-        setMessages(prev => {
-          const filtered = prev.slice(0, -1);
-          return [...filtered, {
-            sender: 'bot',
-            text: response.text,
-            status: response.status || 'diagnosing',
-            language: msgLang,
-            code: response.code,
-            structured: response.structured
-          }];
-        });
-
-        if (response.structured && response.structured.no_more_checks) {
-          setTimeout(() => {
-            const autoNote = `[시스템 안내: 추가 점검 불가]\n${response.structured.message || "매뉴얼 내 추가 대책이 확인되지 않아 자동으로 접수 절차를 개시합니다."}`;
-            handleUnresolved(msgLang, autoNote);
-          }, 1500);
-        } else if (response.status === 'unresolved') {
-          setCurrentStep('unresolved');
-        }
+      const resp = await analyzeSymptom(text, sessionLanguage, messages);
+      
+      // 📊 진단 단계 동기화 (AI 응답 상태에 따라 사이드바 업데이트)
+      if (resp.status === 'unresolved') {
+        setCurrentStep('unresolved');
+      } else if (resp.status === 'diagnosing' && currentStep !== 'diagnosing') {
+        setCurrentStep('diagnosing');
       }
-    } catch (error) {
-       console.error(error);
+
+      setMessages(prev => [...prev, {
+        sender: 'bot',
+        text: resp.text,
+        structured: resp.structured,
+        language: sessionLanguage,
+        status: resp.status
+      }]);
+    } catch (e) {
+      console.error(e);
+      setMessages(prev => [...prev, { sender: 'bot', text: "AI 서버와 통신 중 문제가 발생했습니다.", language: sessionLanguage }]);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleMoreChecks = () => {
-    const query = sessionLanguage === 'ko' 
-      ? "추가적인 점검 사항이나 해결책이 매뉴얼에 더 있나요? 있다면 상세히 알려주세요." 
-      : "Are there any more troubleshooting steps or solutions in the manual? If so, please provide them in detail.";
-    handleSendMessage(query, true);
-  };
+  // 🕒 세션 종료 전 데이터 유실 방지 (데이터 축적 엔진)
+  useEffect(() => {
+    const handleUnload = () => {
+      if (messages && messages.length >= 3 && lastUserQuery) {
+        try {
+          const lastBot = messages[messages.length - 1];
+          if (lastBot?.sender === 'bot') {
+            const data = JSON.stringify({
+              question: lastUserQuery, answer: lastBot.text, language: sessionLanguage, isAutoSaved: true
+            });
+            const blob = new Blob([data], { type: 'application/json' });
+            navigator.sendBeacon('/api/save-case', blob);
+          }
+        } catch (e) { console.error(e); }
+      }
+    };
+    window.addEventListener('beforeunload', handleUnload);
+    return () => window.removeEventListener('beforeunload', handleUnload);
+  }, [messages, lastUserQuery, sessionLanguage]);
 
-  const [complaintInitialNotes, setComplaintInitialNotes] = useState('');
-
-  const handleUnresolved = (lang, notes = '') => {
-    setCurrentStep('unresolved');
-    setFormLanguage(sessionLanguage || lang);
-    setComplaintInitialNotes(notes);
-    setShowComplaintForm(true);
-  };
-
-  const handleResolved = async (resolvedSteps = []) => {
-    const lastBotMsg = messages[messages.length - 1];
-    if (lastUserQuery && lastBotMsg && lastBotMsg.sender === 'bot') {
+  const handleResolved = async (resolvedSteps) => {
+    // 💾 AI 학습을 위한 데이터 저장
+    if (lastUserQuery && messages.length > 0) {
+      const lastBot = messages[messages.length - 1];
       try {
         await fetch('/api/save-case', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             question: lastUserQuery,
-            answer: lastBotMsg.text,
-            language: sessionLanguage || 'ko',
-            resolved_steps: resolvedSteps
+            answer: `[Resolved by Guide]\nResolved Steps: ${resolvedSteps?.join(', ')}\nRaw Answer: ${lastBot?.text}`,
+            language: sessionLanguage,
+            model: lastBot?.structured?.model_name || "Unknown"
           })
         });
-      } catch (e) {
-        console.error("사례 저장 실패:", e);
-      }
+      } catch (e) { console.error("Save error:", e); }
     }
 
-    setMessages([...messages, { 
-      sender: 'bot', 
-      text: sessionLanguage === 'ko' ? '문제가 해결되어 기쁩니다! 이용해 주셔서 감사합니다.' : 'Glad the issue is resolved! Thank you for using our service.',
-      language: sessionLanguage || 'ko'
+    // 🎉 종료 메시지 추가
+    const finalMsgs = {
+      ko: "해결되었다니 정말 다행입니다!\n이용해 주셔서 감사합니다. 추가적인 질문사항이 있으면 언제든지 다시 문의해 주세요.",
+      en: "I'm glad the issue is resolved!\nThank you for using our service. If you have any more questions, feel free to ask anytime.",
+      ja: "問題が解決されて本当に良かったです！\nご利用いただきありがとうございます。追加のご質問がございましたら、いつでもお問い合わせください。",
+      'pt-BR': "Fico feliz que o problema foi resolvido!\nObrigado por usar nosso serviço. Se tiver mais perguntas, sinta-se à vontade para perguntar a qualquer momento.",
+      es: "¡Me alegra que el problema se haya resuelto!\nGracias por usar nuestro servicio. Si tiene más preguntas, no dude en preguntar en cualquier momento."
+    };
+    const finalMsg = finalMsgs[sessionLanguage] || finalMsgs.en;
+
+    setMessages(prev => [...prev, {
+      sender: 'bot',
+      text: finalMsg,
+      language: sessionLanguage,
+      status: 'finished'
     }]);
+    
     setCurrentStep('resolved');
   };
 
-  return (
-    <div className="h-screen flex flex-col bg-zinc-950 overflow-hidden font-sans text-slate-200">
-      {/* 🚢 초기 언어 선택 랜딩 페이지 */}
-      {!isLanguageSelected && <LanguageSplash onSelect={handleLanguageSelect} />}
+  if (!isLanguageSelected) {
+    return <LanguageSplash onSelect={handleLanguageSelect} />;
+  }
 
-      {/* Header */}
-      <header className="h-[72px] bg-zinc-900/80 backdrop-blur-md text-white flex items-center px-8 shadow-sm z-20 shrink-0 border-b border-zinc-800">
-        <img src={newpongLogo} alt="NEWPONG CI" className="h-8 mr-3 object-contain invert grayscale brightness-125 mix-blend-screen opacity-90" />
-        <h1 className="text-xl font-bold tracking-wide">NEWPONG Global CS Team</h1>
-        <div className="ml-auto flex items-center gap-3 relative">
-          <div className="animate-pulse w-2 h-2 rounded-full bg-emerald-400 absolute -left-4 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></div>
-          <span className="text-xs font-bold bg-white/5 text-slate-300 px-3 py-1.5 rounded-full border border-white/10">ISO 13485 Compliant</span>
+  return (
+    <div className="h-screen flex flex-col bg-[#0c0c0e] overflow-hidden font-sans text-slate-200">
+      {/* 🔮 NEWPONG Global CS Team Header (1.5x Scaled) */}
+      <header className="h-20 border-b border-white/5 bg-black/40 flex items-center px-8 justify-between shrink-0 z-50">
+        <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3">
+            <img 
+              src={newpongLogo} 
+              alt="NEWPONG" 
+              className="h-10 opacity-95" 
+              style={{ filter: 'invert(1) hue-rotate(180deg)' }} 
+            />
+            <span className="text-lg font-black text-white tracking-tight">NEWPONG Global CS Team</span>
+          </div>
+        </div>
+        <div className="flex items-center gap-3 px-4 py-2 bg-zinc-900/50 border border-white/10 rounded-lg">
+          <div className="w-2 h-2 bg-emerald-500 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.8)]"></div>
+          <span className="text-xs font-bold text-slate-200 uppercase tracking-tight">ISO 13485 Compliant</span>
         </div>
       </header>
 
-      {/* Main Layout */}
-      {isLanguageSelected && (
-        <main className="flex-1 flex overflow-hidden">
-          <section className="flex-1 h-full shadow-[4px_0_24px_rgba(0,0,0,0.5)] relative z-10 flex flex-col">
-            <ChatContainer 
-              messages={messages} 
-              onSendMessage={handleSendMessage}
-              onUnresolved={handleUnresolved}
-              onResolved={handleResolved}
-              onMoreChecks={handleMoreChecks}
-              isLoading={isLoading}
-              loadingLanguage={loadingLanguage}
-            />
-          </section>
-          <aside className="w-[320px] shrink-0 h-full p-6 bg-zinc-900/40 border-l border-zinc-800 backdrop-blur-sm">
-            <StepIndicator currentStep={currentStep} />
-          </aside>
-        </main>
-      )}
+      <main className="flex-1 flex overflow-hidden">
+        {/* 💬 채팅 메인 영역 */}
+        <section className="flex-1 relative overflow-hidden bg-black/20">
+          <ChatContainer
+            messages={messages}
+            onSendMessage={handleSendMessage}
+            isLoading={isLoading}
+            loadingLanguage={sessionLanguage}
+            onResolved={handleResolved}
+            onUnresolved={(lang, notes) => {
+              setComplaintNotes(notes || '');
+              setShowComplaintForm(true);
+              setCurrentStep('unresolved');
+            }}
+            onMoreChecks={() => {
+              const moreChecksMsg = {
+                ko: "추가 점검 사항도 알려주세요.",
+                en: "Please provide additional troubleshooting steps.",
+                ja: "追加の点検項目も教えてください。",
+                'pt-BR': "Por favor, forneça etapas adicionais de solução de problemas.",
+                es: "Por favor, proporcione pasos adicionales de solución de problemas."
+              };
+              handleSendMessage(moreChecksMsg[sessionLanguage] || moreChecksMsg.en, true);
+            }}
+          />
+        </section>
 
-      {/* Complaint Form Modal */}
+        {/* 📊 사이드바 진행 단계 (우측 배치) */}
+        <aside className="w-[320px] border-l border-white/5 bg-zinc-900/30 p-8 hidden lg:block overflow-y-auto shrink-0 transition-all duration-300">
+          <StepIndicator currentStep={currentStep} language={sessionLanguage} />
+        </aside>
+      </main>
+
+      {/* 📝 불만 접수 폼 레이어 */}
       {showComplaintForm && (
-        <ComplaintForm 
-          onClose={() => setShowComplaintForm(false)} 
-          language={formLanguage} 
-          initialNotes={complaintInitialNotes}
+        <ComplaintForm
+          initialNotes={complaintNotes}
+          language={sessionLanguage}
+          onClose={() => setShowComplaintForm(false)}
         />
       )}
     </div>

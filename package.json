@@ -1,8 +1,11 @@
 {
-  "name": "my-app",
+  "name": "newpong-chatbot",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "start": "node server.js",
     "server": "node server.js",
@@ -35,6 +38,8 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
+    "pdf-parse": "^1.1.1",
+    "pdfjs-dist": "^5.6.205",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2",
     "vite": "^8.0.1"

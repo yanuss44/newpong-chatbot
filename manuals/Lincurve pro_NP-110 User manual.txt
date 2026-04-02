@@ -1,0 +1,1665 @@
+
+
+ 
+LINCURVE PRO       
+ 
+1 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Instructions For Use 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+LINCURVE PRO       
+ 
+2 
+ 
+Table of Contents 
+1 System overview ................................................................................................................ 4 
+1.1 System description ...................................................................................................................... 4 
+1.2 Intended use .................................................................................................................................. 4 
+1.3 System components .................................................................................................................... 5 
+1.4 Technical Specifications ............................................................................................................. 6 
+2 Safety Precautions ............................................................................................................. 7 
+2.1 Warnings and Precautions ......................................................................................................... 7 
+2.2 General precautions .................................................................................................................... 7 
+2.3 Maintenance precautions ........................................................................................................... 7 
+2.4 Precautions during use ............................................................................................................... 7 
+2.5 Safety precautions ....................................................................................................................... 8 
+2.6 Pre-procedure checklist ............................................................................................................. 9 
+2.7 Procedure precautions ............................................................................................................. 10 
+2.8 Expected adverse events .......................................................................................................... 11 
+3 Operating and storage environment ............................................................................... 11 
+4 System components and features ................................................................................... 12 
+4.1 Main body (Body+LCD) .............................................................................................................. 12 
+4.2 Accessories ................................................................................................................................... 13 
+5 Installation procedure ..................................................................................................... 15 
+5.1 Pre-installation checklist.......................................................................................................... 15 
+5.2 Main body (Body & LCD) assembly ......................................................................................... 15 
+5.3 Pre-use checklist ......................................................................................................................... 16 
+5.4 Power connection ...................................................................................................................... 16 
+5.5 Handpiece connection .............................................................................................................. 16 
+5.6 Cartridge connection ................................................................................................................. 17 
+5.7 Cartridge replacement (Applicable to S type, L type, D type) ........................................ 17 
+5.8 Power On/Off ............................................................................................................................... 18
+ 
+6 Operating Instructions..................................................................................................... 21 
+6.1 Main screen configuration ....................................................................................................... 21 
+6.2 Mode description ........................................................................................................................ 22 
+6.3 Info screen configuration ......................................................................................................... 25 
+
+ 
+LINCURVE PRO       
+ 
+3 
+ 
+6.4 Instructions .................................................................................................................................. 26 
+7 Cleaning and Care ............................................................................................................ 32 
+7.1 Regular maintenance ................................................................................................................ 32 
+7.2 Cleaning ........................................................................................................................................ 32 
+7.3 Storage .......................................................................................................................................... 33 
+8 Troubleshooting .............................................................................................................. 34 
+8.1 Troubleshooting guidelines ..................................................................................................... 34 
+8.2 System messages ....................................................................................................................... 35 
+9 IEC Electrical Safety and EMC Specifications ..................................................................  39 
+10 Symbol Descriptions ........................................................................................................ 42 
+11 Warranty .......................................................................................................................... 44 
+ 
+  
+
+ 
+LINCURVE PRO       
+ 
+4 
+ 
+1 System overview 
+1.1 System description 
+LINCURVE PRO (NP-110) delivers concentrated ultrasound energy to the lower part of the skin 
+through a focused ultrasound transducer. A small thermal coagulation zone is formed in the 
+deepskin layers such as the dermis, the boundary layer between the dermis and subcutaneous fat, 
+the SMAS layer, and the fascia. The area where ultrasound energy is concentrated causes 
+coagulation of the tissue, and gradual thermal damage is created in nearby tissues, leading to 
+various degrees of collagen degeneration. This process stimulates the tissue’s natural healing 
+response, resulting in skin lifting, tightening, and improved elasticity. 
+ 
+1.2 Intended use 
+The LINCURVE PRO is used to achieve skin lifting and tightening effects by inducing the 
+regeneration of collagen and elastic Fibers. This is accomplished when focused ultrasound energy 
+selectively coagulates the subcutaneous and SMAS layers for the indications for use described 
+below. 
+•  Eyebrow and sagging chin lifting/tightening 
+•  Improves firmness of skin on jaw line, peri-orbital, cheek, abdomen, thigh and arm 
+•  Improve fine lines and wrinkles on the chest(decolletage) and neck area        
+•  Improving cellulite and stretch marks 
+ 
+  
+
+ 
+LINCURVE PRO       
+ 
+5 
+ 
+1.3 System components 
+ 
+Main body 
+Item Quantity Remarks 
+Body 1ea  
+LCD 1ea  
+Accessories 
+Item Quantity Remarks 
+Handpiece 1ea  
+Cartridge S2 1ea Optional item 
+Cartridge L2 1ea Optional item 
+Cartridge L3 1ea Optional item 
+Cartridge L4 1ea Optional item 
+Cartridge D3 1ea Optional item 
+Cartridge D4 1ea Optional item 
+Power cord 1ea  
+LCD holder pin 2ea  
+User manual 1ea  
+ 
+
+ 
+LINCURVE PRO       
+ 
+6 
+ 
+1.4 Technical Specifications 
+Category Description Remarks 
+Product name LINCURVE PRO  
+Model number NP-110  
+Input voltage 100-240VAC, 50/60Hz  
+Power consumption 120VA  
+Fuse T6.3A-250V / 2ea  
+Output setting and frequency 
+ 
+DEEP BOOSTER Frequency 
+ 
+S2 0.11 ~ 0.25 J - 7MHz 
+L2 0.11 ~ 0.25 J 2.5 ~ 5.5J 7MHz 
+L3 0.20 ~ 0.45 J 2.5 ~ 5.5J 7MHz 
+L4 0.45 ~ 1.00 J  4.7 ~ 10.5J 4MHz 
+D3 0.20 ~ 0.45 J 
+ 
+7MHz 
+D4 0.45 ~ 1.00 J 
+ 
+4MHz 
+Mode setting 
+SINGLE mode/AUTO mode - 
+DEEP mode (SINGLE mode /AUTO mode) 
+L, D Cartridge 
+BOOSTER mode (SINGLE mode/AUTO mode) 
+Use L Cartridge only 
+Protection against electric 
+shock 
+Class I device 
+ 
+Degree of patient protection Type BF Applied part 
+ 
+Safety standards IEC 60601-1, IEC 60601-1-2 
+ 
+Ingress protection 
+Cartridge (IPX7) 
+(Excluding the top part of the cartridge) 
+Main Body 
+& Handpiece is not 
+waterproof. 
+Temperature stability of 
+contact surfaces 
+The temperature of all contactable fittings is 
+within 43°C. 
+ 
+Physical Dimensions 
+(L x H x W) 
+298.8 x 368.1 x 418.9 mm  
+Weight 6.7Kg  
+Warranty 
+- Main body: 2 years 
+- Accessories (Handpiece, Cartridge): 
+1 year or the specified shot number is used 
+whichever comes first 
+ 
+
+ 
+LINCURVE PRO       
+ 
+7 
+ 
+2 Safety Precautions 
+2.1 Warnings and Precautions 
+1) Read and understand the instructions before use. 
+2) Only the authorized operator may use this device. 
+3) The procedure must be performed by a doctor or licensed medical personnel under the 
+direction and supervision of a doctor. 
+4) Dispose of the main unit and cartridge in accordance with applicable regulations. For any 
+issues related to disposal, please contact Newpong Co., Ltd. or your authorized distributor. 
+ 
+2.2 General precautions 
+1) Before use, be sure to read and understand this user manual, and use only the designated 
+components. 
+2) Doctors and all personnel involved in the procedure must be familiar with this user manual. 
+3) If any issues occur during use, contact the manufacturer for assistance. 
+4) Do not attempt to repair or modify the device unless you are a certified Newpong service 
+technician. 
+5) All maintenance and service must be performed by authorized technicians using approved 
+components. 
+6) Do not disassemble or modify the product under any circumstances. 
+ 
+2.3 Maintenance precautions 
+1) Clean the handpiece with alcohol to maintain hygiene. 
+2) Store the cartridge at room temperature to prevent the internal liquid from freezing, which may 
+cause damage. Do not use frozen cartridges. 
+3) When cleaning the LCD touchscreen, use a soft cloth moistened with alcohol. 
+4) To clean the surface of the device, wipe it with a soft cloth moistened with alcohol. Avoid 
+allowing any liquid to enter the device. 
+5) Ensure that the hose connecting the main unit and the handpiece is not bent or twisted. 
+6) Do not use or store the device in areas with high humidity or poor ventilation. Avoid exposure to 
+direct sunlight or high-temperature environments. 
+ 
+2.4 Precautions during use 
+1) Do not operate the device near flammable or combustible gases or materials. 
+2) Check the coolant level inside the cartridge before use. Do not operate the device if the coolant 
+is absent or insufficient. 
+
+ 
+LINCURVE PRO       
+ 
+8 
+ 
+3) Apply ultrasound gel to the treatment area on the patient’s skin to enhance ultrasound 
+transmission. Do not use water or general cosmetic products. 
+4) Only trained operators may use this device. 
+5) High humidity may cause condensation on components and surfaces, potentially damaging 
+critical parts. Maintain proper humidity levels. 
+6) Use the device in a well-ventilated area to prevent damage caused by overheating, dust, or 
+mechanical vibration. 
+7) Do not install the device outdoors or in environments with severe temperature fluctuations. 
+Install it indoors in a well-ventilated area, away from patient traffic. 
+8) Handle the handpiece and cartridge carefully to prevent them from falling. 
+9) Do not press or scratch the screen surface with fingernails or sharp objects (e.g., nails, pencils, 
+pens), as this may cause damage. 
+10) Always keep the handpiece connector clean and dry. 
+11) Take care not to drop the handpiece when transporting the device. 
+ 
+2.5 Safety precautions 
+1) Do not place flammable materials such as volatile anesthetics or solvents near the device. 
+2) Do not use the device in close proximity to other equipment. 
+3) Do not connect the power cord if it is damaged. 
+4) To avoid potential electromagnetic hazards or interference between devices, connect only to a 
+power supply with protective grounding. Do not use a multi-socket outlet (MSO). 
+5) This product complies with IEC 60601-1-2 (EMC) and does not interfere with nearby devices. 
+However, to minimize potential risks, do not place it directly adjacent to or stacked with other 
+electronic equipment. 
+6) Due to the electrical nature of the device, internal sparking could lead to gas explosions in the 
+presence of flammable gases. 
+7) Do not place power cables near heating equipment, as this could cause wire breakage or short 
+circuits. 
+8) Ensure the power supply voltage, frequency, and current (or power consumption) match the 
+device's specifications. 
+9) Make sure the power plug is securely inserted into the outlet. 
+10) To prevent electric shock, connect the device only to a power supply with protective grounding. 
+11) Use only the dedicated power cord provided by the manufacturer. Use of unverified 
+components may result in malfunction or electric shock. 
+12) All cables must be connected correctly and securely. 
+13) The device must be grounded. When not in use, always switch off the main power. 
+
+ 
+LINCURVE PRO       
+ 
+9 
+ 
+14) Do not use damaged wires, as this could result in fire due to electrical leakage. 
+15) Do not touch the power plug with wet hands, as this may cause electric shock. 
+16) Do not insert multiple plugs into a single outlet, as this may lead to fire hazards. 
+17) Avoid tilting, vibration, or mechanical shock during transport. 
+18) Be especially cautious when moving the product, as significant damage may occur. 
+19) Do not pour water on the device or place heavy objects on it. 
+20) Keep a fire extinguisher near the device in case of fire caused by electrical leakage. 
+21) Do not place reflective or flammable objects near the device. 
+22) If a malfunction occurs and a qualified technician is not available, attach a warning label to the 
+device and contact the manufacturer for service. 
+23) Immediately contact the manufacturer for inspection if any of the following occurs: 
+- Abnormal overheating of the main unit 
+- Unusual noises during operation 
+- Visible deformation or cracking of the main unit, handpiece, cartridge, or other 
+components 
+24) In hospital environments, hazardous currents may occur due to potential differences between 
+conductive parts. To prevent this, connect the device’s equipotential grounding terminal to the 
+hospital’s equipotential grounding system. 
+25) During procedures, bubbles may form on the surface of the transducer, at the boundary 
+between the transducer and tissue, or in the treatment area. To prevent this, ensure the 
+cartridge’s film surface is always facing downward during ultrasound delivery. 
+26) Handle the handpiece with an attached cartridge carefully to avoid any negative impact on the 
+device. 
+27) If the device is subjected to a strong impact, a full performance inspection must be conducted 
+to ensure all essential functions are operating properly. 
+ 
+2.6 Pre-procedure checklist 
+1) Do not use the device on patients who meet any of the following conditions: 
+- Patients with skin allergies to local anesthetics 
+- Pregnant women or infants 
+- Patients with keloid-prone skin 
+- Patients with pacemakers, stents, or metal implants 
+- Patients with skin cancer 
+2) Patients with the following conditions must consult with a medical specialist before proceeding 
+with the treatment: 
+- Pregnant or breastfeeding women 
+
+ 
+LINCURVE PRO       
+ 
+10 
+ 
+- (For women with suspected pregnancy, a pregnancy test must be performed and a 
+consultation with a specialist is required before treatment.) 
+- Patients taking aspirin or aspirin-based medications 
+- Patients with bleeding disorders, thrombosis, or other blood coagulation issues 
+- Patients with cardiovascular or other systemic diseases 
+- Patients currently suffering from acute or chronic illnesses, including dermatologic 
+conditions 
+- Patients with dermatologic lesions or abnormal sensation in the treatment area 
+- Patients with a history of skin resurfacing treatments in the treatment area 
+- Patients with photosensitive disorders or those taking photosensitizing medications 
+- Individuals prone to keloids or hypertrophic scarring 
+- Patients undergoing long-term steroid or immunosuppressive therapy 
+- Elderly patients aged 65 or older 
+- Patients with heart disease 
+- Patients with herpes virus infection 
+- Patients with diabetes or epilepsy 
+3) The focused ultrasound energy emitted by this device may be affected by or cause damage to 
+certain materials. Therefore, do not use the device on patients who have any of the following: 
+- Mechanical implants 
+- Dermal fillers 
+- Breast implants 
+ 
+2.7 Procedure precautions 
+1) Apply ultrasound gel to ensure close contact between the cartridge and the treatment area 
+during the procedure. Failure to maintain proper contact may result in inaccurate focal depth, 
+reduced treatment efficacy, or skin burns. Be careful not to allow air bubbles to form within the 
+gel, as they may cause thermal damage to surrounding tissues. 
+2) There is a risk of bubble formation along the acoustic path during treatment, particularly at the 
+interface between the transducer and tissue. To avoid this, ensure the film surface of the 
+cartridge is always facing downward during ultrasound emission. Additionally, air bubbles in 
+the acoustic path can reduce treatment effectiveness. Therefore, only degassed water should 
+be filled in the cartridge. 
+3) The uniform propagation of High-Intensity Focused Ultrasound (HIFU) waves may be disrupted 
+by bone or gas-containing organs in the treatment area. Use caution when treating areas with 
+loose or sagging skin, as there is a risk of facial nerve injury. 
+
+ 
+LINCURVE PRO       
+ 
+11 
+ 
+4) Patients may experience pain or itching during the procedure. If such symptoms occur, follow 
+the physician's instructions. 
+5) The following temporary side effects may occur after treatment. In case of side effects, follow 
+the instructions of a medical professional: 
+- Numbness 
+- Stiffness 
+- Nerve paralysis 
+- Erythema, itching, or swelling 
+- Pain, bruising, erosion, blistering, or ulceration 
+- Hypopigmentation or hyperpigmentation 
+6) If abnormal symptoms such as skin depressions or excessive swelling occur, stop the treatment 
+immediately. 
+7) Do not apply treatment repeatedly to the same area in succession. 
+8) Before treatment, clearly explain all possible side effects to the patient and obtain a signed 
+informed consent form. 
+9) When using the S2 cartridge, which emits single shots, avoid overlapping exposures on the 
+same spot. Move continuously during treatment to prevent damage. 
+ 
+2.8 Expected adverse events 
+1) Unintended heating of tissues may occur, potentially resulting in skin damage or fistula 
+formation. 
+2) Thermal injury may affect the skin, surrounding tissues, or adjacent anatomical structures. 
+ 
+3 Operating and storage environment 
+Condition Operating Storage 
+Temperature 5 ∼ 35°C 
+Main body: -10 ∼ 50°C 
+Cartridge: 2 ∼ 50°C 
+Humidity 20 ∼ 90 % 20 ∼ 90 % 
+Atmosphere 900hPa ~ 1060hPa 900hPa ~ 1060hPa 
+Remarks  
+Store in a dry place at room temperature, 
+away from direct sunlight. 
+ 
+ 
+ 
+
+ 
+LINCURVE PRO       
+ 
+12 
+ 
+4 System components and features 
+4.1 Main body (Body+LCD) 
+4.1.1 Front and rear view 
+ 
+# Item Description 
+➀ TFT LCD Various user interface (UI) elements are displayed 
+➁ auxiliary power button Turn system On/Off 
+➂ Handpiece connector Socket for plugging in handpiece cable 
+➃, ➄ Fan 
+Air circulation for cooling  
+➅ Protective earth protective earth(ground) symbol and pin 
+➆ AC Inlet Supplies power to system 
+4.1.2 Left and right view 
+ 
+# Item Description 
+➀ Handpiece Holder Place to put the handpiece 
+ 
+  
+
+ 
+LINCURVE PRO       
+ 
+13 
+ 
+4.2 Accessories 
+4.2.1 Handpiece 
+                       
+ 
+<Cartridge connection> 
+# Item Description 
+➀ Handpiece plug Connect to the main body’s handpiece cable connector  
+➁ Handpiece cable Cable for the handpiece 
+➂ Handpiece body Handpiece Body  
+➃ Handpiece shot button Button to start and stop shot 
+➄ Cartridge release button Press when removing cartridges  
+➅ LED color 
+Status Color 
+STANDBY White 
+READY Green 
+SHOT Blue 
+ 
+ 
+  
+
+ 
+LINCURVE PRO       
+ 
+14 
+ 
+4.2.2 Cartridge (S2, L2, L3, L4, D3, D4) 
+ 
+ 
+# Item Description 
+➀ 
+Cartridge 
+Contact cover Protects the contact film and indicates the output area. 
+➁ 
+Handpiece 
+Joint 
+Part that combines with the handpiece. Contains an ultrasonic 
+ceramic and a cartridge board that stores cartridge information 
+and the number of shots. 
+➂ Contact Film 
+Part  where  focused  ultrasound  is  output  and  used  in  close  
+contact with the skin. 
+ 
+4.2.3 LCD holder pin 
+                 
+Pin Provided for Assembling the LCD to the Body 
+※ Be sure to use only the pins supplied with the device. 
+ 
+ 
+ 
+ 
+
+ 
+LINCURVE PRO       
+ 
+15 
+ 
+5 Installation procedure 
+5.1 Pre-installation checklist 
+1) Before using the device, check the main unit and accessories for any damage or defects. 
+2) Ensure  the  cartridge  has  been  properly  cleaned  before  use.  Do  not  operate  the  device  if  any  
+accessories are damaged. 
+ 
+5.2 Main body ( Body &  LCD) assembly 
+1) Properly attach the LCD to the main body. 
+ 
+ 
+2) After attachment, insert the LCD holder pin into the corresponding hole. 
+        .   
+3) Once the LCD holder pin is secured, the NP-110 main body assembly is complete. 
+ 
+
+ 
+LINCURVE PRO       
+ 
+16 
+ 
+5.3 Pre-use checklist 
+1) Use the device on a flat surface that does not transmit vibrations to the equipment. 
+2) The device may generate some heat; therefore, ensure that the exhaust vents are not blocked 
+and operate the device in a well-ventilated area. 
+ 
+5.4 Power connection 
+Turn  off  the  power  switch  on  the  back  of  the  device  (position  O  indicates  OFF),  then  connect  the  
+power cord to the power inlet (ⓐ) as shown in the illustration below. 
+Before connecting After connecting 
+ 
+ 
+ 
+5.5 Handpiece connection 
+Align the arrow on the handpiece plug (ⓒ) to face upward toward the handpiece cable connector (ⓑ) 
+and connect it to the handpiece cable connector (
+ⓑ) located on the front of the device, as shown in 
+the illustration below. 
+Before connecting After connecting 
+  
+ 
+Ensure that the handpiece cable is fully inserted by confirming an audible ‘click’ sound upon 
+connection. 
+※ The handpiece must be connected or disconnected only when the device is powered off. 
+  
+
+ 
+LINCURVE PRO       
+ 
+17 
+ 
+5.6 Cartridge connection 
+After selecting one of the six types of cartridges, insert it into the handpiece until it is fully seated, as 
+shown in the image below. 
+ 
+Before connecting After connecting 
+ 
+ 
+ 
+5.7 Cartridge replacement (Applicable to S type, L type, D type) 
+Press the cartridge release switch (ⓓ) and pull in the direction of the arrow to remove the cartridge. 
+ 
+Before removal Cartridge-Handpiece Disconnection 
+ 
+ 
+After removal 
+ 
+ 
+  
+
+ 
+LINCURVE PRO       
+ 
+18 
+ 
+5.8 Power On/Off 
+5.8.1 Power on 
+1) Turn on the power using the "I" mark on the power switch located at the back of the device. 
+※ When the power switch is in the "O" position, the device is OFF; when in the "I" position, the 
+device is ON. 
+Power Off Power On 
+ 
+ 
+ 
+2) Press the auxiliary power button (ⓔ) on the front of the device to turn on the LCD and activate 
+the device for use. 
+Auxiliary power off Auxiliary power on 
+ 
+ 
+ 
+3) When the power is turned on without any issues, the system will boot up, and an intro screen 
+will appear for about 1 second as shown below. 
+ 
+<Intro screen> 
+
+ 
+LINCURVE PRO       
+ 
+19 
+ 
+4) After  the  intro  screen  is  displayed,  the  device  will  automatically  switch  to  the  password  entry  
+screen. 
+5) Enter the 4-digit password provided by the manufacturer, then press the ‘⤶’ button to proceed to 
+the main screen. 
+※ If the password is incorrect, an error message will be displayed for 1 second, and the entered 
+password will be reset. 
+  
+<Password input screen> <Password error message> 
+ 
+5.8.2 Power Off 
+1) Press the ‘STANDBY’ button to switch the STANDBY status. 
+ 
+ 
+2) Press and hold the auxiliary power button (ⓔ) on the front of the device for more than 1 second 
+to turn off the LCD and the device. 
+Auxiliary power off Auxiliary power on 
+ 
+ 
+
+ 
+LINCURVE PRO       
+ 
+20 
+ 
+※ If  the  auxiliary  power  button  is  pressed  during  a  cartridge  shot  in  READY  status,  the  device  will  
+finish the current shot before shutting down. 
+ 
+3) Turn off the device by pressing the ‘O’ (OFF) side of the power switch located on the rear panel. 
+※ The power switch is in the OFF position when set to 'O', and in the ON position when set to 'I'. 
+Main power off Main power on 
+ 
+ 
+ 
+4) After removing the cartridge, clean it thoroughly and store it in a clean, dry place. 
+5) If the device will not be used for an extended period, switch off the main power located on the 
+rear panel and disconnect the power cable before storing the device. 
+ 
+ 
+ 
+ 
+
+ 
+LINCURVE PRO       
+ 
+21 
+ 
+6 Operating Instructions 
+6.1 Main screen configuration 
+ 
+➀ SINGLE: Switches the operating mode to ‘SINGLE’ mode 
+➁ AUTO: Switches the operating mode to ‘AUTO’ mode 
+➂ Cartridge Information: Displays the type of the connected cartridge and the remaining 
+number of shots available. 
+                   
+ 
+➃ INFO  Button:  Switches  to  the  Info  screen.  (Used  to  check  device  information,  adjust  
+brightness and volume levels, and configure settings.) 
+➄ Output Value: Displays the selected ultrasound energy output level for the procedure. 
+Cartridge Information Color 
+S2 S2 ‒ 2.0mm Yellow 
+L2 L2 ‒ 2.0mm Green 
+L3 L3 ‒ 3.0mm Purple 
+L4 L4 ‒ 4.5mm Sky blue 
+D3 D3 ‒ 3.0mm Magenta 
+D4 D4 ‒ 4.5mm Blue 
+<Connected cartridge type> 
+
+ 
+LINCURVE PRO       
+ 
+22 
+ 
+➅ Shot Count: In SINGLE mode, displays the number of shots that have been delivered so far. 
+➆ DEEP: Switches the output mode to Deep mode. 
+⑧ BOOSTER: Switches the output mode to Booster mode. 
+⑨ RESET: Resets the current shot count to zero. 
+⑩ STANDBY: Sets the STANDBY status. 
+⑪ READY: Sets the READY status. 
+⑫ Output  Increase  Button:  Increases  the  ultrasound  energy  output  level  by  one  step  during  
+treatment. 
+⑬ Output Decrease Button: Decreases the ultrasound energy output level by one step during 
+treatment. 
+⑭ Shot Count Increase Button: Increases the desired shot count by the configured unit value 
+during treatment (not available in SINGLE mode). 
+⑮ Shot Count Decrease Button: Decreases the desired shot count by the configured unit value 
+during treatment (not available in SINGLE mode). 
+ 
+6.2 Mode description 
+1) Operating mode and Output mode 
+MODE Description 
+Operating 
+Mode 
+SINGLE  
+In SINGLE mode, pressing the handpiece shot button once delivers a single 
+ultrasound output. 
+(Applicable cartridges: S2, L2, L3, L4, D3, D4) 
+AUTO 
+- In   AUTO   mode,   pressing   the   handpiece   shot   button   once   delivers   
+continuous ultrasound pulses up to the user-defined shot count. 
+- If the shot button is pressed again before reaching the set shot count, the 
+operation is paused. 
+- Pressing   the   shot   button   once   more   during   the   pause   will   resume   
+ultrasound delivery until the remaining shots are completed. 
+(Applicable cartridges: S2, L2, L3, L4, D3, D4) 
+Output 
+Mode 
+BOOSTER 
+A mode in which ultrasound energy is delivered continuously. 
+Single Booster output:    
+(Applicable cartridges: L2, L3, L4) 
+DEEP 
+A mode in which ultrasound energy is delivered at regular intervals. 
+Single Deep output:    
+(Applicable cartridges: L2, L3, L4, D3, D4) 
+※ SINGLE mode is the default operation mode, and DEEP mode is the default output mode.   
+
+ 
+LINCURVE PRO       
+ 
+23 
+ 
+2) Operating Modes by Cartridge Type 
+Cartridge Mode Description Remarks 
+S Type 
+SINGLE 
+Pressing the handpiece shot button 
+once delivers a single ultrasound 
+pulse. 
+ 
+- LED lights blue during 
+ultrasound output. 
+- DEEP mode and BOOSTER 
+mode are not available for 
+S-type cartridges. 
+- In AUTO mode, the shot 
+count can be set from 50 to 
+950. 
+AUTO 
+Delivers the preset number of shots 
+with one button press. 
+ 
+L Type 
+SINGLE  
+DEEP 
+Single Button-Press Output 
+ 
+- LED lights blue during 
+ultrasound output. 
+BOOSTER 
+Single Button-Press Output 
+ 
+AUTO 
+DEEP 
+Delivers the preset number of shots 
+with one button press. 
+ 
+- LED lights blue during 
+ultrasound output. 
+- In AUTO mode, the shot 
+count can be set from 50 to 
+950. 
+BOOSTER 
+Delivers the preset number of shots 
+with one button press. 
+ 
+D Type 
+SINGLE  DEEP 
+Single Button-Press Output 
+ 
+- LED lights blue during 
+ultrasound output. 
+AUTO DEEP 
+Delivers the preset number of shots 
+with one button press. 
+ 
+- LED lights blue during 
+ultrasound output. 
+- In AUTO mode, the shot 
+count can be set from 50 to 
+950. 
+ 
+  
+
+ 
+LINCURVE PRO       
+ 
+24 
+ 
+3) On the main screen, select the desired mode, then choose the power level and shot count. 
+➀ Power setting 
+➁ Shot count selection is available only in AUTO mode. The shot count can be set between 50 and 
+950 using the /buttons. 
+S type cartridge 
+Cartridge Mode Min. Power(J) Max. Power(J) Remarks 
+S2 
+2.0mm 
+SINGLE 
+0.11 0.25 
+* Selectable levels from 3 to 10. 
+*  Use  the   /    buttons  to  adjust  
+the output level in increments of 1. 
+AUTO 
+L type cartridge 
+Cartridge Mode 
+Min. Power(J) Max. Power(J) Remarks 
+L2 
+2.0mm 
+DEEP 
+SINGLE 
+0.11 0.25 
+* Selectable levels from 3 to 10. 
+* Use the /  buttons to adjust 
+the output level in increments of 1. 
+* In AUTO mode, the shot count 
+can be set from 50 to 950. 
+AUTO 
+BOOSTER 
+SINGLE 
+2.5 5.5 
+AUTO 
+L3 
+3.0mm 
+DEEP 
+SINGLE 
+0.20 0.45 
+AUTO 
+BOOSTER 
+SINGLE 
+2.5 5.5 
+AUTO 
+L4 
+4.5mm 
+DEEP 
+SINGLE 
+0.45 1.00 
+AUTO 
+BOOSTER 
+SINGLE 
+4.7 10.5 
+AUTO 
+D type cartridge 
+Cartridge Mode Min. Power(J) Max. Power(J) Remarks 
+D3 
+3.0mm 
+DEEP 
+SINGLE 
+0.20 0.45 
+* Selectable levels from 3 to 10. 
+* Use the /  buttons to adjust 
+the output level in increments of 1. 
+* In AUTO mode, the shot count 
+can be set from 50 to 950. 
+AUTO 
+D4 
+4.5mm 
+DEEP 
+SINGLE 
+0.45 1.00 
+AUTO 
+ 
+
+ 
+LINCURVE PRO       
+ 
+25 
+ 
+6.3 Info screen configuration 
+1) Pressing the INFO button displays the screen shown below. 
+ 
+<Info screen> 
+ 
+➀ SOFTWARE VERSION: Displays the current software version installed on the device. 
+➁ BRIGHTNESS: Adjusts   the   screen   brightness.   (Range:   50%   to   100%,   adjustable   in   10%   
+increments; Default: 80%) 
+➂ SPEAKER VOLUME: Adjusts the device's speaker volume. (Range: 0 to 5, adjustable in steps of 1; 
+Default: 3) 
+➃ MAIN: Returns to the main screen. 
+➄ USER MANUAL: Access the user manual by scanning the QR code. 
+➅ AUTO SHOT INTERVAL: Sets the time interval between automatic shots. (Range: 0.1 to 1 second, 
+adjustable in 0.1-second increments; Default: 0.1 sec) 
+➆ AUTO SHOT INCREMENT: Sets the unit value for automatic shot count adjustments. (Selectable: 
+10, 50, or 100 shots; Default: 50)  
+
+ 
+LINCURVE PRO       
+ 
+26 
+ 
+6.4 Instructions 
+6.4.1 STANDBY status 
+1) Pressing the STANDBY button activates the STANDBY status, allowing you to configure the 
+output level, mode, and shot count. 
+2) In STANDBY status, pressing the handpiece shot button does not trigger any output. 
+3) While in STANDBY status, the LED on the top of the handpiece lights white. 
+4) The display screen layout varies depending on whether SINGLE or AUTO mode is selected. 
+5) If no cartridge is connected, cartridge information (refer to the blue box) cannot be displayed. 
+(The device cannot enter READY status without a connected cartridge.)  
+ 
+ SINGLE mode - STANDBY screen AUTO mode - STANDBY screen 
+Cartridg   
+ 
+  
+Cartrid 
+ 
+  
+ 
+  
+
+ 
+LINCURVE PRO       
+ 
+27 
+ 
+6.4.2 READY status 
+ 
+1) After completing the settings, press the ‘READY’ button to enter the READY status. 
+2) The ‘STOP’ button is only enabled in the READY status, and all other buttons (except 
+STANDBY/STOP) are disabled. 
+※ The ‘STOP’ button is used for emergency shutdown. If the ‘STOP’ button is pressed 
+during output, the output will immediately stop and the device will return to STANDBY 
+status. 
+3) Output will only begin when the shot button on the handpiece is pressed. 
+4) During output, the LED on the top of the handpiece will display the preset color 
+according to the selected mode. 
+ Color Photo 
+STANDBY White 
+ 
+READY Green 
+ 
+Output Blue 
+ 
+ 
+※ If the user switches from READY to STANDBY status while the handpiece is in operation, the 
+device will complete the current output and then switch to STANDBY status. 
+※ If the cartridge is removed or a caution condition occurs, a warning message will appear. After 
+confirming the message, the system will automatically switch to STANDBY status. 
+※ If the user experiences a sensation of excessive heat or electric shock during operation, 
+immediately remove the handpiece from the patient and press the STOP or STANDBY button to halt 
+the operation. Then, turn off the power and contact the manufacturer or authorized distributor. 
+  
+
+ 
+LINCURVE PRO       
+ 
+28 
+ 
+6.4.3 SINGLE mode 
+In SINGLE mode, one press of the handpiece shot button delivers a single ultrasound output. 
+ 
+6.4.3.1 S type, D type cartridge 
+  
+<S type> <D type> 
+ 
+• In STANDBY status, press Button ➀ to select SINGLE mode. 
+• Check the connected cartridge information in Section ➂ to ensure there are no issues. 
+• Use Button ⑩ or ⑪ to set the desired output level for the procedure. 
+• After completing the desired settings, press Button ⑨ to switch to READY status. 
+• Each time the handpiece shot button is pressed, a single ultrasound output is delivered. 
+• The number of shots delivered can be monitored in Section ➅. 
+• Pressing Button ⑧ stops the output and returns the device to STANDBY status. 
+ 
+6.4.3.2 L type cartridge 
+ 
+<L type> 
+ 
+ 
+
+ 
+LINCURVE PRO       
+ 
+29 
+ 
+1) DEEP mode 
+• In STANDBY status, press Buttons ➀ and    ➆ to select SINGLE - DEEP mode. 
+• Verify that the connected cartridge information in Section ➂ is normal and free of errors. 
+• Use Buttons ⑫ or ⑬ to set the desired output level for the procedure. 
+• Once all settings are configured, press Button ⑪ to switch to READY status. 
+• Each press of the handpiece shot button delivers a single ultrasound output. 
+• After each output, the total number of shots delivered can be checked in Section ➅. 
+• To stop the output and return to STANDBY status, press Button ⑩. 
+ 
+2) BOOSTER mode 
+• In STANDBY status, press Buttons ➀ and ⑧ to select SINGLE - BOOSTER mode. 
+• Check the connected cartridge information in Section ➂ to ensure there are no issues. 
+• Use Buttons ⑫ or ⑬ to set the desired output level for the procedure. 
+• After completing the settings, press Button ⑪ to switch to READY status. 
+• Each time the handpiece shot button is pressed, a single ultrasound output is delivered. 
+• After each output, the current shot count can be viewed in Section ➅. 
+• Press Button ⑩ to stop the output and return to STANDBY status. 
+ 
+6.4.4 AUTO mode 
+In AUTO mode, pressing the handpiece shot button once delivers continuous ultrasound output 
+up to the preset shot count. 
+6.4.4.1 D type cartridge 
+※  For D-type cartridges, only DEEP mode is supported; BOOSTER mode is not available. 
+ 
+<D type> 
+• In STANDBY status, press Button ➁ to select AUTO mode. 
+• Verify that the connected cartridge information in Section ➂ is normal and without 
+
+ 
+LINCURVE PRO       
+ 
+30 
+ 
+issues. 
+• Use Buttons ⑩ or ⑪ to set the desired output level for the procedure. 
+• Use Buttons ⑫ or ⑬ to set the desired shot count. 
+(The adjustable shot count range is from 50 to 950.) 
+• After completing the settings, press Button ⑨ to switch to READY status. 
+• Pressing the handpiece shot button initiates output up to the specified shot count. 
+• The current number of shots delivered can be monitored in Section ➅. 
+• To pause output before reaching the preset shot count, press the handpiece shot button 
+once more (pause state). 
+• In pause state, press Button ⑧ to return to STANDBY status. 
+• Upon reaching the preset shot count, the device resets to SINGLE mode and enters 
+STANDBY status. 
+ 
+6.4.4.2 L type cartridge 
+ 
+<L type> 
+ 
+1) DEEP mode 
+• In STANDBY status, press Buttons ➁ and    ➆ to select AUTO - DEEP mode. 
+• Verify that the connected cartridge information displayed in Section ➂ is correct and 
+error-free. 
+• Use Buttons ⑫ or ⑬ to set the desired output level for the procedure. 
+• Use Buttons ⑭ or ⑮ to set the desired shot count. 
+(The adjustable shot count range is from 50 to 950.) 
+• After configuring the desired settings, press Button ⑪ to switch to READY status. 
+• Pressing the handpiece shot button initiates continuous output up to the preset shot 
+count. 
+
+ 
+LINCURVE PRO       
+ 
+31 
+ 
+• The number of shots delivered can be monitored in Section ➅. 
+• To pause output before the preset shot count is reached, press the handpiece shot button 
+once again (pause state). 
+• While in pause state, press Button ⑧ to return to STANDBY status. 
+• Once the preset shot count is reached, the system automatically resets to SINGLE - DEEP 
+mode in STANDBY status. 
+ 
+2) BOOSTER mode 
+• In STANDBY status, press Buttons ➁ and ⑧ to select AUTO - BOOSTER mode. 
+• Verify that the connected cartridge information in Section ➂ is normal and error-free. 
+• Use Buttons ⑫ or ⑬ to set the desired output level for the procedure. 
+• Use Buttons ⑭ or ⑮ to set the desired shot count. 
+(The adjustable shot count range is from 50 to 950.) 
+• After completing the desired settings, press Button ⑪ to switch to READY status. 
+• Pressing the handpiece shot button will initiate continuous output up to the preset shot 
+count. 
+• Each time output is delivered, the current shot count can be monitored in Section ➅. 
+• To pause the output before reaching the preset shot count, press the handpiece shot 
+button once again (pause state). 
+• While in pause state, press Button ⑩ to return to STANDBY status. 
+• Once the preset shot count is reached, the system automatically resets to SINGLE - DEEP 
+mode in STANDBY status. 
+ 
+ 
+ 
+
+ 
+LINCURVE PRO       
+ 
+32 
+ 
+7 Cleaning and Care 
+7.1 Regular maintenance 
+Inspect the product according to the intervals specified in the table below before use. 
+Inspection item Inspection Interval Inspection Method 
+Cartridge Leakage 
+Before each procedure,  
+Before every shot during the 
+procedure 
+Perform a visual inspection prior to use 
+and maintain visual monitoring 
+throughout operation. 
+Cartridge Film 
+Damage 
+Before each procedure,  Perform a visual inspection prior to use 
+and maintain visual monitoring 
+throughout operation. 
+Cartridge Lifetime 
+Before every shot during the 
+procedure 
+Ensure that the cartridge’s total shot usage 
+and remaining shot count are verified 
+before each use. 
+Handpiece Button 
+Functionality 
+Continuously during the 
+procedure 
+Check that the button switch operates 
+smoothly. 
+External Damage Before each procedure Perform a visual inspection. 
+ 
+7.2 Cleaning 
+1) Main body and connector 
+• Use compressed air or similar methods to remove dust from the main unit and 
+connectors. 
+• Wipe the outer surfaces of the main unit (front, back, LCD) using a soft cloth lightly 
+moistened with alcohol. Take care to avoid any alcohol entering the electrical terminals 
+or connector contacts. 
+2) Handpiece 
+• To clean the handpiece, disinfect by gently wiping it with a soft cotton pad or cotton swab 
+soaked in ethanol or isopropanol (70‒90%) for at least 1 minute. 
+3) Cartridge 
+• Clean the cartridge using a cotton pad moistened with alcohol. 
+※ Always clean and disinfect using only the methods and disinfectants specified above. 
+Do not use any other cleaning agents. 
+※ Do not reuse any disinfecting tools (cotton pads, swabs) once used. 
+※ After cleaning and disinfection, ensure all disinfectant has completely dried before 
+using the device. 
+ 
+
+ 
+LINCURVE PRO       
+ 
+33 
+ 
+7.3 Storage 
+   Store the device in a dry, room-temperature environment, away from direct sunlight. 
+ 
+ 
+ 
+
+ 
+LINCURVE PRO       
+ 
+34 
+ 
+8 Troubleshooting   
+8.1 Troubleshooting guidelines 
+If the issue cannot be resolved using the following methods, contact the manufacturer for service. 
+Category Issue Recommended action 
+Main body 
+A burning smell or 
+explosion sound is 
+coming from the 
+device 
+1) Immediately unplug the power cord from the outlet and 
+contact the manufacturer or authorized distributor. 
+The device does not 
+power on 
+1) Check whether the outlet has power and ensure the plug is 
+securely connected. 
+2) Make sure the device and power cable are properly secured. 
+3) If the device still does not operate after these checks, contact 
+the manufacturer or authorized distributor. 
+ 
+Auxiliary power 
+switch cannot be 
+turned off 
+ 
+1) Verify that the power cord is connected to the wall outlet and 
+the main power switch is turned on. 
+2) If the issue persists after turning the sub power switch ON/OFF 
+2‒3 times, contact the manufacturer or authorized distributor. 
+The LCD does not 
+respond to touch 
+1) Immediately stop using the device and halt the procedure. 
+2) Turn the sub power switch OFF and then ON again to reboot the 
+system. Check if the issue persists. 
+3) If the problem continues, contact the manufacturer or 
+authorized distributor. 
+ 
+A warning message 
+appears on the 
+LCD 
+ 
+1) Immediately stop using the device and halt the procedure. 
+2) Refer to “8.2 Warning Code Descriptions” to resolve the issue. 
+3) If the same warning message continues or additional warnings 
+appear, contact the manufacturer or authorized distributor. 
+System message 
+appears on the LCD 
+1) Immediately stop using the device and halt the procedure. 
+2) Refer to “8.2 Error Code Descriptions” to resolve the issue. 
+3) If the same error message continues or additional errors 
+appear, contact the manufacturer or authorized distributor. 
+Cartridge 
+ 
+Handpiece 
+A continuous 
+rattling or grinding 
+sound comes from 
+the cartridge 
+1) Try reinstalling the cartridge. This issue may occur when the 
+cartridge is not properly recognized. 
+2) Replace with a new cartridge and restart the device. 
+3) If the issue persists, contact the manufacturer or authorized 
+distributor. 
+The device powers 
+off when the 
+handpiece shot 
+button is pressed 
+1) This may be caused by moisture entering the cartridge. In this 
+case, it is recommended to use a different cartridge. 
+2) If the same issue persists after checking, contact the 
+manufacturer or authorized distributor. 
+
+ 
+LINCURVE PRO       
+ 
+35 
+ 
+8.2 System messages 
+8.2.1 Caution messages 
+1) Errors that may occur during device operation on the main screen are classified as either 
+"Caution" or "Error." 
+2) A caution message is displayed when an issue affecting operation occurs. 
+3) If  a  caution  code  occurs  in  the  READY  status,  the  device  will  forcibly  switch  to  STANDBY 
+status and display the caution message. 
+ 
+<Caution screen> 
+ 
+※ The caution message (displayed in a red box) can be dismissed by pressing the message. 
+※ If  you  switch  from  STANDBY  to  READY  without  resolving  the  existing  caution(s),  the  
+remaining caution message(s) will reappear, and the device will not enter the READY status. 
+  
+
+ 
+LINCURVE PRO       
+ 
+36 
+ 
+Caution message displayed Check items Troubleshooting steps 
+ 
+Verify if each cartridge is set 
+above the recommended 
+energy level. 
+If a caution message appears, press the 
+message check button to acknowledge 
+it. 
+ 
+Check if the cartridge is 
+properly connected. 
+1. Remove and reconnect the cartridge. 
+2. Try connecting another handpiece. 
+ 
+Check if the handpiece cable is 
+properly connected. 
+1. Disconnect and reconnect the 
+handpiece cable. 
+2. Try connecting another handpiece. 
+ 
+Confirm if the cartridge shot 
+count has reached the 
+maximum usage. 
+Replace with another cartridge. 
+ 
+Check if the cartridge 
+temperature is high 
+1. Wait until the internal cartridge 
+temperature decreases. 
+2. Use another cartridge. 
+ 
+1. Turn off the power and restart the device. 
+ 
+Check if the cartridge was 
+forcibly removed during 
+handpiece operation. 
+If a caution message appears, press the 
+message check button to acknowledge 
+it. 
+ 
+1. Remove and reconnect the cartridge. 
+2. Try connecting another handpiece. 
+ 
+1. Remove and reconnect the cartridge. 
+2. Tr y  connecting another cartridge. 
+ 
+1. Remove and reconnect the cartridge. 
+2. Tr y  connecting another cartridge. 
+ 
+1. Remove and reconnect the cartridge. 
+2. Disconnect and reconnect the handpiece cable. 
+3. Turn off the power and restart the device. 
+ 
+1. Remove and reconnect the cartridge. 
+2. Try connecting another handpiece. 
+ 
+1. Remove and reconnect the cartridge. 
+2. Try connecting another handpiece. 
+
+ 
+LINCURVE PRO       
+ 
+37 
+ 
+Caution message displayed Check items Troubleshooting steps 
+ 
+Check if the handpiece has 
+been used for an extended 
+period. 
+1. Remove and reconnect the cartridge. 
+2. Try connecting another handpiece. 
+ 
+1. Remove and reconnect the cartridge. 
+2. Tr y  connecting another cartridge. 
+ 
+1. Remove and reconnect the cartridge. 
+2. Tr y  connecting another cartridge. 
+ 
+1. Remove and reconnect the cartridge. 
+2. Tr y  connecting another cartridge. 
+ 
+Check if there are any 
+abnormalities in the treatment 
+data set by the user. 
+1. Remove and reconnect the cartridge. 
+2. Turn off the power and restart the 
+device. 
+ 
+1. Disconnect and reconnect the handpiece cable. 
+2. Turn off the power and restart the device. 
+3. Try connecting another handpiece. 
+ 
+1. Remove and reconnect the cartridge. 
+2. Tr y  connecting another cartridge. 
+ 
+Check if the handpiece has 
+been used for an extended 
+period. 
+1. Remove and reconnect the cartridge. 
+2. Try connecting another handpiece. 
+ 
+Check if the user-set POWER 
+JOULE time has been 
+exceeded during output. 
+1. When a caution message appears, 
+press the message check button. 
+※  If the message occurs consecutively 
+two or more times, please contact the 
+manufacturer immediately. 
+ 
+1. Turn off the power and restart the device. 
+ 
+1. Disconnect and reconnect the handpiece cable. 
+2. Turn off the power and restart the device. 
+3. Try connecting another handpiece. 
+※ If the caution message continues to appear despite taking corrective actions, please contact 
+the manufacturer. 
+※ [High Setting Power]: When the power is set above the level specified by the manufacturer 
+(Power in Joules), a caution message will be displayed. Pressing the check button acknowledges 
+the message, and the device will operate normally. 
+
+ 
+LINCURVE PRO       
+ 
+38 
+ 
+※ [Cartridge Removal and Reinstallation]: When the cartridge is removed from the handpiece 
+and reattached, all existing caution messages are reset and a new inspection begins. 
+ 
+8.2.1 Error messages 
+1) In the event of a critical error, an error message will be displayed. 
+2) If an error occurs in the READY status, all output will be stopped and the error message will be 
+shown. 
+3) Once an error message is displayed, the device cannot return to the previous state. 
+ 
+ 
+<Error screen> 
+ 
+Error messages Troubleshooting steps 
+ 
+Contact the Manufacturer 
+ 
+Power off the device for approximately one hour, then reboot. 
+Contact the Manufacturer 
+ 
+Contact the Manufacturer 
+ 
+Contact the Manufacturer 
+  
+
+ 
+LINCURVE PRO       
+ 
+39 
+ 
+9 IEC Electrical Safety and EMC Specifications 
+Table 1 IEC Electrical Safety Specifications 
+Device Description 
+This device (LINCURVE PRO (NP-110)) delivers focused ultrasound energy to the lower part of the skin 
+through a focused ultrasound transducer. The irradiated ultrasonic energy forms a small thermal 
+coagulation zone of 1㎟ to 2  ㎟  in the deep skin layers such as the dermis, the boundary layer between 
+the dermis and subcutaneous fat, the fibrous tissue of the fat layer, the SMAS layer, and the fascia. 
+Tissues are coagulated in the area where ultrasonic energy is accumulated, and gradual thermal damage 
+is also made to nearby tissues, causing various degrees of collagen degeneration. 
+Mode of Operation:  
+Electrical Isolation 
+ Leakage current conforms to IEC 60601-1 
+ Dielectric withstanding voltage conforms to IEC 60601-1 
+EMC Emissions and Susceptibility: LINCURVE PRO has been tested and found to comply with the limits 
+for medical devices to the IEC 60601-1-2:2014+A1:2020. These limits are designed to provide reasonable 
+protection against harmful interference in a typical medical installation. This Generator generates, uses, 
+and can radiate radiofrequency energy and, if not installed and used in accordance with the instruction 
+given below, may cause harmful interference to other devices in the vicinity. However, there is no 
+guarantee that interference will not occur in a particular installation. 
+ 
+Table 2 IEC EMC Specifications (Emissions) 
+Guidance and Manufacturer’s Declaration ‒ Electromagnetic Emissions 
+LINCURVE PRO is intended for use in the electromagnetic environment specified below. The customer or 
+the user of LINCURVE PRO should assure that it is used in such an environment. 
+Emissions Test Compliance Electromagnetic Environment ‒ Guidance 
+RF emissions 
+CISPR 11 
+Group 1 
+LINCURVE  PRO uses  RF  energy  only  for  its  internal  function.  
+Therefore,  its  RF  emissions  are  very  low  and  are  not  likely  to  
+cause any interference in nearby electronic equipment. 
+RF emissions 
+CISPR 11 
+Class A 
+LINCURVE  PRO  is  suitable  for  use  in  all  establishments  other  
+than domestic and those directly connected to the public low 
+voltage power supply network that supplies buildings used for 
+domestic purposes. 
+Harmonic emissions 
+IEC 61000-3-2 
+Class A 
+Voltage fluctuations/ 
+flicker emissions 
+IEC 61000-3-3 
+Complies 
+
+ 
+LINCURVE PRO       
+ 
+40 
+ 
+Table 3 IEC EMC Specifications (Immunity) 
+Immunity test 
+Basic EMC 
+standard or test 
+method 
+IEC 60601 test level Result 
+Electrostatic discharge 
+(ESD) 
+IEC 61000-4-2 
+±8kV Contact 
+±2kV, ±4kV, ±8kV, ±15kV Air 
+PASS 
+Radio-frequency 
+electromagnetic field. 
+Amplitude modulated 
+IEC 61000-4-3 
+80 MHz - 2.7 GHz 10 V/m 
+Home Healthcare 10 V/m  
+Prof. Healthcare 3 V/m 80 % / 1 kHz 
+PASS 
+Power frequency (50 Hz/60 
+Hz) magnetic field 
+IEC 61000-4-8 30 A/m PASS 
+Electrical fast transient 
+/burst 
+IEC 61000-4-4 5/50 ns, 100 kHz, ±2 kV PASS 
+Surge IEC 61000-4-5 
+1.2/50 (8/20) μs  
+LtL: ±1.0 kV  
+LtG: ±2.0 kV 
+PASS 
+Conducted RF IEC 61000-4-6 
+Amplitude modulated 
+IEC 61000-4-6 
+150 kHz - 80 MHz 3 V 
+ISM Bands 6 V 
+80 % / 1 kHz 
+PASS 
+Voltage dips, short 
+interruptions and voltage 
+variations on power supply 
+input lines 
+IEC 61000-4-11 
+0 % U
+T
+ for 0.5 cycle (1 phase) 
+0 % U
+T
+ for 1 cycle 
+70 % U
+T
+ for 25/30 cycles(50/60 Hz) 
+0 % U
+T
+ for 250/300 cycles(50/60 Hz) 
+PASS 
+ 
+  
+
+ 
+LINCURVE PRO       
+ 
+41 
+ 
+Table 4 IEC Recommended Separation of RF Communication Equipment 
+Band (MHz) Service  IEC 60601 test level Result 
+380‒   390 TETRA 400 
+380 - 390 MHz 
+27 V/m; PM 50 %; 18 Hz 
+PASS 
+430‒   470 
+GMRS 460, 
+FRS 460 
+430 - 470 MHz 
+28 V/m; (FM ±5 kHz, 1 kHz sine) PM; 
+18 Hz 
+PASS 
+704‒   787 LT E   Band 13, 17 
+704 - 787 MHz 
+9 V/m; PM 50 %; 217 Hz 
+PASS 
+800‒   960 
+GSM 800/900, 
+TETRA 800, 
+iDEN 820, 
+CDMA 850, 
+LT E   Band 5 
+800 - 960 MHz 
+28 V/m; PM 50 %; 18 Hz 
+PASS 
+1700 ‒1990 
+SM 1800 
+CDMA 1900 
+GSM 1900, 
+D E C T, 
+LT E   band 1, 3,4, 25, UMTS 
+1700 - 1990 MHz 
+28 V/m; PM 50 %; 217 Hz 
+PASS 
+2400 ‒2570 
+Bluetooth, 
+WLAN,802.11 b/g/n, 
+RFID2450, 
+LT E Band 7 
+2400 - 2570 MHz 
+28 V/m; PM 50 %; 217 Hz 
+PASS 
+5100 ‒5800 WLAN 802.11 a/n 
+5100 - 5800 MHz 
+9 V/m; PM 50 %; 217 Hz 
+PASS 
+ 
+Rated 
+maximum 
+output power 
+of transmitter 
+P(W) 
+Minimum separation distance (m) 푑푑=
+6
+퐸퐸
+√
+푃푃 
+or 0.3, whichever is greater 
+380‒   390 
+MHz 
+430‒   470 
+MHz 
+704‒   787 
+MHz 
+800‒   960 
+MHz 
+1700 ‒
+1990MHz 
+2400 ‒2570 
+MHz 
+5100 ‒5800 
+MHz 
+0.01 0.3 0.3 0.3 0.3 0.3 0.3 0.3 
+0.1 0.3 0.3 0.3 0.3 0.3 0.3 0.3 
+1 0.3 0.3 0.67 0.3 0.3 0.3 0.67 
+10 0.7 0.68 2.11 0.68 0.68 0.68 2.11 
+100 2.22 2.14 6.67 2.14 2.14 2.14 6.67 
+ 
+ 
+ 
+
+ 
+LINCURVE PRO       
+ 
+42 
+ 
+10 Symbol Descriptions 
+ 
+Symbol Description 
+ 
+General prohibition sign 
+ 
+General warning sign 
+ 
+Refer to instruction manual/booklet 
+ 
+"ON" (power) 
+ 
+"OFF" (power) 
+ 
+Stand-by 
+To identify the switch or switch position by means of which 
+part of the equipment is switched on in order to bring it into 
+the stand-by condition.. 
+ 
+Caution 
+ 
+CE conformity marking and notified body number 
+ 
+Authorized representative in the European community 
+ 
+Serial number 
+
+ 
+LINCURVE PRO       
+ 
+43 
+ 
+ 
+Manufacturer 
+ 
+Date of manufacture 
+ 
+WEEE Mark 
+ 
+Temperature limit 
+ 
+This is the correct upright position of the distribution packages for transport 
+and storage. 
+ 
+BF APPLIED PART 
+ 
+Protective earth (ground) 
+ 
+Humidity Limit 
+IPX7 Cartridge water proof protection class 
+ 
+Do Not Sit Here 
+ 
+No Stepping On Surface 
+
+ 
+LINCURVE PRO       
+ 
+44 
+ 
+11 Warranty 
+※ We sincerely thank you for purchasing a product from Newpong Co., Ltd. 
+※ This product has undergone rigorous quality control and has passed stringent inspections. 
+※ The  compensation  standards  for  repair,  exchange,  and  refund  of  this  product  follow  the  "Consumer  
+Dispute Resolution Standards" announced by the Fair Trade Commission. 
+※ Should  any  defects  arise  under  normal  usage  during  the  warranty  period,  Newpong  Co.,  Ltd.  will  
+provide complimentary repair services at authorized service centers. 
+※ In the event of any issues during the warranty period, please promptly notify the company, providing 
+the model name, serial number, date of purchase, and a detailed description of the problem. 
+※ No part of this user manual may be modified, reproduced, reprinted, or distributed without the prior 
+written consent of Newpong Co., Ltd. 
+※ Newpong  Co.,  Ltd.  reserves  the  right  to  amend  technical  specifications,  equipment  configurations  
+(including  form  factors),  or  manuals  without  prior  notice,  in  order  to  enhance  product  quality  and  
+customer satisfaction. 
+※ The information provided by Newpong Co., Ltd. is accurate and reliable to the best of our knowledge. 
+※ Newpong Co., Ltd. assumes no liability for damages resulting from the use of the product for purposes 
+other than those outlined in this manual or by unqualified operators. 
+※ This  user  manual  contains  comprehensive  information  to  assist  users  in  properly  operating  and  
+managing the product. Should you have any inquiries or concerns regarding the use or handling of this 
+device, please contact the manufacturer using the details provided below. 
+Address: #1216, SJ Technoville 278, Beotkkot-ro, Geumcheon-gu, Seoul, 08511, Republic of 
+Korea 
+Telephone: +82-2-541-0145 
+Website: www.newpong.com 
+※ It is imperative that the user thoroughly reviews this manual prior to using the product to ensure correct 
+operation. 
+※ This product is classified as a medical device. 
+ 

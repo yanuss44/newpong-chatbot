@@ -1,11 +1,82 @@
 import React, { useState } from 'react';
 import { Bot, User, CheckSquare, Square } from 'lucide-react';
 
+const UI_TEXT = {
+  ko: {
+    checklist: '진단 체크리스트',
+    resolved: '해결됨',
+    notSolved: '해결 안됨',
+    moreChecks: '다른 체크항목을 더 확인해드릴까요?',
+    yes: '예 (YES)',
+    no: '아니오 (A/S접수)',
+    complaint: '해결 안됨 (서비스 불만 접수서 작성)',
+    solutions: '검색된 해결 방법입니다:',
+    asGuideMsg: '안내드립니다.\n\n확인 가능한 모든 매뉴얼 해결책을 검토해봤지만 문제가 지속되고 있는 것 같습니다.\n\n전문 엔지니어의 방문 서비스(A/S) 접수 진행을 도와드릴까요?',
+    asYes: '예, A/S 접수를 도와주세요',
+    asNo: '아니오, 더 확인해볼게요',
+  },
+  en: {
+    checklist: 'Diagnosis Checklist',
+    resolved: 'Resolved',
+    notSolved: 'Not Solved',
+    moreChecks: 'Should I check more items?',
+    yes: 'YES',
+    no: 'NO (A/S Request)',
+    complaint: 'File Official Complaint Form',
+    solutions: 'Found the following solutions:',
+    asGuideMsg: 'We have reviewed all available manual solutions, but it seems the issue persists.\n\nWould you like us to assist you with filing an A/S service request for an engineer visit?',
+    asYes: 'Yes, Please Help Me File A/S Request',
+    asNo: 'No, I Will Check More',
+  },
+  ja: {
+    checklist: '診断チェックリスト',
+    resolved: '解決済み',
+    notSolved: '未解決',
+    moreChecks: '他のチェック項目も確認しますか？',
+    yes: 'はい',
+    no: 'いいえ（A/S申請）',
+    complaint: '公式クレームフォームを提出',
+    solutions: '以下の解決策が見つかりました：',
+    asGuideMsg: 'ご案内いたします。\n\nマニュアルに記載された解決策をすべて確認しましたが、問題が解消されていないようです。\n\n専門エンジニアによる訪問サービス（A/S）の申請手続きをお手伝いしましょうか？',
+    asYes: 'はい、A/S申請をお願いします',
+    asNo: 'いいえ、もう少し確認します',
+  },
+  'pt-BR': {
+    checklist: 'Lista de Diagnóstico',
+    resolved: 'Resolvido',
+    notSolved: 'Não Resolvido',
+    moreChecks: 'Devo verificar mais itens?',
+    yes: 'SIM',
+    no: 'NÃO (Solicitar A/S)',
+    complaint: 'Registrar Formulário de Reclamação',
+    solutions: 'Seguem as soluções encontradas:',
+    asGuideMsg: 'Informamos que revisamos todas as soluções disponíveis no manual, mas o problema parece persistir.\n\nGostaria que o ajudássemos a registrar uma solicitação de serviço A/S para uma visita de um engenheiro especialista?',
+    asYes: 'Sim, Por Favor Me Ajude com o A/S',
+    asNo: 'Não, Vou Verificar Mais',
+  },
+  es: {
+    checklist: 'Lista de Diagnóstico',
+    resolved: 'Resuelto',
+    notSolved: 'No Resuelto',
+    moreChecks: '¿Debo verificar más elementos?',
+    yes: 'SÍ',
+    no: 'NO (Solicitud A/S)',
+    complaint: 'Presentar Formulario de Queja',
+    solutions: 'Se encontraron las siguientes soluciones:',
+    asGuideMsg: 'Le informamos que hemos revisado todas las soluciones disponibles en el manual, pero el problema parece persistir.\n\n¿Le gustaría que lo ayudemos a registrar una solicitud de servicio A/S para la visita de un ingeniero especialista?',
+    asYes: 'Sí, Ayúdeme con la Solicitud A/S',
+    asNo: 'No, Verificaré Más',
+  },
+};
+
 export default function MessageBubble({ message, onUnresolvedClick, onResolvedClick, onMoreChecks }) {
   const isUser = message.sender === 'user';
-  const isKo = message.language === 'ko';
+  const lang = message.language || 'en';
+  const t = UI_TEXT[lang] || UI_TEXT.en;
+  const isKo = lang === 'ko';
   const [checkedSteps, setCheckedSteps] = useState([]);
-  const [showMoreQuery, setShowMoreQuery] = useState(false); // 추가 점검 질문 노출 여부
+  const [showMoreQuery, setShowMoreQuery] = useState(false);
+  const [showAsGuide, setShowAsGuide] = useState(false); // A/S 접수 전 안내 단계
 
   const toggleStep = (idx) => {
     if (checkedSteps.includes(idx)) {
@@ -16,190 +87,215 @@ export default function MessageBubble({ message, onUnresolvedClick, onResolvedCl
   };
 
   const handleUnresolved = () => {
-    if (message.structured && message.structured.steps) {
-      const checkedText = checkedSteps
-        .sort((a, b) => a - b)
-        .map(idx => `- ${message.structured.steps[idx]} (완료)`)
-        .join('\n');
-      
-      const notes = checkedText 
-        ? `[사용자 자가 점검 완료 항목]\n${checkedText}\n----------------------------------\n`
-        : '';
-      onUnresolvedClick(notes);
-    } else {
-      onUnresolvedClick('');
-    }
+    const steps = message.structured?.steps || message.structured?.troubleshooting_steps || [];
+    const checkedText = checkedSteps
+      .sort((a, b) => a - b)
+      .map(idx => {
+        const item = steps[idx];
+        const text = typeof item === 'string' ? item : (item.check || item.step_content || Object.values(item)[0]);
+        return `- ${text} (완료)`;
+      })
+      .join('\n');
+
+    const notes = checkedText
+      ? `[사용자 자가 점검 완료 항목]\n${checkedText}\n----------------------------------\n`
+      : '';
+    onUnresolvedClick(notes);
   };
-  
+
   return (
-    <div className={`flex w-full mb-4 ${isUser ? 'justify-end' : 'justify-start'}`}>
+    <div className={`flex w-full mb-6 ${isUser ? 'justify-end' : 'justify-start'}`}>
       <div className={`flex max-w-[85%] ${isUser ? 'flex-row-reverse' : 'flex-row'} items-start gap-3`}>
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 shadow-lg ${isUser ? 'bg-gradient-to-br from-blue-500 to-indigo-600 shadow-blue-500/30' : 'bg-gradient-to-br from-emerald-500 to-teal-600 shadow-emerald-500/30'}`}>
+        {/* 아바타 영역 */}
+        <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 shadow-lg ${isUser ? 'bg-blue-600' : 'bg-emerald-600'}`}>
           {isUser ? <User className="w-5 h-5 text-white" /> : <Bot className="w-5 h-5 text-white" />}
         </div>
-        <div className={`p-4 rounded-2xl ${isUser ? 'bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-tr-sm shadow-[0_4px_14px_rgba(37,99,235,0.2)] border border-blue-500/20' : 'bg-zinc-800/80 backdrop-blur-md text-slate-200 shadow-[0_4px_20px_rgba(0,0,0,0.3)] border border-zinc-700/50 rounded-tl-sm'}`}>
-          {/* 로딩 중 (thinking) → 빈 박스 대신 애니메이션 표시 */}
-          {message.status === 'thinking' ? (
+
+        {/* 메시지 버블 영역 */}
+        <div className={`p-5 rounded-2xl shadow-md ${
+          isUser 
+            ? 'bg-blue-700 text-white rounded-tr-sm' 
+            : 'bg-zinc-800/80 text-slate-200 border border-white/5 rounded-tl-sm'
+        }`}>
+          {message.status === 'thinking' && !message.text ? (
             <div className="flex items-center gap-1.5 py-1 px-1">
-              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce" style={{animationDelay: '0ms'}}></div>
-              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce" style={{animationDelay: '150ms'}}></div>
-              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce" style={{animationDelay: '300ms'}}></div>
-            </div>
-          ) : message.structured && (message.structured.message || message.structured.symptom || (message.structured.steps && message.structured.steps.length > 0) || message.structured.no_more_checks) ? (
-            <div className="flex flex-col gap-4 w-full">
-              {/* 대화형 안내 메시지 (있을 경우 최상단 노출) */}
-              {message.structured.message && (
-                <div className="bg-blue-500/10 p-5 rounded-xl border border-blue-500/20 shadow-sm animate-in fade-in duration-500">
-                  <p className="text-[15px] font-bold text-blue-200 leading-relaxed italic">
-                    "{message.structured.message}"
-                  </p>
-                </div>
-              )}
-
-              {/* 증상 / 원인 요약 섹션 */}
-              {(message.structured.symptom || message.structured.cause) && (
-                <div className="bg-zinc-900/40 p-4 rounded-xl border border-zinc-700/50 shadow-inner">
-                  {message.structured.symptom && (
-                    <>
-                      <div className="flex items-center gap-2 mb-1">
-                        <div className="w-2 h-2 bg-rose-400 rounded-full shadow-[0_0_8px_rgba(244,63,94,0.6)]"></div>
-                        <span className="text-xs font-bold text-rose-400 uppercase tracking-wider">{isKo ? 'Target Symptom (증상)' : 'Target Symptom'}</span>
-                      </div>
-                      <p className="text-[15px] font-medium text-slate-200 ml-4 leading-relaxed tracking-wide mb-4">{message.structured.symptom}</p>
-                    </>
-                  )}
-                  
-                  {message.structured.cause && (
-                    <>
-                      <div className="flex items-center gap-2 mt-4 mb-1">
-                        <div className="w-2 h-2 bg-orange-400 rounded-full shadow-[0_0_8px_rgba(251,146,60,0.6)]"></div>
-                        <span className="text-xs font-bold text-orange-400 uppercase tracking-wider">{isKo ? 'Possible Cause (원인)' : 'Possible Cause'}</span>
-                      </div>
-                      <p className="text-[14px] text-slate-300 ml-4 leading-relaxed">{message.structured.cause}</p>
-                    </>
-                  )}
-                </div>
-              )}
-
-              {/* 추가 점검 사항 없음 안내 (특수 케이스) */}
-              {message.structured.no_more_checks && (
-                <div className="bg-rose-500/10 p-5 rounded-xl border border-rose-500/30 shadow-md animate-in fade-in zoom-in duration-500">
-                  <div className="flex items-center gap-3 mb-2 text-rose-400">
-                    <div className="w-2.5 h-2.5 bg-rose-500 rounded-full animate-ping"></div>
-                    <span className="text-xs font-black uppercase tracking-widest">{isKo ? 'Notice (안내)' : 'Notice'}</span>
-                  </div>
-                  <p className="text-[15px] font-bold text-rose-200 leading-relaxed italic">
-                    "{message.structured.message}"
-                  </p>
-                </div>
-              )}
-
-              {/* 해결 단계 Stepper */}
-              {message.structured.steps && message.structured.steps.length > 0 && (
-                <div className="mt-2 mb-2">
-                  <h4 className="text-[13px] font-bold text-emerald-400 mb-4 flex items-center gap-2">
-                    <span className="bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-lg text-emerald-300 shadow-sm flex items-center gap-2">
-                      <span className="animate-pulse w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
-                      {isKo ? 'Resolution Check (확인 사항)' : 'Resolution Check'}
-                    </span>
-                  </h4>
-                  <div className="relative pl-4 border-l-[3px] border-zinc-700/60 space-y-6 ml-3 mt-4 pb-2">
-                    {message.structured.steps.map((step, idx) => (
-                      <div key={idx} className="relative group cursor-pointer" onClick={() => toggleStep(idx)}>
-                        <div className={`absolute -left-[27px] w-[22px] h-[22px] rounded-full flex items-center justify-center top-0 shadow-lg transition-all ${checkedSteps.includes(idx) ? 'bg-emerald-500 border-none scale-110' : 'bg-zinc-800 border-[2px] border-zinc-600'}`}>
-                          {checkedSteps.includes(idx) ? <CheckSquare className="w-3.5 h-3.5 text-white" /> : <Square className="w-3.5 h-3.5 text-zinc-500" />}
-                        </div>
-                        <div className={`p-4 rounded-2xl border transition-all shadow-md ml-3 ${checkedSteps.includes(idx) ? 'bg-emerald-500/10 border-emerald-500/40' : 'bg-zinc-800/60 border-zinc-700/50 hover:bg-zinc-800/90'}`}>
-                          <p className={`text-[15px] leading-relaxed transition-colors ${checkedSteps.includes(idx) ? 'text-emerald-200 font-bold' : 'text-slate-200 font-medium'}`}>
-                            {step}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* [NEW] 내부 데이터가 모두 없을 때의 세이프티 렌더링 */}
-              {!message.structured.message && !message.structured.symptom && !message.structured.no_more_checks && (!message.structured.steps || message.structured.steps.length === 0) && (
-                <div className="whitespace-pre-wrap text-[15px] leading-relaxed opacity-90 italic">
-                  {message.text}
-                </div>
-              )}
+              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+              <div className="w-2 h-2 bg-emerald-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
             </div>
           ) : (
-            <div className="whitespace-pre-wrap text-[15px] leading-relaxed">
-              {message.text}
-            </div>
-          )}
-          
-          {!isUser && message.status === 'unresolved' && (
-            <div className="mt-4 border-t border-zinc-700/50 pt-3">
-              <button 
-                onClick={handleUnresolved}
-                className="w-full bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 font-semibold py-2 px-4 rounded-lg transition-colors text-sm border border-rose-500/20 shadow-[0_0_10px_rgba(244,63,94,0.1)]"
-              >
-                {isKo ? 'Complaint Form (불만 접수) 펼치기' : 'Submit Official Complaint Form'}
-              </button>
-            </div>
-          )}
-          
-          {!isUser && message.status === 'diagnosing' && message.structured && (message.structured.steps?.length > 0 || message.structured.no_more_checks) && (
-             <div className="mt-4 border-t border-zinc-700/50 pt-3 flex flex-col gap-3">
-                {message.structured && message.structured.no_more_checks ? (
-                  /* 더 이상 체크할 사항이 없을 때의 전용 UI */
-                  <div className="bg-zinc-900/60 p-5 rounded-xl border border-rose-500/30 animate-in fade-in slide-in-from-bottom-2 duration-500">
-                    <p className="text-[14px] text-rose-200 mb-4 font-bold leading-relaxed text-center">
-                      {isKo ? '더 이상의 체크항목은 없습니다. 제조사에서 면밀히 검토할 수 있게 서비스 접수를 진행해 주세요. 그렇게 진행할까요?' : 'No more check items available. Please proceed to file a service request for a thorough review. Shall we proceed?'}
-                    </p>
-                    <button 
-                      onClick={handleUnresolved}
-                      className="w-full bg-rose-600 hover:bg-rose-500 text-white py-3 px-4 rounded-xl text-sm font-black transition-all shadow-lg shadow-rose-900/30 flex items-center justify-center gap-2 group"
-                    >
-                      <span>{isKo ? '네, 서비스 접수를 진행하겠습니다' : 'Yes, Proceed to Service Request'}</span>
-                      <Bot className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
+            <div className="flex flex-col gap-5 w-full">
+              {/* 1. 텍스트 메시지 (설명글) */}
+              <div className="whitespace-pre-wrap text-[15.5px] leading-relaxed font-medium">
+                {(() => {
+                  const lang = message.language || 'en';
+                  const syncMsg = {
+                    ko: "데이터를 불러오는 중입니다...",
+                    en: "Syncing data...",
+                    ja: "データを読み込んでいます...",
+                    'pt-BR': "Carregando dados...",
+                    es: "Cargando datos...",
+                  };
+                  const solutionMsg = {
+                    ko: '검색된 해결 방법입니다:',
+                    en: 'Found the following solutions:',
+                    ja: '以下の解決策が見つかりました：',
+                    'pt-BR': 'Seguem as soluções encontradas:',
+                    es: 'Se encontraron las siguientes soluciones:',
+                  };
+
+                  // [1] JSON 블록을 제외한 순수 텍스트 추출 (첫 '{' 이전 텍스트 우선)
+                  if (message.text) {
+                    const firstBrace = message.text.indexOf('{');
+                    const textBeforeJson = firstBrace > 0 ? message.text.substring(0, firstBrace).trim() : '';
+                    if (textBeforeJson) return textBeforeJson;
+
+                    // JSON 전체 제거 후 남은 텍스트
+                    const lastBrace = message.text.lastIndexOf('}');
+                    const textAfterJson = lastBrace !== -1 ? message.text.substring(lastBrace + 1).trim() : '';
+                    if (textAfterJson) return textAfterJson;
+                  }
+
+                  // [2] 구조화 데이터 내의 텍스트 탐색
+                  if (message.structured) {
+                    const s = message.structured;
+                    const topMsg = s.message || s.status || s.symptom || s.model_confirmed || s.model_name;
+                    if (topMsg) return topMsg;
+
+                    const modelStatus = s.model_check?.status || s.model_check?.message;
+                    if (modelStatus) return modelStatus;
+
+                    if (s.steps || s.troubleshooting_steps) {
+                      return solutionMsg[lang] || solutionMsg.en;
+                    }
+                  }
+
+                  // [3] 최후의 보루: 원문 노출
+                  return message.text || syncMsg[lang] || syncMsg.en;
+                })()}
+              </div>
+
+              {/* 2. 체크리스트 (해결 단계) */}
+              {message.structured && (message.structured.steps || message.structured.troubleshooting_steps) && (
+                <div className="mt-2 border-t border-white/5 pt-5">
+                  <h4 className="text-[13px] font-black text-emerald-400 mb-4 flex items-center gap-2 uppercase tracking-widest">
+                    <CheckSquare className="w-4 h-4" />
+                    {t.checklist}
+                  </h4>
+                  <div className="relative pl-4 border-l-2 border-zinc-700 space-y-4 ml-2">
+                    {(message.structured.steps || message.structured.troubleshooting_steps).map((item, idx) => {
+                      const stepText = typeof item === 'string' ? item : (item.check || item.step_content || Object.values(item)[0]);
+                      const isChecked = checkedSteps.includes(idx);
+                      return (
+                        <div key={idx} className="relative group cursor-pointer" onClick={() => toggleStep(idx)}>
+                          <div className={`absolute -left-[26px] w-[20px] h-[20px] rounded flex items-center justify-center top-0.5 transition-all ${isChecked ? 'bg-emerald-500 scale-110 shadow-[0_0_10px_rgba(16,185,129,0.4)]' : 'bg-zinc-900 border border-zinc-600'}`}>
+                            {isChecked ? <CheckSquare className="w-3.5 h-3.5 text-white" /> : <Square className="w-3.5 h-3.5 text-zinc-500" />}
+                          </div>
+                          <div className={`p-4 rounded-xl border transition-all ${isChecked ? 'bg-emerald-500/10 border-emerald-500/30 opacity-60' : 'bg-zinc-900/40 border-white/5 hover:bg-zinc-900'}`}>
+                            <p className={`text-[15px] leading-relaxed ${isChecked ? 'text-emerald-200/80 line-through' : 'text-slate-200'}`}>
+                              {stepText}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
-                ) : !showMoreQuery ? (
-                  <div className="flex gap-2 w-full">
-                    <button 
-                      onClick={() => {
-                        const resolvingSteps = checkedSteps.map(idx => message.structured.steps[idx]);
-                        onResolvedClick(resolvingSteps);
-                      }}
-                      className="flex-1 bg-zinc-900/50 border border-zinc-700 hover:bg-emerald-500/10 hover:border-emerald-500/40 text-slate-300 hover:text-emerald-400 py-2.5 px-3 rounded-xl text-sm font-bold transition-all shadow-sm"
-                    >
-                      {isKo ? '가이드로 해결됨' : 'Resolved by Guide'}
-                    </button>
-                    <button 
-                      onClick={() => setShowMoreQuery(true)} 
-                      className="flex-1 border border-zinc-700 bg-zinc-900/50 text-slate-400 hover:text-rose-400 hover:border-rose-500/40 hover:bg-rose-500/10 py-2.5 px-3 rounded-xl text-sm font-bold transition-all shadow-sm"
-                    >
-                      {isKo ? '해결 안됨' : 'Not Resolved'}
-                    </button>
-                  </div>
-                ) : (
-                  <div className="bg-zinc-900/60 p-4 rounded-xl border border-zinc-700 animate-in slide-in-from-top-2 duration-300">
-                    <p className="text-[13px] text-slate-300 mb-3 font-medium leading-relaxed">
-                      {isKo ? '위 내용들의 체크로 해결되지 않았나요? 추가로 체크항목을 좀더 확인해드릴까요?' : 'Did the above checks not solve it? Should I check for more items?'}
-                    </p>
-                    <div className="flex gap-2">
-                       <button 
-                         onClick={onMoreChecks}
-                         className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white py-2 px-3 rounded-lg text-xs font-bold transition-colors shadow-lg shadow-emerald-900/20"
-                       >
-                         {isKo ? '예 (YES)' : 'YES'}
-                       </button>
-                       <button 
-                         onClick={handleUnresolved}
-                         className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-slate-300 py-2 px-3 rounded-lg text-xs font-bold transition-colors border border-zinc-700"
-                       >
-                         {isKo ? '아니오 (접수진행)' : 'NO (File Complaint)'}
-                       </button>
+                </div>
+              )}
+
+              {/* 3. 하단 액션 버튼 영역 */}
+              {!isUser && (
+                <div className="pt-2">
+
+                  {/* ── A/S 접수 안내 멘트 (공통 중간 단계) ── */}
+                  {showAsGuide ? (
+                    <div className="bg-zinc-900/90 p-5 rounded-2xl border border-blue-500/20 animate-in fade-in slide-in-from-bottom-2 duration-400">
+                      <p className="text-[14.5px] text-slate-200 mb-5 leading-relaxed whitespace-pre-line">
+                        {t.asGuideMsg}
+                      </p>
+                      <div className="flex flex-col gap-3">
+                        <button
+                          onClick={handleUnresolved}
+                          className="w-full bg-rose-600 hover:bg-rose-500 text-white py-3.5 rounded-xl font-black transition-all shadow-lg shadow-rose-900/20 text-sm"
+                        >
+                          {t.asYes}
+                        </button>
+                        <button
+                          onClick={() => { setShowAsGuide(false); setShowMoreQuery(false); }}
+                          className="w-full bg-zinc-700 hover:bg-zinc-600 text-slate-300 py-3 rounded-xl font-bold transition-all text-sm"
+                        >
+                          {t.asNo}
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                )}
-             </div>
+
+                  ) : message.status === 'unresolved' ? (
+                    /* ── unresolved: 안내 버튼 → showAsGuide ── */
+                    <button
+                      onClick={() => setShowAsGuide(true)}
+                      className="w-full bg-rose-500/10 hover:bg-rose-500/20 text-rose-400 font-bold py-3 px-4 rounded-xl transition-all border border-rose-500/20 text-sm shadow-sm"
+                    >
+                      {t.complaint}
+                    </button>
+
+                  ) : message.status === 'diagnosing' && message.structured && (
+                    <div className="flex flex-col gap-3">
+
+                      {/* ── no_more_checks: 바로 A/S 안내 단계로 ── */}
+                      {message.structured.no_more_checks && !message.structured.steps && !message.structured.troubleshooting_steps ? (
+                        <div className="bg-zinc-900/80 p-5 rounded-2xl border border-rose-500/20 text-center animate-in fade-in duration-500">
+                          <button
+                            onClick={() => setShowAsGuide(true)}
+                            className="w-full bg-rose-600 hover:bg-rose-500 text-white py-3.5 rounded-xl font-black transition-all flex items-center justify-center gap-2 shadow-lg shadow-rose-900/20"
+                          >
+                            {t.complaint}
+                          </button>
+                        </div>
+
+                      ) : !showMoreQuery ? (
+                        /* ── 해결됨 / 해결 안됨 버튼 ── */
+                        <div className="flex gap-3 mt-2">
+                          <button
+                            onClick={() => {
+                              const steps = message.structured.steps || message.structured.troubleshooting_steps;
+                              onResolvedClick(checkedSteps.map(idx => steps[idx]));
+                            }}
+                            className="flex-1 bg-zinc-900/50 border border-zinc-700 hover:bg-emerald-500/10 hover:border-emerald-500/30 text-slate-400 hover:text-emerald-400 py-3 rounded-xl text-sm font-black transition-all"
+                          >
+                            {t.resolved}
+                          </button>
+                          <button
+                            onClick={() => setShowMoreQuery(true)}
+                            className="flex-1 bg-zinc-900/50 border border-zinc-700 hover:bg-rose-500/10 hover:border-rose-500/30 text-slate-400 hover:text-rose-400 py-3 rounded-xl text-sm font-black transition-all"
+                          >
+                            {t.notSolved}
+                          </button>
+                        </div>
+
+                      ) : (
+                        /* ── 추가 체크 여부 확인 ── */
+                        <div className="bg-zinc-900/80 p-5 rounded-2xl border border-zinc-700 animate-in slide-in-from-top-2 duration-300">
+                          <p className="text-[14px] text-slate-300 mb-4 font-bold text-center">
+                            {t.moreChecks}
+                          </p>
+                          <div className="flex gap-3">
+                            <button onClick={onMoreChecks} className="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl text-sm font-black transition-all shadow-lg shadow-emerald-900/20">
+                              {t.yes}
+                            </button>
+                            <button
+                              onClick={() => setShowAsGuide(true)}
+                              className="flex-1 bg-zinc-700 hover:bg-zinc-600 text-slate-200 py-3 rounded-xl text-sm font-black transition-all"
+                            >
+                              {t.no}
+                            </button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
           )}
         </div>
       </div>

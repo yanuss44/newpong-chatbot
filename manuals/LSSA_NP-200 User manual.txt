@@ -1,0 +1,1620 @@
+
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 1 
+ 
+ 
+ 
+ 
+ 
+ 
+LSSA User Manual 
+NPUM-200(US) Rev.12 2026.03.03 
+Eng.ver 
+ 
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 2 
+ 
+Reference before use 
+ 
+This user manual contains all the information to help users understand how to control and operate the product. 
+If you have any question or problem regarding handling the product, do not hesitate to contact us. Manufacturer 
+and official agency shall not be responsible for any problem occurring from misuse or violation of descriptions in 
+the user manual or any problem occurring from unqualified operator.  
+ 
+The product and company means each LSSA and NEWPONG in this user guide.  
+Please use the product in a right and safe manner after reading marked danger, warning, caution, and notice in 
+this manual in detail. 
+ 
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 3 
+ 
+ 
+1. WARNINGS AND PRECAUTIONS 4 
+2. GENERAL 15 
+3. INSTALLATION AND CONNECTION 21 
+4. INSTRUCTION FOR USE 24 
+5. CLEANING AND MAINTENANCE 29 
+6. TROUBLE SHOOTING 32 
+7. PRODUCT SPECIFICATION 34 
+8. PRODUCT WARRANTY 36 
+ 
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 4 
+ 
+1. WARNINGS AND PRECAUTIONS 
+Failure to comply with the following safety information may result in serious injury or device damage. 
+ 
+1.1. General Caution 
+1) Please check the product and accessories before use. 
+- Always check the condition of accessories before use. 
+- Be sure to check the connection status of accessories and equipment before use. 
+- Do not place surgical equipment or other electrical appliances close to each other. 
+- Be sure to fully read and familiarize yourself with the user manual before use. 
+- All accessories must be sterilized by steam prior to use. 
+2) Avoid operating the product which has visible damage. It may harm to patients. 
+3) Please understand this user guide before use. Otherwise, it may harm to people or damage the product. 
+4) Misuse of the product can harm to patients. The people who are well trained and properly understood 
+dangerousness and benefit of the product have to use. 
+5) Safety and effectiveness of the product and components have been confirmed. Accordingly, safety and 
+efficiency coincides with function requirement. 
+6) Please use only compatible accessories supplied, as the safety and effectiveness of the products and parts 
+have been confirmed. 
+7) This equipment is an ultrasonic surgical device and should be operated by qualified medical professionals 
+trained in the safe performance of surgical procedures in accordance with the safety guidelines described in 
+this manual to ensure safe use of ultrasonic energy and medical devices. 
+8) Before using the machine, beware of following precautions. 
+- Check the connection status of the power cord and accessories, and that the equipment is working 
+properly. 
+- Check the grounding and make sure that grounding is secure. And do not touch the power plug with wet 
+hands. 
+- Do not modify the equipment. 
+- When using the equipment with other devices, use it after thorough inspection that there is no impact on 
+the equipment. 
+9) When installing the device, note the following: 
+- Install in a place where water is not nearby. 
+- Install in a place where it will not adversely affect air pressure, temperature, humidity, wind, sunlight, 
+salinity, air containing ionic components. 
+- Pay attention to safety conditions such as vibration and shock (including transportation and movement). 
+- Install in a location that can accurately supply power, voltage, frequency and power consumption. 
+10) When using the device, note the following: 
+- Equipment and patients should be monitored carefully for abnormalities during use. 
+- If an abnormality is found in the device or patient, immediately put the patient in a safe state, stop the 
+operation of the device and take appropriate action. 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 5 
+ 
+- Avoid patient being contacted by the equipment. 
+11) After using the device, note the following: 
+- Return the operation switch to the pre-use state according to its order and disconnect the power supply. 
+- Do not pull the cable or apply excessive force when removing the cord. 
+12) When storing, note the following: 
+- Store in a place where air pressure, temperature, humidity, wind, sunlight, salinity, ions, etc. will not 
+adversely affect. 
+- Beware of safety conditions such as vibration and physical impact (including transportation and 
+movement). 
+- Do not store in chemical storage or gas generating area. 
+- Do not store near water. 
+- Clean up accessories (cords, etc.) and put them together. 
+13) Changes in the configuration of equipment and accessories or the use of accessories with unintended 
+specifications may require reevaluation of additional requirements according to IEC60601-1. 
+14) All components connected to this equipment use the components provided by NEWPONG Co., Ltd. If 
+components not provided by the company are used, there is a possibility that the inspection and operation 
+status of the equipment may not be confirmed, and the equipment may not work. 
+15) All serious accidents related to equipment should be reported to the competent authorities of the Member 
+State where the manufacturer, user and patient are located. 
+Division Timescale Example for accident 
+Serious public 
+health threat 
+Immediately (without any delay that could not be 
+justified) but not later than 2 calendar days after 
+awareness by the manufacturer of this threat. 
+· Possibility   of   multiple   
+deaths  occurring  at  short  
+intervals. 
+Death or 
+inanticipated 
+serious 
+deterioration in 
+state of health 
+Immediately (without any delay that could not be 
+justified) after the manufacturer established a link 
+between  the  device  and  the  event  but  not  later  
+than 10 elapsed calendar days following the date 
+of awareness of the event. 
+·  Death 
+·  Serious burns injuries 
+·  Electric shock 
+Others 
+Immediately (without any delay that could not be 
+justified) after the manufacturer established a link 
+between  the  device  and  the  event  but  not  later  
+than 15 elapsed calendar days following the date 
+of awareness of the event. 
+·  In  the  case  of  Serious  /  
+Major, Minor, Negligible in 
+the 2.5.1. 
+ 
+ 
+ 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 6 
+ 
+1.2. General Warning 
+1) Use of accessories, transducers and cables other than those specified or provided by the manufacturer of 
+this equipment could result in increased electromagnetic emissions or decreased electromagnetic 
+immunity of this equipment and result in improper operation. 
+2) Electric devices have potential electric shocks. Please establish education policy and procedure for risk 
+factors related to electric devices. Only qualified person, who has proper service documents for the 
+electricity shock, can repair this device. 
+3) To avoid risk of electric shock, keep this equipment dry. Do not expose this equipment to high humidity, 
+moisture or liquids. 
+4) If the user uses accessories other than those specified, the safety and performance of the device may be 
+impaired. Use only the specified accessories. 
+5) Do not move the equipment and its components during use of equipment. 
+6) To prevent the risk of electric shock, this equipment must be connected to a power supply (hospital grade 
+AC outlet) with a protective earth. 
+7) Unintended operation may occur due to equipment failure. 
+8) Do not leave the patient with probe inserted. 
+9) If operator uses another accessory besides listing of this device or unapproved accessory for substitution of 
+its original accessory, electromagnetic compatibility(EMC) would be emitted or its resistance for EMC would 
+be decreased. 
+10) If accessory, which is not compatible equivalently with safety requirements, is used, it may downgrade the 
+safety level. Please review if accessories around patient and its safety certificates are compatible with [IEC 
+60601-1] or [IEC 60601-1-2]. It may harm to people or damage the product. 
+11) If operator uses other accessories beside designated accessories, it may downgrade the device’s safety and 
+performance. Please use only designated accessories. 
+12) Do not press the Foot Switch with excessive force.   
+13) The foot switch should be placed on a flat surface and kept from tipping over during use. 
+14) Do not step on the foot switch when it is upside down. 
+15) Press only one foot switch button at a time. Do not press multiple buttons simultaneously. 
+16) Use the foot switch in a location where it is protected from water as much as possible. 
+ 
+1.3. Operating Environment & Electrical Safety Guidelines 
+1) NP-200 is classified as Class 1 and Type BF for electric shock. 
+2) Do not operate NP-200 near flammable anesthetics and solvents. 
+3) Use of this equipment adjacent to or stacked with other equipment should be avoided because it could 
+result in improper operation. If such use is necessary, this equipment and the other equipment should be 
+observed to verify that they are operating normally. 
+4) Failure to use this equipment in the specified type of shielded location could result in degradation of the 
+performance of this equipment, interference with other equipment or interference with radio services. 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 7 
+ 
+5) This equipment has been tested for radiated RF immunity only at selected frequencies, and use nearby of 
+emitters at other frequencies could result in improper operation. 
+6) Please check whether electric specification of building is compatible with electric specification of device. 
+Power of every device which is connected to outlet of stand has to accord with electrical requirements 
+written in the back side of stand. Otherwise, it may cause damage to patients and product. 
+7) To Avoid the Risk Of Electric Shock, This Equipment Must Only Be Connected To A Supply Mains With 
+Protective Earth 
+8) Do not use this unit for multiple socket-outlets. Using multiple socket-outlets or extending the power cord 
+may cause damage to the equipment. 
+9) Equipotential stud should be connected to the protective earthing conductor in hospital by a proper 
+connecting device. If the connection to the earth is not completely established, there is a potential risk that 
+the patient or the operator could be injured by electric shock. 
+10) Portable RF communications equipment (including peripherals such as antenna cables and external 
+antennas) should be used no closer than 30 cm (12 inches) to any part of "NP-200", Including cables 
+specified by the manufacturer. Otherwise, degradation of the performance of this equipment could result. 
+11) Use of this equipment adjacent to or stacked with other equipment should be avoided because it could 
+result in improper operation. If such use is necessary, this equipment and the other equipment should be 
+observed to verify that they are operating normally. 
+12) Failure to use this equipment in the specified type of shielded location could result in degradation of the 
+performance of this equipment, interference with other equipment or interference with radio services. 
+13) This equipment has been tested for radiated RF immunity only at selected frequencies, and use nearby of 
+emitters at other frequencies could result in improper operation. 
+14) If the equipment overheats, stop using it immediately and turn off the power. 
+15) If    operator feels that the handpiece is discomfortable to grab due to hitting, please either add more 
+anesthetic solution or stop using the handpiece. 
+16) Use the probe in a way that prevents it from bending as much as possible. 
+17) Do not touch the connector contacts with bare hands or metallic objects. This may result in electric shock or 
+device malfunction. 
+18) Always ensure that the connector is securely and properly connected before attaching it to the patient. 
+19) When the connector is detached, take care to prevent the exposed area from coming into contact with the 
+patient’s skin or body. 
+20) Do not modify, disassemble, or tamper with the device’s connectors or terminals. 
+21) Use only patient cables and connectors specified by the manufacturer. The use of incompatible accessories 
+may compromise patient safety. 
+22) All exposed metal parts of the device are designed with protective grounding. Do not alter or bypass this 
+safety feature under any circumstances. 
+ 
+ 
+ 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 8 
+ 
+1.4. IEC Electrical Safety & EMC Specificat ions 
+Table 1-1 IEC Electrical Safety Specifications 
+Device Description 
+Class I, Type BF Equipment, IPX0, not AP/APG 
+Mode of Operation: Non-continuous 
+Electrical 
+Isolation 
+· Leakage current conforms to IEC 60601-1 
+· Dielectric withstanding voltage conforms to IEC 60601-1 
+EMC Emissions and Susceptibility: NP-200 Ultrasonic Surgical Unit has been tested and found to comply with the 
+limits for medical devices to the IEC 60601-1-2:2014. These limits are designed to provide reasonable protection 
+against  harmful  interference  in  a  typical  medical  installation.  This  Equipment  uses,  and  can  radiate  RF  energy 
+and, if not installed and used in accordance with the instruction given below, may cause harmful interference to 
+other  devices  in  the  vicinity.  However,  there  is  no  guarantee  that  interference  will  not  occur  in  a  particular  
+installation. 
+ 
+1.5. Electromagnetic Field Information according to IEC 60601-1-2 
+Table 1-2 IEC EMC Specifications (Emissions) 
+Guidance and manufacturer’s declaration ‒ electromagnetic emissions 
+The LSSA is intended for use in the electromagnetic environment specified below. 
+The customer or the user of the LSSA should assure that it is used in such an environment. 
+Emission test Compliance Electromagnetic environment - guidance 
+RF emissions 
+CISPR 11 Group 1 
+The LSSA uses RF energy only for its internal function. 
+Therefore,  its  RF  emissions  are  very  low  and  are  not  likely  to  cause  
+any interference in nearby electronic equipment. 
+RF emissions 
+CISPR 11 
+Class A 
+The EMISSIONS characteristics of this equipment make it suitable or 
+use in industrial areas and hospitals (CISPR 11 class A). If it is used in 
+a residential environment (for which CISPR 11 class B is normally 
+required)  this  equipment  might  not  offer  adequate  protection  to  
+radio-frequency  communication  services.  The  user  might  need  to  
+take  mitigation  measures,  such  as  relocating  or  re-orienting  the  
+equipment. 
+Harmonic 
+emissions 
+IEC 61000-3-2 
+Class A 
+Voltage 
+fluctuations / 
+flicker 
+emissions IEC 
+61000-3-3 
+Complies 
+ 
+Table 1-3 IEC EMC Specifications (Immunity) 
+Guidance and manufacturer’s declaration ‒ electromagnetic Immunity 
+The LSSA is intended for use in the electromagnetic environment specified below. 
+The customer or the user of the LSSA should assure that it is used in such an environment 
+Immunity 
+IEC 60601 
+Test level 
+Compliance level 
+Electromagnetic environment - 
+guidance 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 9 
+ 
+Electrostatic 
+Discharge 
+(ESD) 
+ 
+IEC 61000-4-2 
+± 2,4,6,8 kV Contact 
+± 2,4,6,8 kV 
+Contact 
+Floor should be wood. 
+Concrete or ceramic tile. If 
+floors are covered with 
+synthetic material. The relative 
+humidity should be at least 
+30%. 
+± 2,4,8,15 kV air ± 2,4,8,15 kV air 
+Electrical fast 
+Transient/burst 
+ 
+IEC 61000-4-4 
+± 2 kV for power 
+Supply lines 
+± 2 kV for power  
+Supply lines 
+Main power quality should be 
+that of a typical commercial or 
+hospital environment. 
+± 1 kV for 
+input/output 
+lines 
+± 1 kV for 
+input/output lines 
+Surge 
+ 
+IEC61000-4-5 
+± 0.5, 1 kV line(s) to 
+line(s) 
+± 1 kV line(s) to 
+line(s) 
+Main power quality should be 
+that of a typical commercial or 
+hospital environment. 
+± 0.5,1,2 kV line(s) to 
+ground 
+± 2 kV line(s) to 
+ground 
+Voltage dips, 
+short 
+interruptions 
+and voltage 
+Variations on 
+power supply 
+input lines 
+ 
+IEC 61000-4-11 
+< 0% ∪T 
+(>100% dip in ∪t) 
+for 0.5cycle 
+< 0% ∪T 
+(>100% dip in ∪t) 
+for 0.5cycle 
+Main power quality should be 
+that of a typical commercial or 
+hospital environment. If the 
+user of the NP-200 requires 
+continued operation during 
+power main interruptions, it is 
+recommended that the NP-200    
+ne powered from an 
+uninterruptible power supply. 
+0% ∪T 
+(100% dip in ∪T) 
+for 1cycle 
+0% ∪T 
+(100% dip in ∪T) 
+for 1cycle 
+70% ∪T 
+(30% dip in ∪T) 
+for 25cycle 
+70% ∪T 
+(30% dip in ∪T) 
+for 25cycle 
+< 0% ∪T 
+(>100% dip in ∪T) 
+for 250cycle 
+< 0% ∪T 
+(>100% dip in ∪T) 
+for 250cycle 
+Power 
+frequency  
+(50,60Hz) 
+Magnetic field 
+ 
+IEC 61000-4-8 
+30 A/m 30 A/m 
+Power frequency magnetic 
+fields should be at levels 
+characteristic of a typical 
+location in a typical 
+commercial or hospital 
+environment. 
+NOTE ∪
+T
+ is the a.c. main voltage prior to application of the test level. 
+ 
+Guidance and manufacturer’s declaration ‒ electromagnetic Immunity 
+The LSSA is intended for use in the electromagnetic environment specified below. 
+The customer or the user of the LSSA should assure that it is used in such an environment 
+Immunity 
+IEC 
+60601 
+Test 
+level 
+Compliance 
+level 
+Electromagnetic environment - guidance 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 10 
+ 
+Conducted 
+RF 
+IEC 61000-
+4-6 
+3 Vrms 
+150kHz 
+to 
+80MHz 
+3 Vrms 
+Potable  mobile  RF  communications  equipment  should  
+be  used  no  closer  any  part  of  the  NP-200,  including 
+cables,   than   the   recommended   separation   distance   
+calculated from the equation applicable to the frequency 
+of the transmitter. 
+ 
+Recommended separation distance 
+ d = 1,2√P 
+ 
+d = 1,2√P 80MHz to 800 MHz 
+d = 2,3√P 800MHz to 2.5 GHz 
+where  P  is  the  maximum  output  power  rating  of  the  
+transmitter in watts (W) according to   the  transmitter  
+manufacturer  and  d  id  the  recommended  separation  
+distance in meters(m). 
+ 
+Field strengths from fixed RF transmitters, as deter-mined 
+by an electromagnetic site survey, a should be less than 
+the compliance level in each frequency range. 
+interference   may   occur   in   the   vicinity   of   equipment   
+marked with the following symbol : 
+ 
+6 Vrms 
+ISM 
+bands @ 
+150 kHz 
+to 80 
+MHz 
+6 Vrms 
+Radiated 
+RF 
+IEC 61000-
+4-3 
+3V/m 
+80MHz 
+to 2.7 
+GHz 
+3 V/m 
+NOTE 1) at 80 MHz and 800 MHz, the higher frequency range applies. 
+NOTE 2) These guidelines may not apply in all situations. Electromagnetic propagation is affected by absorption 
+and reflection from structures, objects and people. 
+a
+ Field strengths from fixed transmitters, such as base stations for radio (cellular/cordless) telephones and land 
+mobile radios, amateur radio, AM and FM radio broadcast and TV broadcast cannot be predicted theoretically 
+with accuracy. To access the electromagnetic environment due to fixed RF transmitters, an electromagnetic site 
+survey should be considered. If the measured filed strength in the location in which the EUT is used exceeds the 
+applicable RF compliance level above, the EUT should be observed to verify normal operation. If abnormal 
+performance is observed, additional measures may be necessary, such as reorienting or relocating LSSA. 
+b
+ Over frequency range 150 kHz to 80 MHz, filed strengths should be less than 3 v/m. 
+1) Precautions regarding sources of EM energy that: 
+- emit levels of EM energy that exceed the immunity test levels of the referenced EMC standards used,  
+or EMI Tesitng has verified the release of the product. 
+- have other emission characteristics to which the medical device has not been tested for immunity: 
+N/A 
+2) Specifications of the wireless communication for medical devices with RF wireless functions: N/A 
+3) Any maintenance instructions needed to ensure that the medical device remains safe and performs as 
+intended with regard to EM disturbances throughout the expected service life. 
+4) Stop using the device if it operates erratically or if the display malfunctions due to the EM disturbances. 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 11 
+ 
+5) Markings affixed to the medical device and warnings for certain types of known EM environments, such as in 
+or near an MRI scanner. Medical devices intended for use in the MR environment that have not been shown 
+to be MR Safe or MR Conditional should be marked with the ASTM F2503 symbol for MR Unsafe. (See ASTM 
+F2503-13 Standard Practice for Marking Medical Devices and Other Items for Safety in the Magnetic 
+Resonance Environment.) 
+ 
+1.6. Precaution During Ultrasonic Procedure 
+1.6.1 Cautions for Patient 
+1) To use this equipment, you should use the dedicated accessor y supplied by NEWPONG Co., Ltd. according 
+to the user's manual to prevent potential danger. 
+2) To stop the ultrasonic output, you can release the right button on the foot switch to stop 
+3) Press the left footswitch button to select modes. Mode changes are disabled during output. 
+4) Any physical deformation inside or outside the device is prohibited. 
+5) Failure of the equipment could result in an unintended increase of output power. 
+6) To avoid the risk of electric shock, this equipment must be connected to the supply mains with protective 
+earth. 
+7) After checking the patient status and considering the clinical treatment guide line, set up the proper 
+parameter.  
+8) Use the machine with prescription and instruction of medical specialist.  
+9) Avoid the treatment to the pregnancy and children.  
+10) Avoid the treatment to patient who has progressive dermatitis or treat after consultation with medical 
+specialist. 
+11) Prohibit the treatment to the acute disease patient who has over 38°C body temperature with bloody 
+condition 
+12) Prohibit the treatment to abnormal blood pressure, infectious and tubercular patients.  
+13) Prohibit the treatment to malignant tumor and heart disease patients.  
+14) Prohibit the treatment to patients who can have the hemotelangiosis from the liver function disturbance 
+and from the long use of steroid hormone.  
+15) Prohibit the treatment the patients who has legal communicable disease.  
+16) Use of this device is limited to those physicians who, by means of residency training or sanctioned 
+continuing medical education, have demonstrated proficiency in suction lipoplasty. 
+17) This device should be used with extreme caution in patients with chronic medical conditions such as 
+diabetes, heart or lung disease, circulatory diseases. 
+18) Loss of blood and fluid is predictable based on suction volume. Capability of providing adequate, timely 
+replacement of these components is essential for patient safety. 
+19) Probe, handpiece, and wrench must be sterilized prior to use. 
+20) The outcome of the procedure may vary depending on the age of the patient, the site of the operation, and 
+the surgeon's experience. 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 12 
+ 
+21) Due to ultrasonic energy, the temperature of the handpiece area rises, and there is a possibility of 
+inadvertent use. In the case of the continuous mode, 10 minutes rest when using for 3 minutes, and in the 
+case of the pulse mode, 10 minutes rest when using for 7 minutes.   
+22) This equipment is designed safely through General requirements for basic safety and essential performance 
+(IEC60601-1) and risk management process to minimize the possibility of risk. However, user and patient 
+may still be exposed to residual risks such as: 
+- Endangerment of patient or user’s life (ex. Death, Electric shock) 
+- Serious burns injuries 
+- Minor burn injuries 
+- Tissue damage 
+- Delay of surgery 
+- Occur problem in product (ex. Trouble in product, fire in product) 
+- Inconvenient 
+23) Caution: Federal law (USA) restricts these devices to sale by or on the order of a physician   
+ 
+1.6.2 Precautions for maintenance 
+1) Remove the foot switch from the device and store. 
+2) Avoid bending the cable connector between the main body and the handpiece or foot switch. 
+3) Regular inspection of products and components is recommended.   
+4) Ensure that the Main Body does not come into contact with water. 
+5) When reusing products that have not been used for a long time, check for safe operation before use. 
+6) You should avoid environments that can be heated by direct sunlight 
+7) Care must be taken not to damage the handpiece by falling on the floor. Care must be taken as it may cause 
+defects. 
+8) Keep the power cable disconnected from the outlet during non-use. 
+9) Store carefully against incline, vibration, impact, etc. 
+10) Avoid storing chemicals in places where gas is generated. 
+11) It should be stored in consideration of hygiene, and it is recommended to disinfect the skin contact area 
+especially when reusing it. 
+12) When cleaning the surface of the product, it is recommended to wipe it with a soft tissue or gauze. 
+ 
+1.7. Side Effect 
+When using an ultrasound surgical device, the following side effects may occur depending on the indications. 
+1) Bleeding 
+2) Hematoma 
+3) Hypoalbuminemia 
+4) Anemia 
+5) Inflammation and infection at the surgical site 
+6) Seroma 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 13 
+ 
+7) Bruising and Swelling 
+8) Hypoesthesia 
+9) Residual Lumps and Irregularities 
+10) Localized Fibrosis 
+ 
+1.8. Indication/Contraindication 
+1) Indication 
+- Plastic and Recinstruction Surgery 
+- Orthopedic Surgery 
+2) Contraindication 
+Do not treat the patients who fall on each of the following subparagraphs 
+- Pregnant women 
+- Patients with cardiac pacemakers or defibrillator 
+- Patients with open wound on the area of treatment 
+- Patients with chronic conditions such as diabetes, blood clotting disorders, heart, lung or 
+circulatory diseases, or have vascular problems including general circulation problems and 
+coagulation problems associated with certain medications 
+- Collagen, the presence of scarring or connective tissue disorders, lupus erythema, endocrine 
+disorders, pregnancy or pregnancy, or other active diseases that may affect or increase the risk of 
+the procedure 
+ 
+1.9. Symbol Definition 
+ 
+Equipotentiality 
+ 
+Separate collection for WEEE 
+ 
+Refer to instruction 
+manual/booklet 
+ 
+Type BF Applied part 
+ 
+Serial Number 
+ 
+Humidity Limitation 
+ 
+Temperature Limit 
+ 
+Atmospheric pressure limitation 
+ 
+Date of Manufacture 
+ 
+Manufacturer 
+ 
+General warning sign 
+ 
+Caution 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 14 
+ 
+ 
+Warning, electricity 
+ 
+Non-sterile 
+ 
+Stand-by 
+ 
+“OFF” 
+ 
+“ON”   
+ 
+ 
+ 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 15 
+ 
+2. General 
+2.1. Introduction 
+NP-200 of Newpong Co., Ltd. is an ultrasonic surgical unit designed to fragment and emulsify subcutaneous fatty 
+tissues   using   ultrasound   frequency   vibrations.   The   NP-200  generates  ultrasonic  vibrations  through  the 
+piezoelectric  effect  of  PZT  ceramic  crystals  embedded  in  the  NP-200  handpieces.  When  electrical  energy  is 
+supplied from the main control unit, these PZT crystals rapidly expand and contract, converting electrical signals 
+into mechanical ultrasonic vibrations. These vibrations are transmitted to the attached probe, which delivers the 
+mechanical action required for tissue fragmentation and emulsification.  
+The  NP-200  is  equipped  with  an  electronic  control  system  that  allows  the  operator  to  adjust  the  vibration 
+amplitude and frequency. It offers two operating modes, Continuous Mode and Pulse Mode. 
+ 
+2.2. Intended Use  
+LSSA  is  intended  for  the  fragmentation  and  emulsification  of  subcutaneous  fatty  tissues  for  aesthetic  body  
+contouring. LSSA is indicated for use in the following surgical specialists when the fragmentation and aspiration 
+of adipose tissue is desired:  
+- Plastic and Reconstruction Surgery  
+- Orthopedic Surgery 
+ 
+2.3. Composition 
+NP-200 is consisted of below parts.  
+Please  check  whether  the  below  parts  are  included  in  the  package  or  there any  damages  of  main  body  or 
+accessories. Applied part to patient is only “PROBEs ”. 
+Table 2-1. Basic Composition 
+No. Shape Name Description Remark 
+1 
+ 
+NP-200 
+Main body 
+LED indicator for User 
+Interface 
+Jog wheel for Adjusting 
+Ultrasonic power 
+1EA 
+2 
+ 
+B 
+HANDPIECE 
+Convert electric power to 
+ultrasonic power (IPX7) 
+With BL, BM, BS PROBE 
+1EA 
+3 
+ 
+F 
+Handpiece 
+Convert electric power to 
+ultrasonic power (IPX7) 
+With FM, FS PROBE 
+1EA 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 16 
+ 
+4 
+ 
+Foot Switch 
+On and Off output of the 
+ultrasonic power (IPX6) 
+2EA 
+5 
+ 
+PROBE 
+Convert the ultrasonic 
+power to mechanical 
+vibration energy   
+BL PROBE (Ø3.7mm), 
+BM PROBE (Ø2.9mm),  
+BS PROBE (Ø1.8mm),  
+FM PROBE (Ø1.2mm),  
+FS PROBE (Ø0.9mm) 
+Optional 
+6 
+ 
+(For FM, FS)                    (For BL, BM, BS) 
+SPANNER 
+(WRENCH) 
+Connect or disconnect the 
+PROBE with the handpiece 
+For BL, BM, BS, FM, FS 
+PROBE 
+1EA 
+7 
+ 
+Power Cord AC Power Connection 1EA 
+8 
+ 
+Operator 
+Manual 
+Operating Instruction for 
+use 
+1EA 
+ 
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 17 
+ 
+2.4. Descriptions   
+2.4.1. Main Body 
+1) Front View of the Main Body 
+ 
+Figure 2-1. NP-200 Front View 
+No. Item name Description 
+1 Lapsed Time Display Ultrasonic Output Lapsed Time. 
+2 Output Power Level Output Power Level (1~5 Level) 
+3 Continuous Mode 
+Continuous Mode Indicator 
+White : B Handpiece, Blue : F Handpiece 
+4 Pulsed Mode 
+Pulsed Mode indicator  
+White : B Handpiece, Blue : F Handpiece 
+5 Handpiece Connector Handpiece Connector 
+6 Jog wheel 
+Controller to adjust output power(Turn counterclockwise to 
+reduce by one level, turn clockwise to increase by one level) 
+7 Output Indicator Indicates that ultrasonic output is in progress 
+ 
+2) Rear view of the Main body 
+ 
+Figure 2-2. NP-200 Rear View 
+No. Function Description 
+1 Time Check button Blinks the current time on Timer 
+2 Time Reset button Reset the timer. 
+3 
+Protective Earth 
+Ter m inal 
+Terminal for connecting Protective Ground Cable 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 18 
+ 
+4 
+Foot Switch 
+Connector 
+The connector for Foot Switch. 
+5 
+Foot Switch 
+Connector 
+The connector for Foot Switch. 
+*Foot switches do not work at the same time. it works individually. 
+6 Main power switch 
+Input: (100-240) V~ 
+On and Off Main Power I: AC On, O: AC off 
+7 Power cable socket Connect power cable 
+ 
+2.4.2. Accessories  
+1) Handpiece 
+The handpiece (including the cable) does not have any intended contact with the patient during medical 
+procedures.   
+① B Handpiece 
+It is used in connection with BL, BM, and BS Probe and converts electrical signals into ultrasonic waves. 
+ 
+No. Name Description 
+1 The Front End Connections to BL, BM, and BS Probe 
+2 Cable Silicon Cable 
+3 Connector Connect to the Main Body's Handpiece Connector 
+4 Cap Cap 
+5 Handpiece Cap Handpiece cap 
+     
+ 
+ 
+ 
+ 
+ 
+ 
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 19 
+ 
+② F Handpiece 
+It is used in connection with FM and FS Probe and converts electrical signals into ultrasonic waves. 
+ 
+No. Name Description 
+1 The Front End Connections to FM and FS Probe 
+2 Cable Silicon Cable 
+3 Connector Connect to the Main Body's Handpiece Connector 
+4 Cap Cap 
+5 Handpiece Cap Handpiece cap 
+ 
+ 
+2) Foot Switch 
+It is an accessory that controls the on/off of the Ultrasonic wave output, which can be changed to C mode and P 
+mode when the left mode switch is operated, and the output is transmitted when the start switch is operated.   
+ 
+No. Name Description 
+1 Mode Switch Used when changing to Continuous mode and Pulse mode 
+2 Start(On/Off) Switch Use to turn the output on 
+3 Cable Cable 
+4 Connector Connect to the Main Body's Foot Switch Connector 
+ 
+ 
+ 
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 20 
+ 
+3) Probe 
+    The probe transmits ultrasonic vibration. 
+ 
+No. Name Description 
+a BL Probe  
+Using with B Handpiece b BM Probe  
+c BS Probe  
+d FM Probe  
+Using with F Handpiece 
+e FS Probe  
+No. Name Description 
+1 The distal end The part that engages with the handpiece. 
+2 The front end The part where ultrasonic energy is transmitted. 
+  
+① The distal end 
+② The front end 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 21 
+ 
+3. Installation and Connection 
+Please note following articles when “NP-200” is installed  
+1) It is recommended that this device is installed at an airy or ventilated space because it has slight heat during 
+operating.  
+2) Be sure to use linear or grounded power supply to prevent against malfunctions by electrical effects.  
+3) Do not try to get the power cord wet.  
+4) Do not connect the power cord to main body if it is damaged.  
+5) Do not share an outlet with other devices. There is potential for the fire by abnormal generated heat if 
+several devices share an outlet.  
+6) If possible, please avoid direct sunlight.  
+7) Be careful not to damage by shock.  
+8) Install the device at the flat location. 
+9) Install the device away from dust or inflammables. 
+10) To facilitate disconnection of the power supply in an emergency, install the equipment with a minimum 
+distance of 15 cm between the rear of the equipment and the wall, and install it in a location where access 
+to the equipment is not obstructed by obstacles or walls. 
+11) Be careful not to block the exhaust vent as heat accumulates on the top and back of the equipment when 
+the equipment is used continuously. 
+ 
+3.1. Transport and Fix 
+Please follow the below process when “NP-200” is moving to another place.  
+1) Before moving the device, turn off the device first. And remove the power cable.  
+2) Be careful for probe and handpiece drop.   
+3) After moving to another place, connect the power cable.  
+4) During the output of "NP-200”, moving of mainbody or removing of accessories is prohibited. 
+5) If device should be moved by elevator or through slope, please use the packing box. 
+6) Do not push PROBE socket with heavy material from the top. It may cause the damage of PROBE socket. 
+ 
+3.2. Power and cable connection 
+1) Connect the power cord to power supply and "NP-200"'s power cord socket which is located at the left of 
+back side. 
+2) Activate the device Switching "Main Power Switch” which is located above the power cord socket. 
+ 
+Warning 
+Check  the  fixed  condition  of  power  cord  when  the  power  cord  is  connected  to  the  power  cord  
+socket. Check the connection of power cord and be careful not to loosen. Any problem or damages 
+on the device can be caused by disconnection of power during operation.  
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 22 
+ 
+3.3. Foot switch connection 
+1) Connect the Foot switch cord to “Foot switch connector” located at the right of back side. 
+2) Align the protrusion of the socket with the slit of the connector before connecting them. 
+3) The footswitch can be used alternately by connecting both. When one switch operates, the other foot switch 
+does not work. 
+ 
+Figure 3-1. NP-200 Footswitch connection 
+ 
+3.4. Handpiece connection 
+1) Connect the Handpiece to "Handpiece connector” located at the left of front side. 
+2) Align the engravings on the socket and connector before connecting them. 
+3) Check whether the cord is connected firmly. 
+ 
+Figure 3-2. NP-200 Handpiece connection 
+ 
+Warning 
+If there are foreign substances (such as body fluids or tissues) inside the Handpiece Connector 
+terminal, using it as is may cause a fire or malfunction. 
+ 
+3.5. Handpiece and PROBEs connection 
+Follow the instruction for fixing the PROBE into handpiece; 
+(1) Remove the cap of the handpiece by turning it around to expose horn.  
+(2) Put the PROBE in to the horn and turning it clockwise to connect with handpiece. 
+(3) For fixing the PROBE firmly using wrench and re-cap the cap of handpiece. 
+(4) It is recommended that operator turns on the power after installing handpiece.  
+(5) Check if the power cord is connected properly. And do not touch the device with wet hand to avoid the electric 
+shock. 
+ 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 23 
+ 
+ 
+Figure 3-3 Fixing the PROBE wrench 
+PROBE, wrench, and handpiece are parts that require sterilization before use. Also the user is required to wear a 
+sterilized clothes and gloves. 
+ 
+ 
+ 
+Warning 
+Manufacturer do not has acceptance and no responsibility for the any trouble or damages caused 
+by consumable items beside original connector or cable which was supplied by manufacturer.  
+ 
+Check the followings after turning on the power of "NP-200”.  
+ Press the ON/OFF button and check whether the power is supplied and device is operated.  
+ 
+Check if the all images are displayed on the screen.  
+ 
+Pour sterilized saline into a bowl, immerse the tip of the probe, and press the foot switch for 2-3 seconds to 
+check if the output is functioning properly. 
+ 
+ 
+ 
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 24 
+ 
+4. Instr uction for Use  
+4.1. Sterilization 
+4.1.1. Sterilization option 
+The  Ultrasonic  handpiece  and  instruments  may  be  combined  or  separated  for  sterilization  according  to  your  
+facility's capabilities and the sterilization methods descried below. 
+All components(Handpiece, Probe, Wrench) must be disassembled and sterilized separately. 
+Note. Use only FDA-cleared sterilization wraps, pouches, or other appropriate sterile barrier systems validated for 
+the intended sterilization cycle to maintain device sterility. 
+ 
+4.1.2. Instruments 
+Applicable instruments: B HANDPIECE, F HANDPIECE, PROBEs(BL, BM, BS, FM and FS), WRENCH. 
+Follow  your  institution's  guidelines  for  the  following types  of  sterilization.  Autoclave  cycles  longer  than  those  
+shown in the Table 4-1. will slowly degrade the performance and useful life of the handpiece. 
+ 
+Caution 
+DO NOT unscrew hex-shaped cable connection on the back of the Handpiece. 
+ 
+Caution 
+DO NOT use chlorinated cleaning agents (bleach) on the Handpiece. 
+ 
+Caution 
+DO NOT use abrasive cleaning agents on the Handpiece. 
+ 
+4.1.3. Sterilization Methods for Instruments 
+Sterilization Method Recommended Parameters 
+  Cycle Times for Gravity-
+Displacement Steam Sterilization 
+Cycles 
+Temperature 132 °C 
+Sterilization Time 15 minutes 
+Drying Time 30 minutes 
+  Cycle Times for Dynamic-Air-
+Removal Steam Sterilization Cycles 
+Temperature 132 °C 
+Sterilization Time 4 minutes 
+Drying Time 30 minutes 
+    Table 4-1. Sterilization Methods for Instruments 
+If using an autoclave to sterilize the handpiece, remove the handpiece as soon as possible when the 
+autoclave  dry  cycle  is  completed.  Do  not  let  the  handpiece  sit  in  a  hot  autoclave  beyond  the  
+recommended  drying  period.  Let  the  Handpiece  cool  at  least  30  minutes  before  use,  2  hours  is  
+preferable. The handpiece may be rinsed in sterilized water or sterilized saline for more rapid cooling. 
+ 
+ 
+ 
+ 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 25 
+ 
+4.2. Starting the system 
+4.2.1. Power On 
+Check the connection of power cable at the bottom behind of the product, then push the power button(Figure 4-
+1) for the ON status in the side of product. After connecting the handpiece and footswitch to the main body, turn 
+on the power and the LED will be displayed as shown in Figure 4-2. 
+ 
+ 
+Figure 4-1. ON/OFF Figure 4-2. Initial UI state 
+ 
+4.2.2. Check handpiece and footswitch connection 
+If the handpiece is not connected to the main body, Er 21 (Figure 4-3.) is displayed and if the footswitch is not 
+connected to the main body, Er 23 is displayed. (Figure 4-4.) 
+  
+Figure 4-3. Handpiece Disconnected Figure 4-4. Foot Switch Disconnected 
+ 
+When the B HANDPIECE is connected to the main body, the LED displayed in continuous mode is white(Figure 4-
+5), and when the F HANDPIECE is connected to the main body, the LED displayed in continuous mode is displayed 
+in blue(Figure 4-6).
+ 
+ 
+ 
+Figure 4-5. B HANDPIECE Connected Figure 4-6. F HANDPIECE Connected 
+ 
+4.2.3. Select Output Level 
+The ultrasonic output level can be set from level 1 to 5. It can be adjusted using the jog wheel on the front of the 
+product,  with  clockwise  rotation  increasing  the  level  and  counterclockwise  rotation  decreasing  the  level.  Each  
+level is numbered from 1 to 5. The number of LEDs and the digits indicate each level. While the ultrasound is being 
+output, the output level does not change even if the jog wheel is turned.
+ 
+Power button  
+White LED 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 26 
+ 
+ 
+Figure 4-7. Indication of output level 
+ 
+4.2.4. Select Output Mode 
+It can be selected by changing the continuous mode and pulse mode by pressing the mode switch(Foot Switch) 
+of  the  foot  switch.  LED  is  indicated      when  continuous  mode  selected,  LED  is  indicated    when  pulse  
+mode selected. 
+ 
+ 
+Figure 4-8. Continuous Mode Figure 4-9. Pulse Mode 
+ 
+ 
+Caution 
+Operation Time and Thermal Safety 
+To prevent handpiece overheating and ensure patient safety, please strictly observe the 
+operation and rest times according to the selected output mode: 
+► Continuous Mode: Max. 3 minutes of use followed by a 10-minute rest period. 
+► Pulsed Mode: Max. 7 minutes of use followed by a 10-minute rest period. 
+ 
+4.2.5. Ultrasonic wave output 
+Press the start switch of the foot switch (Figure 4-10. Foot Switch) to output ultrasonic. When ultrasonic are output, 
+the ultrasonic output indicator lights up and the timer starts (Figure 4-11). The buzzer indicating ultrasonic output 
+sounds once every 2 seconds. When you release the switch, the output stops, and simultaneously, the timer stops, 
+allowing you to check the equipment usage time. The ultrasonic output indicator turns off and the buzzer stops 
+sounding
+ 
+ 
+ 
+Figure 4-10. Foot Switch Figure 4-11. Output Indicator 
+ 
+ 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 27 
+ 
+ 
+4.2.6. Timer Reset 
+The timer operates while the ultrasonic wave is output to display the usage time. Pressing the reset button (Figure 
+4-12) on the rear of the Main Body will reset the usage time back to 00:00. 
+ 
+Figure 4-12. Indication of timer 
+4.3. Operation 
+1) The patient's choice and surgical area are determined through consultation with the patient and medical 
+judgment of the doctor.
+ 
+2) Before using this device, the amount and method of injection of the anesthetic solution shall be determined 
+by the doctor.
+ 
+3) Use of this device in surgery 
+① In order to insert the probe of this device into the body, a 3-5 mm skin is incised. 
+② 
+Connect the probe of this equipment to the handpiece and Position the front end of the probe at the incised skin. 
+③ With the probe entering the target area, press the foot switch to generate an output. Do not step on the 
+footswitch before inserting the probe. 
+④ The user does not stop the stroke of the probe while the ultrasonic output goes out by stepping on the 
+footswitch. 
+⑤ To change the direction of the probe, take back the probe front end to the entry point and then change 
+the direction. 
+⑥
+ In order to maintain ultrasoinc wave output, bending of the probe is prevented as much as possible. The 
+hand holding the handle need to move as straight as possible, and
+ check the probe end with the hand 
+not holding the handpiece. 
+⑦ Be careful not to touch the skin with the probe front end inside the body. 
+⑧ Operator can place wet gauze on the skin to prevent frictional thermal damage by between cannula or 
+probe in the area where the skin contacts the probe. 
+⑨ The end point of device use is until there is a loss of resistance in the probe movement. 
+ 
+Caution 
+DO NOT lay the LSSA Handpiece on the patient when not in use. 
+ 
+4) After using the device, the soft tissue remaining in the body is evacuated using a suction device or    manual  
+syringe approved in the country, which is referred to the literature below. 
+Reference : 
+(1) Rod  J.  Rohich,  Samel  J.  Beran,  Jeffrey  M.  Kenkel.  ULTRASOUND-ASSISTED  LIPOSUCTION.  St.  Louis,  Quality  Medical  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 28 
+ 
+Publishing, Inc., 1998, pp.382-383. 
+(2) Shridharani SM, Broyles JM, Matarasso A. Liposuction devices: technology update. Med Devices (Auckl). 2014 Jul 21;7:241-
+51. doi: 10.2147/MDER.S47322. PMID: 25093000; PMCID: PMC4114741.  
+ 
+5) Operation Environment 
+① Temperature: +10°C to +30°C 
+② Relative Humidity: 30 to 75%(non-condensing) 
+③ Atmospheric pressure: 800 to 1060hPa 
+ 
+4.4. System Off 
+Please follow instruction below to off the system safely. 
+- Turn off the "NP-200” by Push the Power button 
+- Turn off the Main Power switch by switching from I to O 
+- Disconnect the handpiece cable, footswitch cable and power cord. 
+ 
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 29 
+ 
+5. Cleaning and Maintenance 
+ 
+5.1. Maintenance and storage 
+5.1.1. Maintenance 
+1) Always unplug the AC power cord and cables before cleaning the Main Body and handpiece. 
+2) This Main Body, handpiece, probe and wrench must be kept clean and hygienic with proper care. 
+3) Do not submerge the socket at the end of the handpiece in water. 
+4) During cleaning, make sure to completely remove any moisture from the socket at the tip of the handpiece. 
+Failure to do so may result in an electrical short. 
+5) Immediately remove all impurities of outside the device and accessories after treatment.  
+6) Do not break the handpiece cable.  
+7) If the device has not been used for a long time, check firstly whether the device is working in safety.  
+8) Avoid the environment that temperature can be increased by direct sunlight.  
+9) Regular inspection for device and accessories is recommended. 
+10) After clean the device, check the main body and accessories seriously. If the device is old or damaged, do 
+not use the device. 
+11) Remove the power of device before cleaning and maintenance. Otherwise, it may harm to people or 
+damage the product. 
+12) Some chemical cleaning products may have conductivity and make some scraps. The products remain with 
+conductivity dusts or scraps. Do not use the products for electrical part and do not use spray cleaning 
+products for any surfaces. 
+ 
+5.1.2. Storage 
+1) Separate a power cord from the outlet. 
+2) Store the device avoiding a wet place. 
+3) Be careful with the bad influence like air containing atmospheric pressure, temperature, humidity, 
+ventilation, dust and salty.  
+4) Be careful with incline, vibration and shock. 
+5) Do not store the device in storage place for chemicals and place where generates gas. 
+6) Store the device without power cord by using cover as like vinyl when the device is stored in a long time 
+7) If the device has not been used over a month, check whether the device works in safety. 
+8) Store with consideration of sanitation, sterilization before reuse of contact point with skin is recommended. 
+9) Store this NP-200 in a clean, dry and non-corrosive atmosphere under the conditions below. 
+- Temperature: 0  °C  to + 60  °C 
+- Relative Humidity: 10 to 90 % (non-considering) 
+- Atmospheric pressure: 800 to 1 060 hPa 
+ 
+ 
+ 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 30 
+ 
+5.2. Equipment Cleaning  
+5.2.1. Method of Equipment Cleaning 
+1) Use a soft cotton to clean the Main body. 
+2) Use a soft cotton, which has a suitable moisture without greasy, to clean product surface. 
+3) Turn off "NP-200”s power and separate the power cord before cleaning. Also all accessories are separated. 
+Do not soak the device in water and do not trickle any liquid down to the case. 
+4) Do not use alcohol to clean the front side of device. Alcohol may cause a scratch or damage of acrylic. 
+ 
+5.2.2. Method of Accessories Cleaning 
+1) Wash the product with room temperature water for 30 seconds. 
+2) Dilute Endozime AW in a 1:250 ratio in 20°C to 30  °C constant water. (4ml/1L constant water) 
+3) Soak the product for at least 2 minutes. 
+4) Remove any contaminants with a soft brush. 
+5) Rinse the Endozime AW product 2-3 times with room temperature water. 
+6) Dry at a dryer temperature of 110°C for 40 minutes. (After removing the sample, wipe it with sterile gauze 
+and dry it in a clean tray for 1 hour.) 
+ 
+Warning 
+- Prevent cleaning solution to contact with eyes, skin, or clothing. 
+- Avoid generating and breathing mists of cleaning solution. 
+- Wash  thoroughly  with  soap  and  water  after  handling  the  cleaning  solution  and  before  eating,  
+drinking, chewing gum, using tobacco or using the toilet. 
+- Remove and wash for cleaning solution contaminated clothing before reuse. 
+- Seal the cleaning solutions and store. 
+- Avoid spilling liquids into the Main Body during cleaning. 
+- Avoid getting cleaning materials inside the Foot switch Port and the AC Power inlet. 
+- 
+※ Do not immerse the socket at the tip of the handpiece in water during cleaning. 
+ 
+5.3. Regular inspection 
+1) It is recommended that "NP-200” is inspected regularly once a year like as other medical devices. 
+2) For a symptom of corrosion or damage, check regularly. Otherwise, it may harm to people or damage the 
+product. 
+3) Only qualified service person or trained person trained/authorized by manufacturer can repair the device 
+due to its electrical shock. 
+ 
+5.3.1. Instruction of Inspection 
+Inspection Order Description 
+1. Power supply 
+1) Connect only the main body to the power supply to turn on the device. 
+2) Check if the "Er 23" code appears on the UI screen  
+2. Footswitch 
+recognition 
+1) Properly attach the footswitch to the main body. 
+2) Verify that the "Er23" code converted to "Er 21" code 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 31 
+ 
+3. Handpiece 
+recognition 
+1) Properly attach the Handpiece to the main body. 
+2)  Verify  that  all  error  messages  are  disappeared  and  correct  indicators  are  light  up  
+according to the handpiece type 
+3) Connect a different type of handpiece to make sure the correct indicator lights 
+up(Optional) 
+4. Footswitch 
+Operation 
+1) Press the footswitch mode button and check if the mode indicator changes. 
+5. Ultrasonic 
+Output 
+1) Connect the probe to the handpiece and submerge 50‒75% of the probe in distilled 
+water. 
+2) Press the output button on the footswitch to emit ultrasonic for approximately 5 
+seconds. 
+3) Turn the jog wheel to check if the output level adjusts properly. 
+4) Check whether the UI indicators for ultrasonic emission are functioning properly. 
+1) After inspection, wipe the probe clean with a dry cloth to ensure no residue remains. Before use, be sure to 
+follow the sterilization process recommended by the manufacturer. 
+2) Never emit ultrasound while the probe is exposed to air. This may cause damage to the handpiece and 
+probe. 
+ 
+5.4. Product Lifetime and Probe Change Guidance 
+Lifetime of the NP-200 is determined by SMPS electrolytic condenser. SMPS electrolytic condenser lifetime is 5,000 
+hours and expectation used time is 3 hours/day. So, lifetime of our product is 5 years. 
+ 
+ 
+  
+ 
+unused usable 
+Replacement 
+recommended 
+Must be replaced 
+  
+Possibility of abnormal 
+output 
+abnormal output 
+ 
+5.5. Disposal of Equipment 
+When disposing of the product, it must be separated and recycled. For disposal of waste residue, please contact 
+the manufacturer, NEWPONG Co., Ltd., or the place where you purchased the product.
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 32 
+ 
+6. Tr ou bl e shoot i n g 
+ 
+6.1. Corrective action for emergency 
+ 
+Warning 
+Nobody beside authorized person can disassemble the device. Manufacturer has no responsibility 
+for the broken device or damaged person if the device is disassembled discretionally.  
+ 
+Warning 
+In  case  of  unintended  malfunction  or  showing  a  sign,  immediately  stop  operating  and  follow  to  
+trouble shooting procedures below.  
+ 
+If following troubles happen, please check the trouble shooting below before contact to manufacturer.  
+ 
+Situation and indications Checklist Solution 
+Smell  of  burning  or  sound  of  
+explosion in product 
+ Separate power cord from outlet. 
+Immediately call manufacturer. 
+When connection of Handpiece 
+is not recognized. 
+It    happens    when    the    
+Handpiece is         not         
+connected well. 
+Restart  the  device  after  substitute  
+the Handpiece. 
+If  it doesn’t  work  with  substituted  
+Handpiece, contact us immediately. 
+Burn damage on the skin  Immediately       have       a       cooling       
+massage    on    the    treated    area.    
+Prescribe   steroid   and   spread   an   
+Ointment  for  burns  depending  on  
+the situation. 
+When  the  LED  indicator  light  is  
+damaged 
+ Discontinue  use  and  treatment  of  
+the product immediately. 
+Turn the power OFF and unplug the 
+power cable from the outlet. 
+Contact           the           manufacturer           
+immediately. 
+Power supply is not working Check       whether       the       
+outlet or socket of wall is 
+working       and       check       
+whether     the     plug     is     
+inserted properly. 
+Check  whether  the  power  cord  is  
+connected well into main body. 
+If   the   device   is   still   not   working   
+though check all lists above, please 
+call manufacturer. 
+The device does not turn off Check   the   power   cord   
+and reset the working of 
+ON/OFF button. 
+It  the  situation  is  repeated  though  
+check    the    working    of    ON/OFF    
+button  two  to  three  times,  please  
+call manufacturer. 
+ 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 33 
+ 
+6.2. Error Message 
+When error occurs, an error message is displayed with the alarm sound. 
+Display Error Type Error detail Trouble shooting 
+Er10 
+1  
+Initial Fail 
+Hardware Error 
+1. Reboot the device 
+2. Contact to manufacturer or supplier 
+Er21 
+2  
+External 
+Connection 
+Status 
+HP Not Connected 
+1. Check handpiece connection 
+2. Re-connect handpiece cable 
+3. Test with other handpiece 
+4. Contact to manufacturer or supplier 
+Er23 
+Foot Switch Not 
+Connected 
+** One Foot switch connected ** 
+1. Check Foot switch connection 
+2. Re-connect Foot switch cable 
+ 
+** Two Foot switch connected ** 
+1. IF one of them is working, there is no 
+error message. Test with other foot 
+switch and figure out whether it is foot 
+switch problem or port problem. 
+2. If error message pop-up, test with 
+other foot switch. 
+3. Contact to manufacturer or supplier 
+ 
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 34 
+ 
+7. Product specification 
+7.1. Mechanical Specification 
+Item Description 
+Model Name NP-200 
+Classification and 
+type for electrical 
+shock 
+Class I, Type BF 
+Input Power (100 ‒ 240) V~, (50/60) Hz 
+Maximum Power 
+Dissipation 
+200VA 
+PROBE Tuning  
+Frequency Range 
+37.5 kHz ± 2%,    31 kHz ± 2% 
+Output Acoustic 
+power 
+Mode BL BM BS FM FS 
+Contin
+uous 
+17W~40
+W±10% 
+15W~37
+W±10% 
+14W~36
+W±10% 
+8W~22W
+±10% 
+8W~20W
+±10% 
+Pulse 
+12W~30
+W±10% 
+11W~28
+W±10% 
+11W~27
+W±10% 
+7W~19W
+±10% 
+6W~18W
+±10% 
+ 
+Oper
+ation 
+Mode 
+Contin
+uous 
+Continuous Output  
+Pulse Pulsed Output (Duty Cycle : 50%) 
+Main Body D 396mm x W 397mm x H 128mm 
+B HANDPIECE 264mm(without cable), 32Φ, IPX7 
+F HANDPIECE 205mm(without cable), 28Φ, IPX7 
+Foot Switch IPX6 
+Mobility Portable ME equipment 
+Language English 
+S/W Version NP200_MAIN_APP_2.00.00 
+ 
+7.2. Intended conditions of use 
+Considerations Condition 
+Frequency of use Depend on the operators and patients. 
+Location In hospital environment 
+Mobility Portable ME equipment 
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 35 
+ 
+ 
+7.3. Intended user profile (Operator Profile) 
+Considerations Requirement description 
+Education 
+Physicians   who,   by   means   of   formal   professional   training   or   sanctioned   
+continuing medical education (including supervised operative experience). 
+Knowledge 
+- At least graduate from a surgical college. 
+- International language(English), Local Language. 
+- Arabic numerals and international units. 
+Language 
+understanding 
+- Local language 
+Experience - surgical or dermatologist 
+Permissible 
+impairments 
+- Mild reading vision impairment or vision corrected to log MAR 0.2 
+- Average degree of aging-related short term memory impairment 
+- Impaired by 40 % resulting in 60 % of normal hearing at 500 Hz to 2 kHz 
+ 
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 36 
+ 
+8. Product Warranty 
+Product name LSSA 
+Model name NP-200 
+Product license number 
+1)
+  
+Serial number  
+Warranty  
+(from the date of installation) 
+Main body : 24 months (except accessories) 
+Handpiece & Footswitch : 6 months 
+Purchase date  
+Client 
+Hospital : 
+ 
+Address : 
+ 
+Name : 
+ 
+Te l  : 
+Seller  
+Manufacturer NEWPONG Co., Ltd 
+ 
+※ Thank you for your purchasing of NEWPONGʻs product. 
+※ This device is passed the restrict quality control and inspection process.  
+※ Standard compensation for repair, exchange and refund is compliant with [Consumer Injury and Compensation rule] of 
+Ministry of Strategy and Finance.  
+※ Service center will repair in free of charge during warranty period if the device has a trouble under normal conditions during 
+warranty period. 
+※ Please inform manufacturer or seller the model name, serial number, purchasing date and trouble matter if the device has a 
+trouble under normal conditions during warranty period 
+※ Any unauthorized modification on this device are prohibited. 
+※ Main Body and accessories disposal should be done complying with disposed according to the hospital management 
+regulations or WEEE policies. 
+  
+
+ 
+Copyright© 2021-2026 NEWPONG Co.,Ltd. All rights reserved.   
+ 
+[NPUM-200(en-GLB) Rev.12 2026.03.   03] NEWPONG Co., Ltd. 37 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  NEWPONG Co., Ltd 
+#1216 SJ Technoville, 278, Beotkkot-ro, Geumcheon-gu, Seoul, Korea 
+Tel. +82-2-541-0145      
+FAX. +82-2-541-0147 
+E-mail: info@newpong.com 
