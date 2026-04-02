@@ -30,17 +30,22 @@ export const analyzeSymptom = async (userText, language = 'en', history = [], on
         if (line.trim().startsWith('data: ')) {
           const dataStr = line.replace('data: ', '').trim();
           if (dataStr === '[DONE]') continue;
-          
+
+          // JSON 파싱 오류와 서버 에러를 분리하여 처리
+          let data;
           try {
-            const data = JSON.parse(dataStr);
-            if (data.text) {
-              fullText += data.text;
-              if (onChunk) onChunk(fullText); 
-            }
-            if (data.error) throw new Error(data.error);
+            data = JSON.parse(dataStr);
           } catch (e) {
-            console.warn("데이터 파싱 실패:", e, dataStr);
+            console.warn("SSE JSON 파싱 실패:", dataStr);
+            continue;
           }
+
+          if (data.text) {
+            fullText += data.text;
+            if (onChunk) onChunk(fullText);
+          }
+          // 서버 에러는 외부 catch로 전파 (이전에는 내부 catch에 삼켜졌던 버그)
+          if (data.error) throw new Error(data.error);
         }
       }
     }
