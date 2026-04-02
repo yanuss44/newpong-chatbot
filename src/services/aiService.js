@@ -71,6 +71,24 @@ export const analyzeSymptom = async (userText, language = 'en', history = [], on
       "해결할 수 없",           // Korean
     ];
 
+    // 빈 응답 수신 시 멈춤 방지 → 명확한 에러 메시지 반환
+    if (!fullText.trim()) {
+      const emptyMsgs = {
+        ko: "응답을 받지 못했습니다. 증상을 조금 더 구체적으로 설명해 주세요.",
+        en: "No response received. Please describe your symptoms in more detail.",
+        ja: "応答を受信できませんでした。症状をもう少し詳しく説明してください。",
+        'pt-BR': "Nenhuma resposta recebida. Descreva seus sintomas com mais detalhes.",
+        es: "No se recibió respuesta. Por favor, describa sus síntomas con más detalle."
+      };
+      return {
+        language,
+        text: emptyMsgs[language] || emptyMsgs.en,
+        status: 'diagnosing',
+        code: '',
+        structured: null
+      };
+    }
+
     let status = 'diagnosing';
     if (structured && structured.no_more_checks) {
       status = 'unresolved';

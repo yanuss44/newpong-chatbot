@@ -80,8 +80,15 @@ app.post('/api/chat', async (req, res) => {
             const modelName = MASTER_MODELS[localModelIndex];
             if (!modelName) throw new Error("No more models");
 
-            const queryAndHistory = (message + (context || "")).toUpperCase();
-            const currentModel = queryAndHistory.includes("110") ? "NP-110" : queryAndHistory.includes("200") ? "NP-200" : null;
+            // 사용자 메시지에서만 모델 감지
+            // (AI 이전 답변에 "NP-110/NP-200" 가 포함되어 오감지되는 문제 방지)
+            const userContextLines = (context || "").split('\n')
+                .filter(line => line.trim().startsWith('사용자:'))
+                .join('\n');
+            const modelSearchStr = (message + "\n" + userContextLines).toUpperCase();
+            const currentModel = modelSearchStr.includes("110") ? "NP-110"
+                               : modelSearchStr.includes("200") ? "NP-200"
+                               : null;
 
             if (!currentModel) {
                 const askMsgs = {
